@@ -22,7 +22,7 @@
       media="print"
       onload="this.media='all'">
 
-  <link rel="preconnect" href="https://assets.calendly.com">
+<link rel="preconnect" href="https://assets.calendly.com">
 <link rel="preconnect" href="https://calendly.com">
 <link rel="dns-prefetch" href="https://assets.calendly.com">
 <link rel="dns-prefetch" href="https://calendly.com">
@@ -207,16 +207,13 @@
     .footer-links a:hover { color: var(--gold); }
 
 /* ── BANDEAU COOKIES ── */
-#cookie-banner {
-  position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999;
-  background: linear-gradient(135deg, #0d1a30 0%, #162240 100%);
-  border-top: 1px solid rgba(201,169,110,.35);
-  box-shadow: 0 -12px 48px rgba(0,0,0,.6);
-  transform: translateY(110%);
-  transition: transform .5s cubic-bezier(.22,1,.36,1);
-  font-family: 'Montserrat', sans-serif;
+ #cookie-banner{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  min-height: 70px;
 }
-#cookie-banner.visible { transform: translateY(0); }
 
 /* ── VUE PRINCIPALE ── */
 #banner-main {
@@ -431,7 +428,7 @@ input:disabled + .slider { cursor: not-allowed; opacity: .5; }
 
   <div class="hero-visual">
     <div class="hero-card">
-      <div class="duo-photo-placeholder"> <img src="duonb.webp" alt="Photo duo Baptiste et Daphné"></div>
+      <div class="duo-photo-placeholder"> <img src="duonb.webp" alt="Photo duo Baptiste et Daphné" width="700"height="820"</div>
       <div class="duo-names">Baptiste <span>AUDOUIN</span><br/>Daphné <span>MARTIN MARIN</span></div>
       <div class="duo-title">Conseillers immobiliers</div>
       <span class="iad-badge">IAD Immobilier</span>
