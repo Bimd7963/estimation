@@ -708,15 +708,16 @@ input:disabled + .slider { cursor: not-allowed; opacity: .5; }
   <h2 class="section-title">Choisissez votre créneau<br/>en ligne</h2>
   <p class="section-sub">Réservez directement votre rendez-vous d'estimation. Nous analysons, comparons aux ventes actées et construisons la stratégie de départ.</p>
 
- <div class="calendly-wrapper">
+<div class="calendly-wrapper">
   <iframe
-    src="https://calendly.com/baptiste-daphne-immo/estimation?embed_domain=baptistedaphneimmo.com&embed_type=Inline"
+    id="calendly-iframe"
+    data-src="https://calendly.com/baptiste-daphne-immo/estimation?embed_domain=baptistedaphneimmo.com&embed_type=Inline"
     width="100%"
     height="700"
-    frameborder="0"
-    loading="eager">
+    frameborder="0">
   </iframe>
 </div>
+  
 </section>
    <!-- Tracking conversion Calendly → Google Ads -->
  <script>
@@ -728,7 +729,32 @@ input:disabled + .slider { cursor: not-allowed; opacity: .5; }
     }
   });
 </script>
+<script>
+  function loadCalendly() {
+    var iframe = document.getElementById('calendly-iframe');
+    if (iframe && !iframe.src) {
+      iframe.src = iframe.dataset.src;
+    }
+  }
 
+  // Chargement immédiat si l'URL pointe vers #rdv (campagne ads)
+  if (window.location.hash === '#rdv') {
+    loadCalendly();
+  } else {
+    // Sinon, chargement au scroll quand la section devient visible
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          loadCalendly();
+          observer.disconnect();
+        }
+      });
+    }, { rootMargin: '200px' });
+
+    var section = document.getElementById('rdv');
+    if (section) observer.observe(section);
+  }
+</script>
 <!-- ═══ CONTACT BAR ═══ -->
 <div class="contact-bar">
   <p>Vous préférez appeler ?</p>
