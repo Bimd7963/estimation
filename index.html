@@ -895,11 +895,11 @@ input:disabled + .slider { cursor: not-allowed; opacity: .5; }
  function activateAnalytics() {
   if (window._gaLoaded) return; window._gaLoaded = true;
   var s = document.createElement('script'); s.async = true;
-  s.src = 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX'; // ← votre ID GA4
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=G-41DC15H7KJ'; // ← votre ID GA4
   document.head.appendChild(s);
   window.dataLayer = window.dataLayer || [];
   window.gtag = function(){ dataLayer.push(arguments); };
-  gtag('js', new Date()); gtag('config', 'G-XXXXXXXXXX');
+  gtag('js', new Date()); gtag('config', 'G-41DC15H7KJ');
 }
 
 function activateAds() {
