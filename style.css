@@ -80,13 +80,11 @@ nav{
 
 /* ── HERO ── */
 
-.hero{
-  min-height:600px;
-  max-height:800px;
+ .hero{
+  min-height:100vh;
   display:grid;grid-template-columns:52% 48%;
   padding-top:68px;
   position:relative;overflow:hidden;
-  }
 
 .hero-left{
   display:flex;flex-direction:column;justify-content:center;
