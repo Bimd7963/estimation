@@ -366,15 +366,18 @@ footer{background:var(--charcoal);color:var(--ivory);padding:2.8rem 8vw;display:
   .mobile-sticky{display:block;}
   body{padding-bottom:60px;}
 
-  /* ── NAV ── */
-  nav{padding:1rem 5vw;}
+ /* ── NAV ── */
+  nav{padding:1rem 4vw;gap:0.8rem;}
   .nav-links{display:none;}
   .nav-phone{display:none;}
+  .nav-logo{font-size:.82rem;}
+  .nav-cta{font-size:.62rem;letter-spacing:.08em;padding:.6rem .9rem;white-space:nowrap;}
 
   /* ── HERO ── */
   .hero{grid-template-columns:1fr;min-height:auto;}
   .hero-left{padding:5rem 6vw 2.5rem;}
-  .hero-right{height:65vw;}
+  .hero-right{height:80vw;min-height:300px;}
+  .hero-right img{object-position:center 20%;}
   .hero-stat{gap:1.5rem;}
   .cta-cluster{flex-direction:column;align-items:stretch;}
   .btn-primary,.btn-phone{width:100%;justify-content:center;}
