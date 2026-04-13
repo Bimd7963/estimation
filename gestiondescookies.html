@@ -1,310 +1,172 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gestion des Cookies – Baptiste & Daphné Immobilier</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="icon" href="/favicon.png" type="image/png">
-  <style>
-    :root {
-      --navy:  #1B2B4B;
-      --navy2: #162240;
-      --gold:  #c9a96e;
-      --white: #FFFFFF;
-      --grey:  #8A9AB5;
-    }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Montserrat', sans-serif; background: var(--navy); color: var(--white); overflow-x: hidden; }
-
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 1.2rem 5%;
-      background: rgba(27,43,75,0.94);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(200,151,58,0.2);
-    }
-    .nav-logo { font-family: 'Merriweather', serif; font-size: 1.1rem; color: var(--white); letter-spacing: .04em; text-decoration: none; }
-    .nav-logo span { color: var(--gold); }
-    .nav-back { font-size: .85rem; color: rgba(255,255,255,.6); text-decoration: none; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; transition: color .25s; }
-    .nav-back:hover { color: var(--gold); }
-
-    .page-hero {
-      padding: 9rem 5% 4rem;
-      background: var(--navy2);
-      border-bottom: 1px solid rgba(200,151,58,.15);
-      position: relative; overflow: hidden;
-    }
-    .page-hero::before {
-      content: ''; position: absolute; inset: 0;
-      background: radial-gradient(ellipse 60% 80% at 80% 50%, rgba(200,151,58,.06), transparent 70%);
-      pointer-events: none;
-    }
-    .page-hero .eyebrow { font-size: .75rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 1rem; }
-    .page-hero h1 { font-family: 'Merriweather', serif; font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; margin-bottom: .8rem; }
-    .page-hero .date { font-size: .82rem; color: var(--grey); }
-
-    .content { max-width: 800px; margin: 0 auto; padding: 5rem 5%; }
-
-    /* ── WHAT ARE COOKIES EXPLAINER ── */
-    .explainer {
-      background: rgba(200,151,58,.06); border: 1px solid rgba(200,151,58,.2);
-      border-radius: 12px; padding: 2rem; margin-bottom: 3rem;
-    }
-    .explainer h2 { font-family: 'Merriweather', serif; font-size: 1.15rem; color: var(--gold); margin-bottom: 1rem; }
-    .explainer p { font-size: .9rem; color: rgba(255,255,255,.7); line-height: 1.8; margin-bottom: .7rem; }
-    .explainer p:last-child { margin-bottom: 0; }
-
-    /* ── PREFERENCE PANEL ── */
-    .pref-panel { margin-bottom: 3rem; }
-    .pref-panel h2 { font-family: 'Merriweather', serif; font-size: 1.3rem; color: var(--gold); margin-bottom: 1.5rem; padding-bottom: .6rem; border-bottom: 1px solid rgba(200,151,58,.2); }
-
-    .cookie-row {
-      display: flex; align-items: flex-start; justify-content: space-between; gap: 1.5rem;
-      background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.08);
-      border-radius: 10px; padding: 1.4rem 1.6rem; margin-bottom: .8rem;
-      transition: border-color .2s;
-    }
-    .cookie-row:hover { border-color: rgba(200,151,58,.25); }
-    .cookie-row.required { opacity: .75; }
-    .cookie-info { flex: 1; }
-    .cookie-info h3 { font-size: .95rem; font-weight: 600; margin-bottom: .3rem; display: flex; align-items: center; gap: .6rem; }
-    .cookie-info h3 .badge { font-size: .65rem; letter-spacing: .1em; text-transform: uppercase; background: rgba(200,151,58,.15); color: var(--gold); border: 1px solid rgba(200,151,58,.3); border-radius: 3px; padding: .15rem .5rem; font-weight: 600; }
-    .cookie-info h3 .badge.required { background: rgba(100,200,100,.1); color: #7fd87f; border-color: rgba(100,200,100,.3); }
-    .cookie-info p { font-size: .83rem; color: rgba(255,255,255,.55); line-height: 1.65; margin-bottom: .4rem; }
-    .cookie-info .cookie-names { font-size: .75rem; color: var(--grey); font-family: monospace; }
-
-    /* Toggle switch */
-    .toggle-wrap { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; gap: .4rem; padding-top: .1rem; }
-    .toggle { position: relative; width: 46px; height: 26px; }
-    .toggle input { opacity: 0; width: 0; height: 0; }
-    .slider {
-      position: absolute; cursor: pointer; inset: 0;
-      background: rgba(255,255,255,.15); border-radius: 26px;
-      transition: background .3s;
-    }
-    .slider::before {
-      content: ''; position: absolute; width: 20px; height: 20px;
-      left: 3px; bottom: 3px; background: var(--white);
-      border-radius: 50%; transition: transform .3s;
-    }
-    input:checked + .slider { background: var(--gold); }
-    input:checked + .slider::before { transform: translateX(20px); }
-    input:disabled + .slider { cursor: not-allowed; opacity: .5; }
-    .toggle-label { font-size: .7rem; color: var(--grey); text-align: center; }
-
-    /* ── ACTION BUTTONS ── */
-    .actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 2rem; }
-    .btn-accept { background: var(--gold); color: var(--navy); font-weight: 700; font-size: .9rem; padding: .9rem 2rem; border-radius: 6px; border: none; cursor: pointer; transition: opacity .2s, transform .2s; letter-spacing: .02em; }
-    .btn-accept:hover { opacity: .88; transform: translateY(-1px); }
-    .btn-refuse { background: transparent; color: rgba(255,255,255,.6); font-size: .9rem; padding: .9rem 2rem; border-radius: 6px; border: 1px solid rgba(255,255,255,.2); cursor: pointer; transition: border-color .2s, color .2s; font-family: 'Montserrat', sans-serif; }
-    .btn-refuse:hover { border-color: rgba(255,255,255,.4); color: var(--white); }
-    .btn-save { background: transparent; color: var(--gold); font-size: .9rem; padding: .9rem 2rem; border-radius: 6px; border: 1px solid rgba(200,151,58,.4); cursor: pointer; transition: background .2s; font-family: 'Montserrat', sans-serif; font-weight: 600; }
-    .btn-save:hover { background: rgba(200,151,58,.1); }
-
-    .status-msg { display: none; margin-top: 1rem; font-size: .85rem; padding: .7rem 1rem; border-radius: 6px; background: rgba(100,200,100,.1); border: 1px solid rgba(100,200,100,.3); color: #7fd87f; }
-
-    /* ── COOKIE TABLE ── */
-    .section-block { margin-bottom: 3rem; }
-    .section-block h2 { font-family: 'Merriweather', serif; font-size: 1.3rem; color: var(--gold); margin-bottom: 1rem; padding-bottom: .6rem; border-bottom: 1px solid rgba(200,151,58,.2); }
-    .section-block p { font-size: .9rem; color: rgba(255,255,255,.65); line-height: 1.8; margin-bottom: .8rem; }
-    .section-block a { color: var(--gold); text-decoration: none; }
-    .section-block a:hover { text-decoration: underline; }
-
-    .cookie-table { width: 100%; border-collapse: collapse; margin-top: 1rem; font-size: .83rem; }
-    .cookie-table th { background: rgba(200,151,58,.1); color: var(--gold); text-align: left; padding: .7rem 1rem; font-weight: 600; letter-spacing: .05em; font-size: .75rem; text-transform: uppercase; }
-    .cookie-table td { padding: .7rem 1rem; border-bottom: 1px solid rgba(255,255,255,.06); color: rgba(255,255,255,.65); vertical-align: top; }
-    .cookie-table tr:hover td { background: rgba(255,255,255,.02); }
-    .cookie-table code { font-size: .8rem; background: rgba(255,255,255,.06); padding: .1rem .4rem; border-radius: 3px; color: var(--gold); }
-
-    footer { background: var(--navy2); border-top: 1px solid rgba(255,255,255,.06); padding: 2.5rem 5%; display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; }
-    .footer-logo { font-family: 'Merriweather', serif; font-size: 1rem; white-space: nowrap; }
-    .footer-logo span { color: var(--gold); }
-    footer p { font-size: .73rem; color: var(--grey); max-width: 660px; line-height: 1.7; }
-    .footer-links { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top: .5rem; }
-    .footer-links a { font-size: .75rem; color: var(--grey); text-decoration: none; transition: color .2s; }
-    .footer-links a:hover { color: var(--gold); }
-
-    @media (max-width: 600px) {
-      .content { padding: 3rem 5%; }
-      #cookie-banner { flex-direction: column; align-items: flex-start; }
-    }
-  
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="cookies.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <style>:root 
+.page-hero{padding:7rem 8vw 3rem;background:var(--navy);position:relative;overflow:hidden;}
+.page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 80% 50%,rgba(168,132,74,0.07),transparent 65%);pointer-events:none;}
+.page-hero .eyebrow{font-size:.64rem;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:.8rem;margin-bottom:1rem;}
+.page-hero .eyebrow::before{content:'';display:block;width:18px;height:1px;background:var(--gold);flex-shrink:0;}
+.page-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:300;color:var(--ivory);margin-bottom:.6rem;}
+.page-hero .date{font-size:.72rem;color:rgba(250,247,242,.4);letter-spacing:.06em;}
+.content{max-width:800px;margin:0 auto;padding:4rem 8vw;}
+.section-block{margin-bottom:2.5rem;padding-bottom:2.5rem;border-bottom:1px solid var(--border-l);}
+.section-block:last-child{border-bottom:none;}
+.section-block h2{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:300;color:var(--charcoal);margin-bottom:1rem;padding-bottom:.6rem;border-bottom:1px solid rgba(168,132,74,.2);}
+.section-block h2 span{color:var(--gold);}
+.section-block h3{font-size:.92rem;font-weight:400;color:var(--charcoal);margin:1.2rem 0 .5rem;}
+.section-block p{font-size:.88rem;color:var(--gray);line-height:1.9;margin-bottom:.7rem;}
+.section-block a{color:var(--gold);text-decoration:none;transition:opacity .2s;}
+.section-block a:hover{opacity:.7;}
+.info-card{background:var(--cream);border-left:2px solid var(--gold);padding:1.2rem 1.5rem;margin-top:.8rem;}
+.info-card p{font-size:.85rem;color:var(--charcoal);margin:0;}
+.info-card p+p{margin-top:.4rem;}
+.info-card strong{font-weight:400;}
+.tag{display:inline-block;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;background:rgba(168,132,74,.1);color:var(--gold);border:1px solid rgba(168,132,74,.3);padding:.2rem .6rem;margin-bottom:.6rem;}
+@media(max-width:768px){.content{padding:3rem 6vw;}footer{flex-direction:column;text-align:center;}.footer-links{justify-content:center;}}
+.pref-panel{margin-bottom:2.5rem;}
+.cookie-row{display:flex;align-items:flex-start;justify-content:space-between;gap:1.5rem;background:var(--cream);border:1px solid var(--border-l);padding:1.4rem 1.6rem;margin-bottom:.8rem;transition:border-color .2s;}
+.cookie-row:hover{border-color:rgba(168,132,74,.3);}
+.cookie-row.required{opacity:.75;}
+.cookie-info{flex:1;}
+.cookie-info h3{font-size:.92rem;font-weight:400;color:var(--charcoal);margin-bottom:.3rem;display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;}
+.cookie-info p{font-size:.82rem;color:var(--gray);line-height:1.7;margin-bottom:.3rem;}
+.cookie-info .cookie-names{font-size:.7rem;color:var(--gray);font-family:monospace;opacity:.7;}
+.toggle-wrap{flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:.3rem;padding-top:.1rem;}
+.toggle{position:relative;width:40px;height:22px;}
+.toggle input{opacity:0;width:0;height:0;}
+.slider{position:absolute;cursor:pointer;inset:0;background:rgba(28,28,28,.15);border-radius:22px;transition:background .3s;}
+.slider::before{content:'';position:absolute;width:16px;height:16px;left:3px;bottom:3px;background:var(--ivory);border-radius:50%;transition:transform .3s;}
+input:checked + .slider{background:var(--gold);}
+input:checked + .slider::before{transform:translateX(18px);background:var(--charcoal);}
+input:disabled + .slider{cursor:not-allowed;opacity:.4;}
+.toggle-label{font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;color:var(--gray);}
+.actions{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.5rem;}
+.btn-accept{background:var(--gold);color:var(--charcoal);font-family:'Jost',sans-serif;font-weight:400;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;padding:.85rem 2rem;border:none;cursor:pointer;transition:background .2s;}
+.btn-accept:hover{background:var(--gold-l);}
+.btn-refuse{background:transparent;color:var(--gray);font-family:'Jost',sans-serif;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;padding:.85rem 1.8rem;border:1px solid var(--border-l);cursor:pointer;transition:border-color .2s,color .2s;}
+.btn-refuse:hover{border-color:var(--gold);color:var(--charcoal);}
+.btn-save{background:transparent;color:var(--gold);font-family:'Jost',sans-serif;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;padding:.85rem 1.8rem;border:1px solid rgba(168,132,74,.4);cursor:pointer;transition:background .2s;}
+.btn-save:hover{background:rgba(168,132,74,.08);}
+.status-msg{display:none;margin-top:1rem;font-size:.82rem;padding:.7rem 1rem;background:rgba(168,132,74,.1);border:1px solid rgba(168,132,74,.3);color:var(--gold);}
+.cookie-table{width:100%;border-collapse:collapse;margin-top:1rem;font-size:.82rem;}
+.cookie-table th{background:var(--cream);color:var(--gold);text-align:left;padding:.7rem 1rem;font-weight:400;font-size:.68rem;text-transform:uppercase;letter-spacing:.06em;border-bottom:1px solid rgba(168,132,74,.2);}
+.cookie-table td{padding:.7rem 1rem;border-bottom:1px solid var(--border-l);color:var(--gray);}
+.cookie-table code{font-size:.78rem;background:var(--cream);padding:.1rem .4rem;color:var(--gold);}</style>
 </head>
 <body>
-
+    <div id="sbar"></div>
+    <div id="cur"></div>
+    <div id="cur-ring"></div>
 <nav>
-  <a href="index.html" class="nav-logo">Baptiste &amp; Daphné <span>Immobilier</span></a>
+  <a href="index.html" class="nav-logo">Baptiste <span>&</span> Daphné<br>Immobilier</a>
   <a href="index.html" class="nav-back">← Retour au site</a>
 </nav>
-
 <div class="page-hero">
   <span class="eyebrow">Transparence & contrôle</span>
   <h1>Gestion des Cookies</h1>
   <span class="date">Dernière mise à jour : février 2026</span>
 </div>
-
 <div class="content">
-
-  <!-- EXPLAINER -->
-  <div class="explainer">
-    <h2>🍪 C'est quoi, un cookie ?</h2>
-    <p>Un cookie est un petit fichier texte déposé sur votre appareil (ordinateur, téléphone, tablette) lorsque vous visitez un site web. Il permet au site de mémoriser des informations sur votre visite.</p>
-    <p>Certains cookies sont <strong>essentiels</strong> au fonctionnement du site et ne peuvent pas être désactivés. D'autres, dits <strong>optionnels</strong>, nécessitent votre accord préalable : c'est ce que la loi française et le RGPD imposent.</p>
-    <p>Sur ce site, les cookies optionnels servent à <strong>mesurer l'audience</strong> (Google Analytics, Clarity) et à <strong>suivre l'efficacité de nos publicités</strong> (Google Ads). Ils ne contiennent aucune donnée personnelle permettant de vous identifier directement.</p>
-  </div>
-
-  <!-- PREFERENCE PANEL -->
-  <div class="pref-panel">
-    <h2>Mes préférences</h2>
-
-    <div class="cookie-row required">
-      <div class="cookie-info">
-        <h3>Cookies essentiels <span class="badge required">Toujours actifs</span></h3>
-        <p>Nécessaires au bon fonctionnement du site. Ils ne collectent aucune donnée personnelle et ne peuvent pas être désactivés.</p>
-        <div class="cookie-names">Exemples : cookies de session, préférences de langue</div>
-      </div>
-      <div class="toggle-wrap">
-        <label class="toggle"><input type="checkbox" checked disabled><span class="slider"></span></label>
-        <span class="toggle-label">Requis</span>
-      </div>
-    </div>
-
-    <div class="cookie-row">
-      <div class="cookie-info">
-        <h3>Google Analytics <span class="badge">Audience</span></h3>
-        <p>Mesure le nombre de visiteurs, les pages consultées et la durée des sessions. Les données sont anonymisées et agrégées — elles ne permettent pas de vous identifier.</p>
-        <div class="cookie-names">_ga, _gid, _ga_* — conservation 26 mois</div>
-      </div>
-      <div class="toggle-wrap">
-        <label class="toggle"><input type="checkbox" id="toggle-ga"><span class="slider"></span></label>
-        <span class="toggle-label">Optionnel</span>
-      </div>
-    </div>
-
-    <div class="cookie-row">
-      <div class="cookie-info">
-        <h3>Google Ads <span class="badge">Publicité</span></h3>
-        <p>Mesure l'efficacité de nos campagnes publicitaires et permet de vous proposer des annonces pertinentes. Activé uniquement si vous avez interagi avec une de nos publicités.</p>
-        <div class="cookie-names">_gcl_au, _gcl_aw — conservation 90 jours</div>
-      </div>
-      <div class="toggle-wrap">
-        <label class="toggle"><input type="checkbox" id="toggle-ads"><span class="slider"></span></label>
-        <span class="toggle-label">Optionnel</span>
-      </div>
-    </div>
-
-    <div class="cookie-row">
-      <div class="cookie-info">
-        <h3>Microsoft Clarity <span class="badge">Comportement</span></h3>
-        <p>Enregistre les sessions de navigation (clics, scrolls, heatmaps) de façon anonymisée pour nous aider à améliorer l'ergonomie du site. Aucune donnée permettant de vous identifier n'est transmise.</p>
-        <div class="cookie-names">_clck, _clsk, CLID, MUID — conservation 13 mois</div>
-      </div>
-      <div class="toggle-wrap">
-        <label class="toggle"><input type="checkbox" id="toggle-clarity"><span class="slider"></span></label>
-        <span class="toggle-label">Optionnel</span>
-      </div>
-    </div>
-
-    <div class="actions">
-      <button class="btn-accept" onclick="acceptAll()">✓ Tout accepter</button>
-      <button class="btn-refuse" onclick="refuseAll()">Tout refuser</button>
-      <button class="btn-save" onclick="savePrefs()">Enregistrer mes choix</button>
-    </div>
-    <div class="status-msg" id="status-msg">✓ Vos préférences ont été enregistrées.</div>
-  </div>
-
-  <!-- COOKIE TABLE -->
   <div class="section-block">
-    <h2>Détail des cookies utilisés</h2>
+    <h2><span>01 —</span> Qu'est-ce qu'un cookie ?</h2>
+    <p>Un cookie est un petit fichier texte déposé sur votre appareil lors de votre visite. Certains sont essentiels au fonctionnement du site. D'autres, optionnels, nécessitent votre accord préalable conformément au RGPD.</p>
+    <p>Sur ce site, les cookies optionnels servent à mesurer l'audience (Google Analytics, Clarity) et à suivre l'efficacité de nos publicités (Google Ads). Ils ne permettent pas de vous identifier directement.</p>
+  </div>
+  <div class="section-block">
+    <h2><span>02 —</span> Mes préférences</h2>
+    <div class="pref-panel">
+      <div class="cookie-row required">
+        <div class="cookie-info">
+          <h3>Essentiels <span class="tag">Toujours actifs</span></h3>
+          <p>Nécessaires au bon fonctionnement du site. Ne collectent aucune donnée personnelle.</p>
+        </div>
+        <div class="toggle-wrap">
+          <label class="toggle"><input type="checkbox" checked disabled><span class="slider"></span></label>
+          <span class="toggle-label">Requis</span>
+        </div>
+      </div>
+      <div class="cookie-row">
+        <div class="cookie-info">
+          <h3>Google Analytics <span class="tag">Audience</span></h3>
+          <p>Mesure le nombre de visiteurs, pages consultées, durée de session. Données anonymisées.</p>
+          <div class="cookie-names">_ga, _gid, _ga_* — 26 mois</div>
+        </div>
+        <div class="toggle-wrap">
+          <label class="toggle"><input type="checkbox" id="toggle-ga"><span class="slider"></span></label>
+          <span class="toggle-label">Optionnel</span>
+        </div>
+      </div>
+      <div class="cookie-row">
+        <div class="cookie-info">
+          <h3>Google Ads <span class="tag">Publicité</span></h3>
+          <p>Mesure l'efficacité de nos campagnes publicitaires.</p>
+          <div class="cookie-names">_gcl_au, _gcl_aw — 90 jours</div>
+        </div>
+        <div class="toggle-wrap">
+          <label class="toggle"><input type="checkbox" id="toggle-ads"><span class="slider"></span></label>
+          <span class="toggle-label">Optionnel</span>
+        </div>
+      </div>
+      <div class="cookie-row">
+        <div class="cookie-info">
+          <h3>Microsoft Clarity <span class="tag">Comportement</span></h3>
+          <p>Heatmaps et replays de sessions anonymisés pour améliorer l'ergonomie.</p>
+          <div class="cookie-names">_clck, _clsk, CLID — 13 mois</div>
+        </div>
+        <div class="toggle-wrap">
+          <label class="toggle"><input type="checkbox" id="toggle-clarity"><span class="slider"></span></label>
+          <span class="toggle-label">Optionnel</span>
+        </div>
+      </div>
+      <div class="actions">
+        <button class="btn-accept" onclick="acceptAll()">Tout accepter</button>
+        <button class="btn-refuse" onclick="refuseAll()">Tout refuser</button>
+        <button class="btn-save" onclick="savePrefs()">Enregistrer mes choix</button>
+      </div>
+      <div class="status-msg" id="status-msg">Vos préférences ont été enregistrées.</div>
+    </div>
+  </div>
+  <div class="section-block">
+    <h2><span>03 —</span> Détail des cookies utilisés</h2>
     <table class="cookie-table">
-      <thead>
-        <tr>
-          <th>Cookie</th>
-          <th>Émetteur</th>
-          <th>Finalité</th>
-          <th>Durée</th>
-        </tr>
-      </thead>
+      <thead><tr><th>Cookie</th><th>Émetteur</th><th>Finalité</th><th>Durée</th></tr></thead>
       <tbody>
-        <tr>
-          <td><code>_ga</code></td>
-          <td>Google Analytics</td>
-          <td>Distingue les utilisateurs uniques</td>
-          <td>2 ans</td>
-        </tr>
-        <tr>
-          <td><code>_gid</code></td>
-          <td>Google Analytics</td>
-          <td>Distingue les utilisateurs (session)</td>
-          <td>24 heures</td>
-        </tr>
-        <tr>
-          <td><code>_ga_*</code></td>
-          <td>Google Analytics 4</td>
-          <td>Maintient l'état de session GA4</td>
-          <td>2 ans</td>
-        </tr>
-        <tr>
-          <td><code>_gcl_au</code></td>
-          <td>Google Ads</td>
-          <td>Suivi des conversions publicitaires</td>
-          <td>90 jours</td>
-        </tr>
-        <tr>
-          <td><code>_clck</code></td>
-          <td>Microsoft Clarity</td>
-          <td>Identifie l'utilisateur pour Clarity</td>
-          <td>1 an</td>
-        </tr>
-        <tr>
-          <td><code>_clsk</code></td>
-          <td>Microsoft Clarity</td>
-          <td>Regroupe les actions de la page</td>
-          <td>24 heures</td>
-        </tr>
-        <tr>
-          <td><code>CLID</code></td>
-          <td>Microsoft Clarity</td>
-          <td>Identifie la première visite</td>
-          <td>1 an</td>
-        </tr>
+        <tr><td><code>_ga</code></td><td>Google Analytics</td><td>Distingue les utilisateurs uniques</td><td>2 ans</td></tr>
+        <tr><td><code>_gid</code></td><td>Google Analytics</td><td>Session utilisateur</td><td>24 h</td></tr>
+        <tr><td><code>_ga_*</code></td><td>Google Analytics 4</td><td>État de session GA4</td><td>2 ans</td></tr>
+        <tr><td><code>_gcl_au</code></td><td>Google Ads</td><td>Suivi des conversions</td><td>90 jours</td></tr>
+        <tr><td><code>_clck</code></td><td>Microsoft Clarity</td><td>Identifie l'utilisateur</td><td>1 an</td></tr>
+        <tr><td><code>_clsk</code></td><td>Microsoft Clarity</td><td>Regroupe les actions</td><td>24 h</td></tr>
+        <tr><td><code>CLID</code></td><td>Microsoft Clarity</td><td>Première visite</td><td>1 an</td></tr>
       </tbody>
     </table>
   </div>
-
   <div class="section-block">
-    <h2>Liens utiles</h2>
-    <p>
-      → <a href="https://tools.google.com/dlpage/gaoptout" target="_blank">Désactiver Google Analytics dans votre navigateur</a><br/>
-      → <a href="https://adssettings.google.com" target="_blank">Gérer vos préférences Google Ads</a><br/>
-      → <a href="https://clarity.microsoft.com/privacy" target="_blank">Politique de confidentialité Microsoft Clarity</a><br/>
-      → <a href="https://www.cnil.fr/fr/cookies-et-autres-traceurs/regles/cookies/que-dit-la-loi" target="_blank">Règlementation cookies – CNIL</a>
-    </p>
+    <h2><span>04 —</span> Liens utiles</h2>
+    <p>→ <a href="https://tools.google.com/dlpage/gaoptout" target="_blank">Désactiver Google Analytics</a><br>
+    → <a href="https://adssettings.google.com" target="_blank">Gérer vos préférences Google Ads</a><br>
+    → <a href="https://www.cnil.fr/fr/cookies-et-autres-traceurs/regles/cookies/que-dit-la-loi" target="_blank">Règlementation cookies — CNIL</a></p>
   </div>
-
 </div>
-
 <footer>
-  <div>
-    <div class="footer-logo">Baptiste &amp; Daphné <span>Immobilier</span></div>
-    <div class="footer-links">
-      <a href="mentionslegales.html">Mentions légales</a>
-      <a href="politiquedeconfidentialite.html">Politique de confidentialité</a>
-      <a href="gestiondescookies.html">Gestion des cookies</a>
-    </div>
+  <div class="footer-logo">Baptiste <span>&</span> Daphné Immobilier</div>
+  <div class="footer-info">EI Daphné Martin Marin Guillon &amp; EI Baptiste Audouin · Conseillers en immobilier · Réseau IAD France<br>RSAC Chambéry n° 992 606 400 et n° 943 392 555 · Document non contractuel · 2026</div>
+  <div class="footer-links">
+    <a href="mentionslegales.html">Mentions légales</a>
+    <a href="politiquedeconfidentialite.html">Confidentialité</a>
+    <a href="gestiondescookies.html">Cookies</a>
   </div>
-  <p>EI Daphné MARTIN MARIN GUILLON, EI Baptiste AUDOUIN — Mandataires indépendants IAD France — Document non contractuel — Février 2026</p>
 </footer>
-
 <script>
   const CONSENT_KEY = 'bd_cookie_consent';
-
   function loadPrefs() {
     try {
       const saved = JSON.parse(localStorage.getItem(CONSENT_KEY));
@@ -312,65 +174,17 @@
         document.getElementById('toggle-ga').checked = !!saved.analytics;
         document.getElementById('toggle-ads').checked = !!saved.ads;
         document.getElementById('toggle-clarity').checked = !!saved.clarity;
-        return true;
       }
     } catch(e) {}
-    return false;
   }
-
-  function saveConsent(prefs) {
-    localStorage.setItem(CONSENT_KEY, JSON.stringify({ ...prefs, ts: Date.now() }));
-  }
-
-  function acceptAll() {
-    document.getElementById('toggle-ga').checked = true;
-    document.getElementById('toggle-ads').checked = true;
-    document.getElementById('toggle-clarity').checked = true;
-    saveConsent({ analytics: true, ads: true, clarity: true });
-    showStatus();
-    hideBanner();
-  }
-
-  function refuseAll() {
-    document.getElementById('toggle-ga').checked = false;
-    document.getElementById('toggle-ads').checked = false;
-    document.getElementById('toggle-clarity').checked = false;
-    saveConsent({ analytics: false, ads: false, clarity: false });
-    showStatus();
-    hideBanner();
-  }
-
-  function savePrefs() {
-    saveConsent({
-      analytics: document.getElementById('toggle-ga').checked,
-      ads: document.getElementById('toggle-ads').checked,
-      clarity: document.getElementById('toggle-clarity').checked
-    });
-    showStatus();
-    hideBanner();
-  }
-
-  function showStatus() {
-    const msg = document.getElementById('status-msg');
-    msg.style.display = 'block';
-    setTimeout(() => msg.style.display = 'none', 4000);
-  }
-
-  function hideBanner() {
-    document.getElementById('cookie-banner').classList.add('hidden');
-  }
-
-  function showBanner() {
-    document.getElementById('cookie-banner').classList.remove('hidden');
-  }
-
-  function bannerAccept() { acceptAll(); }
-  function bannerRefuse() { refuseAll(); }
-
-  // Init
-  const hasConsent = loadPrefs();
-  if (!hasConsent) setTimeout(showBanner, 800);
+  function saveConsent(p) { localStorage.setItem(CONSENT_KEY, JSON.stringify({...p, ts: Date.now()})); }
+  function showStatus() { const m=document.getElementById('status-msg'); m.style.display='block'; setTimeout(()=>m.style.display='none',4000); }
+  function acceptAll() { ['toggle-ga','toggle-ads','toggle-clarity'].forEach(id=>document.getElementById(id).checked=true); saveConsent({analytics:true,ads:true,clarity:true}); showStatus(); }
+  function refuseAll() { ['toggle-ga','toggle-ads','toggle-clarity'].forEach(id=>document.getElementById(id).checked=false); saveConsent({analytics:false,ads:false,clarity:false}); showStatus(); }
+  function savePrefs() { saveConsent({analytics:document.getElementById('toggle-ga').checked,ads:document.getElementById('toggle-ads').checked,clarity:document.getElementById('toggle-clarity').checked}); showStatus(); }
+  loadPrefs();
 </script>
-
+<script src="script.js" defer></script>
+<script src="cookies.js" defer></script>
 </body>
 </html>
