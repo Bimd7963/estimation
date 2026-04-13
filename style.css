@@ -137,7 +137,7 @@ nav{
 .hero-stat-desktop{display:flex;}
 .hero-stat hero-stat-mobile{display:none;}
 .stat-num{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:300;color:var(--charcoal);line-height:1;}
-.stat-lbl{font-size:.65rem;letter-spacing:.04em;text-transform:uppercase;color:#3A3632;margin-top:.3rem;line-height:1.45;}
+.stat-lbl{font-size:.7rem;letter-spacing:.04em;text-transform:uppercase;color:#3A3632;margin-top:.3rem;line-height:1.45;}
 
 /* HERO DROITE */
 .hero-right{
