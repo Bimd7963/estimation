@@ -108,10 +108,10 @@ function saveCustom() {
 (function(){
   try {
     var saved = JSON.parse(localStorage.getItem(CONSENT_KEY));
-    if (saved) {
-      if (saved.analytics) activateAnalytics();
-      if (saved.ads)       activateAds();
-      if (saved.clarity)   activateClarity();
+   if (saved && typeof saved === 'object') {
+  if (saved.analytics === true) activateAnalytics();
+  if (saved.ads === true)       activateAds();
+  if (saved.clarity === true)   activateClarity();
       var alreadyLogged = sessionStorage.getItem('bd_session_logged');
       if (!alreadyLogged) {
         sessionStorage.setItem('bd_session_logged', '1');
