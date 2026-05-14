@@ -438,6 +438,18 @@ footer{background:var(--charcoal);color:var(--ivory);padding:2.8rem 8vw;display:
 }
 
 /* ══════════════════════════════════
+   RESPONSIVE — max-width: 523px
+   (écrans plus petits : numéro remplacé par hamburger)
+   ══════════════════════════════════ */
+@media(max-width:523px){
+  /* Masquer le numéro de téléphone, garder le hamburger visible */
+  .nav-cta{display:none !important;}
+  
+  /* Laisser le hamburger avec plus d'espace */
+  nav{padding:1rem 3vw;}
+}
+
+/* ══════════════════════════════════
    RESPONSIVE — max-width: 480px
    (petits téléphones : 360-390px)
    ══════════════════════════════════ */
