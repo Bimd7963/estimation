@@ -1,0 +1,237 @@
+/* ═══════════════════════════════════════════
+   HAMBURGER MENU — Baptiste & Daphné
+   Premium Design — navy #1E2535, gold #A8844A
+   Cormorant + Jost, drawer elegant
+   ═══════════════════════════════════════════ */
+
+/* Bouton hamburger (visible qu'en mobile <900px) */
+.hamburger-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  z-index: 502;
+  transition: all 0.3s ease;
+}
+ 
+.hamburger-btn span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--charcoal);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: 1px;
+}
+
+
+.hamburger-btn.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(12px);
+}
+
+.hamburger-btn.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-btn.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-12px);
+}
+
+/* Menu drawer */
+#menu-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0);
+  z-index: 499;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+#menu-drawer.open {
+  background: rgba(0, 0, 0, 0.3);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#menu-content {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  max-width: 340px;
+  height: 100%;
+  background: var(--ivory);
+  z-index: 500;
+  transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  padding-top: 4.5rem;
+  overflow-y: auto;
+  border-left: 1px solid var(--border-l);
+  box-shadow: -4px 0 16px rgba(0, 0, 0, 0.08);
+}
+
+#menu-drawer.open #menu-content {
+  right: 0;
+}
+
+/* Menu items */
+.menu-nav-link {
+  display: flex;
+  align-items: center;
+  padding: 1.2rem 1.8rem;
+  text-decoration: none;
+  color: var(--charcoal);
+  font-size: 0.88rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-family: 'Jost', sans-serif;
+  font-weight: 400;
+  border-bottom: 1px solid var(--border-l);
+  transition: all 0.25s ease;
+  position: relative;
+}
+
+.menu-nav-link::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 2px;
+  height: 0;
+  background: var(--gold);
+  transition: height 0.25s ease;
+}
+
+.menu-nav-link:hover {
+  background: rgba(168, 132, 74, 0.04);
+  color: var(--gold);
+}
+
+.menu-nav-link:hover::before {
+  height: 100%;
+}
+
+/* Section label — MASQUÉ */
+.menu-section-label {
+  display: none;
+}
+
+/* Contact CTA */
+.menu-cta-section {
+  padding: 1.8rem;
+  margin-top: 2rem;
+  border-top: 1px solid var(--border-l);
+}
+
+.menu-cta-phone {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  text-decoration: none;
+  margin-bottom: 1.2rem;
+  padding: 1rem;
+  background: var(--navy);
+  border-radius: 4px;
+  transition: all 0.25s ease;
+}
+
+.menu-cta-phone:hover {
+  background: var(--gold);
+}
+
+.menu-cta-phone span:first-child {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  color: var(--gold);
+  font-weight: 300;
+}
+
+.menu-cta-phone:hover span:first-child {
+  color: var(--charcoal);
+}
+
+.menu-cta-phone span:last-child {
+  font-size: 0.78rem;
+  color: var(--ivory);
+  letter-spacing: 0.04em;
+}
+
+.menu-cta-phone:hover span:last-child {
+  color: var(--charcoal);
+}
+
+.menu-cta-btn {
+  display: block;
+  width: 100%;
+  background: var(--charcoal);
+  color: var(--ivory);
+  padding: 1rem;
+  text-decoration: none;
+  text-align: center;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-family: 'Jost', sans-serif;
+  font-weight: 400;
+  border-radius: 4px;
+  transition: all 0.25s ease;
+}
+
+.menu-cta-btn:hover {
+  background: var(--gold);
+  color: var(--charcoal);
+}
+
+/* Mobile only */
+@media (max-width: 900px) {
+  .hamburger-btn {
+    display: flex;
+    margin-left: auto;
+  }
+
+
+  /* Masquer les nav-links desktop */
+  .nav-links {
+    display: none !important;
+  }
+
+  /* Garder le nav-phone visible en mobile */
+  .nav-phone {
+    display: block !important;
+  }
+}
+
+@media (min-width: 901px) {
+  .hamburger-btn {
+    display: none !important;
+  }
+
+  #menu-drawer {
+    display: none !important;
+  }
+}
+
+/* Petit écrans */
+@media (max-width: 360px) {
+  #menu-content {
+    max-width: 100%;
+  }
+
+  .menu-nav-link {
+    padding: 1rem 1.4rem;
+    font-size: 0.8rem;
+  }
+
+  .menu-cta-section {
+    padding: 1.2rem;
+  }
+}
