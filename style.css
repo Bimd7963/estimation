@@ -313,12 +313,30 @@ footer{background:var(--charcoal);color:var(--ivory);padding:2.8rem 8vw;display:
   .mobile-sticky{display:block;}
 
 
-  /* ── NAV ── */
+/* ── NAV ── */
   nav{padding:1rem 4vw;gap:.8rem;}
   .nav-links{display:none;}
   .nav-phone{display:none;}
   .nav-logo{font-size:.82rem;}
   .nav-cta{font-size:.62rem;letter-spacing:.08em;padding:.6rem .9rem;white-space:nowrap;}
+
+  /* Adapter .nav-right pour mobile */
+  .nav-right{
+    flex: 1;
+    justify-content: flex-end;
+    gap: 0.8rem;
+  }
+  
+  .nav-phone{
+    display:block;
+    font-size:1rem;
+  }
+  
+  .nav-cta{
+    display:none;
+  }
+
+
 
   /* ── HERO — structure flex colonne ── */
   .hero{
