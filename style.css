@@ -336,8 +336,6 @@ footer{background:var(--charcoal);color:var(--ivory);padding:2.8rem 8vw;display:
     display:none;
   }
 
-
-
   /* ── HERO — structure flex colonne ── */
   .hero{
     display:flex;
