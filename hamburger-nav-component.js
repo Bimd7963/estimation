@@ -19,7 +19,7 @@
       <div id="menu-content">
         <a href="#approche" class="menu-nav-link">Notre approche</a>
         <a href="#avis" class="menu-nav-link">Avis clients</a>
-        <a href="FAQ.html" class="menu-nav-link">Questions fréquentes</a>
+        <a href="FAQ.html" class="menu-nav-link">Questions</a>
         <a href="Articles-p.html" class="menu-nav-link">Articles</a>
 
         <div class="menu-cta-section">
