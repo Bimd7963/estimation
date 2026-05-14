@@ -19,8 +19,8 @@
       <div id="menu-content">
         <a href="#approche" class="menu-nav-link">Notre approche</a>
         <a href="#avis" class="menu-nav-link">Avis clients</a>
-        <a href="#faq" class="menu-nav-link">Questions</a>
-        <a href="#blog" class="menu-nav-link">Blog</a>
+        <a href="FAQ.html" class="menu-nav-link">Questions fréquentes</a>
+        <a href="Articles-p.html" class="menu-nav-link">Articles</a>
 
         <div class="menu-cta-section">
           <a href="#rdv" class="menu-cta-btn">Discuter de mon projet</a>
