@@ -512,13 +512,11 @@
 <!-- ═════════════════════════════════════════════════════════════
      TRACKING GOOGLE FORMS
      ═════════════════════════════════════════════════════════════ -->
- 
-<script src="script.js" defer></script>
-
-<script src="script.js" defer></script>
+ <script src="script.js" defer></script>
 
 <script>
-const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSfHPxMd8HyjV-U0zfrYvoDnuHi7E7TTOhG-_-iXpWLjm9TE4Q/formResponse';
+// Configuration du formulaire Google
+const GOOGLE_FORM_BASE = 'https://docs.google.com/forms/d/e/1FAIpQLSfHPxMd8HyjV-U0zfrYvoDnuHi7E7TTOhG-_-iXpWLjm9TE4Q/formResponse';
 
 function scrollToProfiles(e) {
   e.preventDefault();
@@ -528,27 +526,53 @@ function scrollToProfiles(e) {
 function trackProfileSelection(profile) {
   try {
     const timestamp = new Date().toLocaleString('fr-FR');
-    const device = navigator.userAgent.substring(0, 50);
+    const device = getDeviceInfo();
     
-    const data = `entry.1869076338=${encodeURIComponent(profile)}&entry.1502176833=${encodeURIComponent(timestamp)}&entry.1637361635=${encodeURIComponent(device)}`;
+    const formData = new FormData();
+    formData.append('entry.1869076338', profile);        // Profil sélectionné
+    formData.append('entry.1502176833', timestamp);      // Heure du clic
+    formData.append('entry.1637361635', device);         // Device/Navigateur
     
-    fetch(GOOGLE_FORM_URL, {
+    fetch(GOOGLE_FORM_BASE, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: data,
+      body: formData,
       mode: 'no-cors'
-    }).catch(err => console.log('✓ Enregistré'));
-  } catch(e) {}
+    }).catch(err => {
+      console.log('✓ Données enregistrées');
+    });
+  } catch(e) {
+    // Silencieux
+  }
+}
+
+function getDeviceInfo() {
+  const ua = navigator.userAgent;
+  let browser = 'Autre';
+  let os = 'Autre';
+  
+  if (ua.indexOf('Edg') > -1) browser = 'Edge';
+  else if (ua.indexOf('Chrome') > -1) browser = 'Chrome';
+  else if (ua.indexOf('Safari') > -1) browser = 'Safari';
+  else if (ua.indexOf('Firefox') > -1) browser = 'Firefox';
+  
+  if (ua.indexOf('Windows') > -1) os = 'Windows';
+  else if (ua.indexOf('Macintosh') > -1) os = 'macOS';
+  else if (ua.indexOf('Linux') > -1 && ua.indexOf('Android') === -1) os = 'Linux';
+  else if (ua.indexOf('Android') > -1) os = 'Android';
+  else if (ua.indexOf('iPhone') > -1 || ua.indexOf('iPad') > -1) os = 'iOS';
+  
+  return `${browser} • ${os}`;
 }
 
 document.querySelectorAll('.profile-card').forEach(card => {
-  card.addEventListener('click', function() {
+  card.addEventListener('click', function(e) {
     const profile = this.dataset.profile;
     trackProfileSelection(profile);
     sessionStorage.setItem('userProfile', profile);
   });
 });
-</script>
 
+console.log('✓ Tracking activé');
+</script>
 </body>
 </html>
