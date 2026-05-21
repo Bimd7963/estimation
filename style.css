@@ -253,21 +253,206 @@ section{padding:3.5rem 8vw;}
 .post-avis-right{display:flex;flex-direction:column;gap:.7rem;align-items:flex-end;flex-shrink:0;}
 .post-avis-note{font-size:.66rem;color:rgba(250,247,242,.3);font-style:italic;text-align:right;}
 
+/* ── RDV (refonte) ── */
+section.rdv {
+  display: grid;
+  grid-template-columns: 4fr 1fr 4fr; 
+  align-items: start;
+  color: var(--ivory);
+  position: relative;
+}
 
-/* ── RDV ── */
-.rdv-layout{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:stretch;}
-.rdv-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3vw,3rem);font-weight:300;line-height:1.2;color:var(--charcoal);margin-bottom:1rem;}
-.rdv-title em{font-style:italic;color:var(--gold);}
-.rdv-txt{font-size:.9rem;color:var(--gray);line-height:1.75;margin-bottom:1.2rem;max-width:32rem;}
-.rdv-block{background:var(--navy);padding:1.8rem 2rem;display:flex;flex-direction:column;gap:.2rem;}
-.rdv-phone-big{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--ivory);text-decoration:none;margin-top:.1rem;transition:color .2s;letter-spacing:.03em;}
+/* Carte dessinée à la main */
+.map {
+  grid-column: 1;
+  width: 100%;        /* ← LE FIX : 100% au lieu de auto */
+  color: var(--gold-l);
+}
+
+.map-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  font-family: 'Jost', sans-serif;
+}
+
+/* Cours d'eau */
+.map-river {
+  stroke-dasharray: 0;
+}
+
+.map-river-label {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px;
+  font-weight: 300;
+  fill: currentColor;
+  opacity: 0.85;
+  letter-spacing: 0.04em;
+}
+
+.map-label {
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  font-size: 10px;
+  fill: rgba(250,247,242,.85);
+  letter-spacing: .02em;
+}
+
+.map-label--strong {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 14px;
+  fill: var(--ivory);
+}
+
+.map-coords {
+  font-family: 'Jost', sans-serif;
+  font-weight: 200;
+  font-size: 9px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  fill: rgba(250,247,242,.55);
+}
+
+/* Bloc contact à droite */
+.rdv-block{
+  grid-column:3;
+  display:flex;
+  flex-direction:column;
+  background:transparent;
+  padding:0;
+  gap:0;
+}
+.rdv-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2rem,3vw,2.8rem);
+  font-weight:300;
+  line-height:1.15;
+  color:var(--ivory);
+  margin-bottom:1.2rem;
+}
+.rdv-title em{font-style:italic;color:var(--gold-l);}
+.rdv-txt{
+  font-size:.95rem;
+  color:rgba(250,247,242,.78);
+  line-height:1.65;
+  max-width:30rem;
+  margin-bottom:2.5rem;
+}
+
+/* Téléphone */
+.rdv-phone-wrap{margin-bottom:2.5rem;}
+.rdv-phone-lbl{
+  font-family:'Jost',sans-serif;
+  font-weight:300;
+  font-size:.65rem;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--gold-l);
+  margin-bottom:.6rem;
+}
+.rdv-phone-big{
+  display:inline-block;
+  font-family:'Cormorant Garamond',serif;
+  font-weight:300;
+  font-size:clamp(2.4rem,4.5vw,3.6rem);
+  color:var(--ivory);
+  text-decoration:none;
+  letter-spacing:.01em;
+  line-height:1;
+  margin-bottom:.6rem;
+  margin-top:0;
+  transition:color .3s;
+}
 .rdv-phone-big:hover{color:var(--gold-l);}
-.rdv-phone-sub{font-size:.72rem;color:rgba(250,247,242,.4);margin-top:.1rem;}
-.rdv-promise{font-size:.76rem;color:#4E4A46;font-style:italic;line-height:1.7;}
-.rdv-right{background:var(--cream);padding:2rem;border-top:2px solid var(--gold);display:flex;flex-direction:column;}
-.rdv-right-lbl{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gray);margin-bottom:.6rem;}
-.rdv-right-title{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:300;color:var(--charcoal);margin-bottom:.5rem;line-height:1.35;}
-.rdv-right-txt{font-size:.83rem;color:var(--gray);line-height:1.8;margin-bottom:1rem;}
+.rdv-phone-sub{
+  font-family:'Jost',sans-serif;
+  font-weight:300;
+  font-size:.78rem;
+  color:rgba(250,247,242,.65);
+  margin-top:0;
+}
+
+/* Écrivez-nous : liens texte avec filet gold à gauche */
+.rdv-write{
+  padding-top:2rem;
+  border-top:1px solid rgba(168,132,74,.3);
+  margin-bottom:3rem;
+}
+.rdv-write-list{
+  display:flex;
+  flex-direction:column;
+  gap:.4rem;
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+.rdv-write-list a{
+  display:flex;
+  align-items:center;
+  gap:.9rem;
+  padding:.7rem 0 .7rem 1.2rem;
+  border-left:1px solid var(--gold);
+  font-family:'Jost',sans-serif;
+  font-weight:300;
+  font-size:.88rem;
+  color:var(--ivory);
+  text-decoration:none;
+  transition:color .3s,border-color .3s;
+}
+.rdv-write-list a:hover{
+  color:var(--gold-l);
+  border-left-color:var(--gold-l);
+}
+.rdv-write-glyph{color:var(--gold-l);font-size:.95rem;}
+
+/* Services en micro-typo */
+.rdv-services{
+  padding-top:2rem;
+  border-top:1px solid rgba(168,132,74,.3);
+  margin-bottom:2.5rem;
+}
+.rdv-services-lbl{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:300;
+  font-size:1rem;
+  color:var(--ivory);
+  margin-bottom:.6rem;
+  letter-spacing:.02em;
+}
+.rdv-services-list{
+  font-family:'Jost',sans-serif;
+  font-weight:200;
+  font-size:.68rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--gold-l);
+  line-height:2;
+  max-width:32rem;
+}
+
+/* Pied : coordonnées + rose des vents */
+.rdv-foot{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding-top:1.8rem;
+  border-top:1px solid rgba(168,132,74,.3);
+}
+.rdv-foot-coords{
+  font-family:'Jost',sans-serif;
+  font-weight:200;
+  font-size:.65rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:rgba(250,247,242,.6);
+}
+.compass--stamp{
+  width:32px;
+  height:32px;
+  color:var(--gold-l);
+}
 
 /* ── FOOTER ── */
 footer{background:var(--charcoal);color:var(--ivory);padding:2.8rem 8vw;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem;}
@@ -304,6 +489,44 @@ footer{background:var(--charcoal);color:var(--ivory);padding:2.8rem 8vw;display:
 .carousel-track{display:flex;gap:1.5rem;transition:transform .45s cubic-bezier(.16,1,.3,1);will-change:transform;}
 .carousel-track .avis-card{flex:0 0 calc(33.333% - 1rem);min-width:calc(33.333% - 1rem);}
 
+/* ══════════════════════════════════
+   RESPONSIVE — min-width: 901px (DESKTOP)
+   ══════════════════════════════════ */
+
+@media(min-width:901px){
+  
+  /* Frise desktop : grille 5 colonnes */
+  .approach-timeline{
+    display:grid;
+    grid-template-columns:1fr auto 1fr auto 1fr;
+    gap:2rem;
+    align-items:center;
+    margin-top:3rem;
+  }
+  
+  /* Flèches desktop : afficher → */
+  .approach-arrow{
+    font-size:1.8rem;
+    height:auto;
+    color:var(--gold);
+  }
+  
+  .approach-arrow::before{
+    content:none;
+  }
+  
+  /* Cartes desktop : hauteur naturelle */
+  .approach-timeline .reveal{
+    min-height:220px;
+    background:var(--cream);
+    padding:2.5rem;
+    border-top:3px solid var(--gold);
+    text-align:center;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+  }
+}
 /* ══════════════════════════════════
    RESPONSIVE — max-width: 900px
    ══════════════════════════════════ */
@@ -420,10 +643,15 @@ footer{background:var(--charcoal);color:var(--ivory);padding:2.8rem 8vw;display:
   .post-avis-note{font-size:.72rem;color:rgba(250,247,242,.6);letter-spacing:.06em;}
   .post-avis .cta-btn{width:100%;text-align:center;}
 
-  /* ── RDV ── */
-  .rdv-layout{grid-template-columns:1fr;gap:2rem;}
-  .rdv-right{padding:2rem 1.5rem;}
+   /* ── RDV — mobile : contact au-dessus, carte en-dessous ── */
+  section.rdv{
+    grid-template-columns:1fr;
+    gap:3rem;
+  }
+  .rdv-block{grid-column:1;order:1;}
+  .map{grid-column:1;order:2;}
   .rdv-txt{max-width:100%;}
+  .folio{right:4vw;top:1.8rem;}
 
   /* ── BANDEAU ── */
   .bandeau{flex-direction:column;text-align:center;align-items:center;gap:1rem;}
