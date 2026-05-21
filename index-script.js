@@ -225,7 +225,7 @@ if (container) {
       if (clickedSlideIndex === currentIndex) {
         console.log('  → Slide centrale, redirection vers', profile);
         const urls = {
-          proprio: './index.html',
+          proprio: './index-proprietaire.html',
           locataire: './index-locataire.html',
           fonds: './index-fonds.html'
         };
