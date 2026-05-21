@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://www.googletagmanager.com https://www.clarity.ms; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://docs.google.com https://www.google-analytics.com https://region1.google-analytics.com https://www.clarity.ms;">
+  
+  <title>Choisir votre profil | Baptiste & Daphné Immobilier</title>
+  <meta name="description" content="Découvrez comment Baptiste & Daphné vous accompagnent en fonction de votre profil. Propriétaire, locataire ou entrepreneur à Chambéry.">
+  <meta name="robots" content="index, follow">
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "RealEstateAgent",
+    "name": "Baptiste & Daphné Immobilier",
+    "description": "Conseillers en immobilier à Chambéry. Stratégie de vente pour propriétaires, services pour locataires, et cession de fonds de commerce pour entrepreneurs.",
+    "url": "https://baptistedaphneimmo.com",
+    "telephone": "+33610327493",
+    "areaServed": ["Chambéry", "Savoie"],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Chambéry",
+      "addressRegion": "Savoie",
+      "postalCode": "73000",
+      "addressCountry": "FR"
+    }
+  }
+  </script>
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://www.clarity.ms">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="cookies.css">
+  <link rel="stylesheet" href="hamburger.css">
+  
+  <style>
+    /* ═══════════════════════════════════════
+       LANDING PAGE — COVERFLOW 3D
+       ═══════════════════════════════════════ */
+    
+    .landing-page {
+      min-height: 100vh;
+      height: 100vh;
+      background: var(--ivory);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0;
+      position: relative;
+      overflow: hidden;
+      justify-content: space-between;
+    }
+    
+    .landing-page::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 120% 100% at 50% 0%, rgba(168,132,74,0.08) 0%, transparent 70%),
+                  radial-gradient(ellipse 150% 120% at 20% 100%, rgba(30,37,53,0.04) 0%, transparent 60%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    
+    /* ── EN-TÊTE ── */
+    .landing-header {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 3rem 5vw 2rem;
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      flex-shrink: 0;
+    }
+    
+    .landing-eyebrow {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+      font-weight: 400;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+      opacity: 0;
+      animation: fadeUpLanding 0.8s 0.2s both;
+    }
+    
+    .landing-eyebrow::before,
+    .landing-eyebrow::after {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 1px;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+    
+    .landing-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.5rem, 3.2vw, 2.2rem);
+      font-weight: 300;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+      color: var(--charcoal);
+      margin-bottom: 0.6rem;
+      opacity: 0;
+      animation: fadeUpLanding 0.9s 0.3s both;
+    }
+    
+    .landing-title em {
+      font-style: italic;
+      color: var(--gold);
+    }
+    
+    .landing-subtitle {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 400;
+      color: var(--gray);
+      line-height: 1.65;
+      max-width: 550px;
+      margin: 0 auto;
+      opacity: 0;
+      animation: fadeUpLanding 0.9s 0.4s both;
+    }
+    
+    /* ── CARROUSEL 3D COVERFLOW ── */
+    .coverflow-container {
+      position: relative;
+      width: 100%;
+      height: 38vh;
+      perspective: 1200px;
+      margin-top: 1.5rem;
+      opacity: 0;
+      animation: fadeUpLanding 1s 0.5s both;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: visible;
+      flex-shrink: 0;
+      z-index: 1;
+    }
+    
+    .coverflow-track {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .coverflow-slide {
+      position: absolute;
+      width: clamp(280px, 40vw, 480px);
+      aspect-ratio: 1;
+      cursor: pointer;
+      user-select: none;
+      overflow: hidden;
+      border-radius: 12px;
+      border: 1px solid rgba(168, 132, 74, 0.12);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      transform-style: preserve-3d;
+      z-index: 50;
+      flex-shrink: 0;
+      transition: box-shadow 0.3s ease;
+      pointer-events: auto;
+    }
+    
+    .coverflow-slide:hover {
+      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.4);
+    }
+    
+    .coverflow-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      filter: grayscale(6%) brightness(0.93);
+      transition: filter 0.4s ease;
+    }
+    
+    .coverflow-slide:hover img {
+      filter: grayscale(2%) brightness(1);
+    }
+    
+    .coverflow-slide.active {
+      z-index: 100;
+    }
+    
+    .coverflow-slide.active img {
+      filter: grayscale(2%) brightness(1);
+    }
+    
+    .slide-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(30, 37, 53, 0) 0%,
+        rgba(30, 37, 53, 0.6) 50%,
+        rgba(30, 37, 53, 0.98) 100%
+      );
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: clamp(1.5rem, 8vw, 2.5rem);
+      z-index: 2;
+      opacity: 1;
+      transition: opacity 0.6s ease;
+      pointer-events: none;
+    }
+    
+    .coverflow-slide.active .slide-overlay {
+      opacity: 1;
+    }
+    
+    .coverflow-slide:not(.active) .slide-overlay {
+      opacity: 0.85;
+    }
+    
+    .slide-label {
+      font-family: 'Jost', sans-serif;
+      font-size: clamp(0.55rem, 2vw, 0.6rem);
+      font-weight: 400;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.6rem;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+    
+    .slide-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.1rem, 5vw, 1.8rem);
+      font-weight: 300;
+      color: var(--ivory);
+      margin: 0 0 0.4rem;
+      line-height: 1.2;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+    }
+    
+    .slide-desc {
+      font-family: 'Jost', sans-serif;
+      font-size: clamp(0.75rem, 2vw, 0.85rem);
+      font-weight: 400;
+      color: rgba(250, 247, 242, 0.95);
+      margin: 0;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+    }
+    
+    /* ── CONTRÔLES ── */
+    .coverflow-controls {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.2rem;
+      margin: 0.8rem 0;
+      opacity: 0;
+      animation: fadeUpLanding 1s 0.6s both;
+      flex-shrink: 0;
+    }
+    
+    .coverflow-arrow {
+      width: 40px;
+      height: 40px;
+      border: 1px solid var(--border-l);
+      background: var(--ivory);
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--charcoal);
+      font-size: 1.1rem;
+      font-weight: 400;
+      transition: all 0.3s ease;
+      user-select: none;
+      flex-shrink: 0;
+    }
+    
+    .coverflow-arrow:hover {
+      background: var(--gold);
+      border-color: var(--gold);
+      transform: scale(1.05);
+    }
+    
+    .coverflow-arrow:active {
+      transform: scale(0.95);
+    }
+    
+    .coverflow-hint {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.6rem;
+      color: var(--gray);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      display: none;
+      flex-shrink: 0;
+    }
+    
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUpLanding {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .landing-page {
+        height: 100vh;
+      }
+      
+      .landing-header {
+        padding: 2.2rem 1rem 1.5rem;
+      }
+      
+      .landing-title {
+        font-size: clamp(1.4rem, 3.5vw, 2rem);
+        margin-bottom: 0.5rem;
+      }
+      
+      .landing-subtitle {
+        font-size: 0.68rem;
+        line-height: 1.6;
+      }
+      
+      .coverflow-container {
+        height: 36vh;
+        margin-top: 1.2rem;
+      }
+      
+      .coverflow-slide {
+        width: clamp(240px, 38vw, 400px);
+      }
+      
+      .coverflow-controls {
+        gap: 1rem;
+        margin: 0.8rem 0;
+      }
+      
+      .coverflow-arrow {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+      }
+    }
+    
+    @media (max-width: 600px) {
+      .landing-page {
+        height: 100vh;
+      }
+      
+      .landing-header {
+        padding: 1.8rem 0.8rem 1.2rem;
+      }
+      
+      .landing-eyebrow {
+        font-size: 0.7rem;       /* +27% */
+        margin-bottom: 0.4rem;
+      }
+
+      .landing-title {
+        font-size: clamp(1.6rem, 5vw, 2.2rem);   /* min +33%, max +29%, 5vw meilleur scaling */
+        margin-bottom: 0.4rem;
+      }
+
+      .landing-subtitle {
+        font-size: 0.7rem;       /* +38% */
+        line-height: 1.55;
+        max-width: 100%;
+        padding: 0 0.5rem;
+      }
+      
+      .coverflow-container {
+        height: 32vh;
+        margin-top: 1rem;
+      }
+      
+      .coverflow-slide {
+        width: clamp(180px, 35vw, 300px);
+      }
+      
+      .slide-title {
+        font-size: clamp(1rem, 4vw, 1.4rem);
+      }
+      
+      .slide-label {
+        font-size: clamp(0.5rem, 1.5vw, 0.55rem);
+      }
+      
+      .slide-desc {
+        font-size: clamp(0.65rem, 1.8vw, 0.75rem);
+      }
+      
+      .coverflow-controls {
+        gap: 0.8rem;
+        margin: 0.6rem 0;
+      }
+      
+      .coverflow-arrow {
+        width: 32px;
+        height: 32px;
+        font-size: 0.9rem;
+      }
+      
+      .coverflow-hint {
+        display: block;
+        width: 100%;
+        text-align: center;
+        font-size: 0.55rem;
+      }
+    }
+    
+    /* Masquer la nav sur landing */
+    .landing-page nav {
+      display: none;
+    }
+    
+    .landing-page .mobile-sticky {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+
+<div id="sbar"></div>
+<div id="cur"></div>
+<div id="cur-ring"></div>
+
+<div class="landing-page">
+  
+  <!-- EN-TÊTE -->
+  <div class="landing-header">
+    <p class="landing-eyebrow">Chambéry &amp; Savoie</p>
+    <h1 class="landing-title">
+      Stratégie immobilière<br><em>sur mesure</em>
+    </h1>
+    <p class="landing-subtitle">
+      Sélectionnez votre profil pour découvrir comment Baptiste &amp; Daphné vous accompagnent.
+    </p>
+  </div>
+  
+  <!-- CARROUSEL COVERFLOW 3D -->
+  <div class="coverflow-container">
+    <div class="coverflow-track" id="coverflowTrack">
+      
+      <div class="coverflow-slide active" data-profile="proprio" data-index="0">
+        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=700&fit=crop" alt="Propriétaire vendant sa maison">
+        <div class="slide-overlay">
+          <p class="slide-label">01 — Propriétaire</p>
+          <h3 class="slide-title">Vendre votre bien</h3>
+          <p class="slide-desc">Appartement ou maison à Chambéry</p>
+        </div>
+      </div>
+      
+      <div class="coverflow-slide" data-profile="locataire" data-index="1">
+        <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=600&h=700&fit=crop" alt="Locataire cherchant son logement">
+        <div class="slide-overlay">
+          <p class="slide-label">02 — Locataire</p>
+          <h3 class="slide-title">Trouver votre logement</h3>
+          <p class="slide-desc">Appartement en location à Chambéry</p>
+        </div>
+      </div>
+      
+      <div class="coverflow-slide" data-profile="fonds" data-index="2">
+        <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?w=600&h=700&fit=crop" alt="Entrepreneur cédant son fonds de commerce">
+        <div class="slide-overlay">
+          <p class="slide-label">03 — Entrepreneur</p>
+          <h3 class="slide-title">Céder votre fonds</h3>
+          <p class="slide-desc">Cession de fonds de commerce</p>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+  <!-- CONTRÔLES -->
+  <div class="coverflow-controls">
+    <button class="coverflow-arrow" id="prevBtn" aria-label="Slide précédent">←</button>
+    <button class="coverflow-arrow" id="nextBtn" aria-label="Slide suivant">→</button>
+  </div>
+  
+  <p class="coverflow-hint">Utilisez les flèches pour naviguer</p>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="landing-script.js"></script>
+
+<!-- ═════════════════════════════════════════════════════════════
+     TRACKING GOOGLE FORMS
+     ═════════════════════════════════════════════════════════════ -->
+ 
+<script src="script.js" defer></script>
+
+<script src="script.js" defer></script>
+
+<script>
+const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSfHPxMd8HyjV-U0zfrYvoDnuHi7E7TTOhG-_-iXpWLjm9TE4Q/formResponse';
+
+function scrollToProfiles(e) {
+  e.preventDefault();
+  document.getElementById('profilesGrid').scrollIntoView({ behavior: 'smooth' });
+}
+
+function trackProfileSelection(profile) {
+  try {
+    const timestamp = new Date().toLocaleString('fr-FR');
+    const device = navigator.userAgent.substring(0, 50);
+    
+    const data = `entry.1869076338=${encodeURIComponent(profile)}&entry.1502176833=${encodeURIComponent(timestamp)}&entry.1637361635=${encodeURIComponent(device)}`;
+    
+    fetch(GOOGLE_FORM_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: data,
+      mode: 'no-cors'
+    }).catch(err => console.log('✓ Enregistré'));
+  } catch(e) {}
+}
+
+document.querySelectorAll('.profile-card').forEach(card => {
+  card.addEventListener('click', function() {
+    const profile = this.dataset.profile;
+    trackProfileSelection(profile);
+    sessionStorage.setItem('userProfile', profile);
+  });
+});
+</script>
+
+</body>
+</html>
