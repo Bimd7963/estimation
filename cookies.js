@@ -160,6 +160,7 @@ function applyAndLog(prefs, decision) {
 function hideBanner() {
   var banner = document.getElementById('cookie-banner');
   if (banner) banner.classList.remove('visible');
+   document.body.classList.remove('cookie-wall');
 }
 
 function bannerAccept() {
@@ -214,5 +215,6 @@ function saveCustom() {
   setTimeout(function () {
     var banner = document.getElementById('cookie-banner');
     if (banner) banner.classList.add('visible');
+     document.body.classList.add('cookie-wall');
   }, 1200);
 })();
