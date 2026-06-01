@@ -2,12 +2,16 @@
    BANDEAU COOKIES — Baptiste & Daphné Immobilier
    Design V5 — navy #1E2535, gold #A8844A, Jost + Cormorant
    ═══════════════════════════════════════════ */
+/* Bloque le scroll tant que le bandeau est visible */
+body.cookie-wall {
+  overflow: hidden;
+}
 
 #cookie-banner {
   position: fixed;
   inset: 0;
   z-index: 9999;
-  background: rgba(10, 12, 20, 0.88);
+  background: rgba(10, 12, 20, 0.92);
   display: flex;
   align-items: center;
   justify-content: center;
