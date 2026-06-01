@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
-<meta http-equiv="X-Content-Type-Options" content="nosniff">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.clarity.ms; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://docs.google.com https://www.google-analytics.com https://region1.google-analytics.com https://www.clarity.ms;">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.clarity.ms https://connect.facebook.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://docs.google.com https://www.google-analytics.com https://region1.google-analytics.com https://www.clarity.ms https://www.facebook.com;">
   <title>Gestion des Cookies – Baptiste & Daphné Immobilier</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="cookies.css">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="stylesheet" href="cookies.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <style>:root 
 .page-hero{padding:7rem 8vw 3rem;background:var(--navy);position:relative;overflow:hidden;}
 .page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 80% 50%,rgba(168,132,74,0.07),transparent 65%);pointer-events:none;}
@@ -65,129 +65,178 @@ input:disabled + .slider{cursor:not-allowed;opacity:.4;}
 .cookie-table code{font-size:.78rem;background:var(--cream);padding:.1rem .4rem;color:var(--gold);}</style>
 </head>
 <body>
-    <div id="sbar"></div>
-    <div id="cur"></div>
-    <div id="cur-ring"></div>
-<nav>
-  <a href="index.html" class="nav-logo">Baptiste <span>&</span> Daphné<br>Immobilier</a>
-  <a href="index.html" class="nav-back">← Retour au site</a>
-</nav>
-<div class="page-hero">
-  <span class="eyebrow">Transparence & contrôle</span>
-  <h1>Gestion des Cookies</h1>
-  <span class="date">Dernière mise à jour : février 2026</span>
-</div>
-<div class="content">
-  <div class="section-block">
-    <h2><span>01 —</span> Qu'est-ce qu'un cookie ?</h2>
-    <p>Un cookie est un petit fichier texte déposé sur votre appareil lors de votre visite. Certains sont essentiels au fonctionnement du site. D'autres, optionnels, nécessitent votre accord préalable conformément au RGPD.</p>
-    <p>Sur ce site, les cookies optionnels servent à mesurer l'audience (Google Analytics, Clarity) et à suivre l'efficacité de nos publicités (Google Ads). Ils ne permettent pas de vous identifier directement.</p>
+  <div id="sbar"></div>
+  <div id="cur"></div>
+  <div id="cur-ring"></div>
+  <nav>
+    <a href="index.html" class="nav-logo">Baptiste <span>&</span> Daphné<br>Immobilier</a>
+    <a href="index.html" class="nav-back">← Retour au site</a>
+  </nav>
+  <div class="page-hero">
+    <span class="eyebrow">Transparence & contrôle</span>
+    <h1>Gestion des Cookies</h1>
+    <span class="date">Dernière mise à jour : février 2026</span>
   </div>
-  <div class="section-block">
-    <h2><span>02 —</span> Mes préférences</h2>
-    <div class="pref-panel">
-      <div class="cookie-row required">
-        <div class="cookie-info">
-          <h3>Essentiels <span class="tag">Toujours actifs</span></h3>
-          <p>Nécessaires au bon fonctionnement du site. Ne collectent aucune donnée personnelle.</p>
+  <div class="content">
+    <div class="section-block">
+      <h2><span>01 —</span> Qu'est-ce qu'un cookie ?</h2>
+      <p>Un cookie est un petit fichier texte déposé sur votre appareil lors de votre visite. Certains sont essentiels au fonctionnement du site. D'autres, optionnels, nécessitent votre accord préalable conformément au RGPD.</p>
+      <p>Sur ce site, les cookies optionnels servent à mesurer l'audience (Google Analytics, Clarity), à suivre l'efficacité de nos publicités (Google Ads) et à personnaliser nos campagnes de remarketing (Meta / Facebook).</p>
+    </div>
+    <div class="section-block">
+      <h2><span>02 —</span> Mes préférences</h2>
+      <div class="pref-panel">
+        <div class="cookie-row required">
+          <div class="cookie-info">
+            <h3>Essentiels <span class="tag">Toujours actifs</span></h3>
+            <p>Nécessaires au bon fonctionnement du site. Ne collectent aucune donnée personnelle.</p>
+          </div>
+          <div class="toggle-wrap">
+            <label class="toggle"><input type="checkbox" checked disabled><span class="slider"></span></label>
+            <span class="toggle-label">Requis</span>
+          </div>
         </div>
-        <div class="toggle-wrap">
-          <label class="toggle"><input type="checkbox" checked disabled><span class="slider"></span></label>
-          <span class="toggle-label">Requis</span>
+        <div class="cookie-row">
+          <div class="cookie-info">
+            <h3>Google Analytics <span class="tag">Audience</span></h3>
+            <p>Mesure le nombre de visiteurs, pages consultées, durée de session. Données anonymisées.</p>
+            <div class="cookie-names">_ga, _gid, _ga_* — 26 mois</div>
+          </div>
+          <div class="toggle-wrap">
+            <label class="toggle"><input type="checkbox" id="toggle-ga"><span class="slider"></span></label>
+            <span class="toggle-label">Optionnel</span>
+          </div>
         </div>
+        <div class="cookie-row">
+          <div class="cookie-info">
+            <h3>Google Ads <span class="tag">Publicité</span></h3>
+            <p>Mesure l'efficacité de nos campagnes publicitaires.</p>
+            <div class="cookie-names">_gcl_au, _gcl_aw — 90 jours</div>
+          </div>
+          <div class="toggle-wrap">
+            <label class="toggle"><input type="checkbox" id="toggle-ads"><span class="slider"></span></label>
+            <span class="toggle-label">Optionnel</span>
+          </div>
+        </div>
+        <div class="cookie-row">
+          <div class="cookie-info">
+            <h3>Microsoft Clarity <span class="tag">Comportement</span></h3>
+            <p>Heatmaps et replays de sessions anonymisés pour améliorer l'ergonomie.</p>
+            <div class="cookie-names">_clck, _clsk, CLID — 13 mois</div>
+          </div>
+          <div class="toggle-wrap">
+            <label class="toggle"><input type="checkbox" id="toggle-clarity"><span class="slider"></span></label>
+            <span class="toggle-label">Optionnel</span>
+          </div>
+        </div>
+        <div class="cookie-row">
+          <div class="cookie-info">
+            <h3>Meta (Facebook) <span class="tag">Remarketing</span></h3>
+            <p>Permet de vous présenter nos annonces sur Facebook et Instagram après une visite sur notre site. Données pseudonymisées transmises à Meta Platforms.</p>
+            <div class="cookie-names">_fbp, _fbc — 90 jours</div>
+          </div>
+          <div class="toggle-wrap">
+            <label class="toggle"><input type="checkbox" id="toggle-meta"><span class="slider"></span></label>
+            <span class="toggle-label">Optionnel</span>
+          </div>
+        </div>
+        <div class="actions">
+          <button class="btn-accept" onclick="acceptAll()">Tout accepter</button>
+          <button class="btn-refuse" onclick="refuseAll()">Tout refuser</button>
+          <button class="btn-save" onclick="savePrefs()">Enregistrer mes choix</button>
+        </div>
+        <div class="status-msg" id="status-msg">Vos préférences ont été enregistrées.</div>
       </div>
-      <div class="cookie-row">
-        <div class="cookie-info">
-          <h3>Google Analytics <span class="tag">Audience</span></h3>
-          <p>Mesure le nombre de visiteurs, pages consultées, durée de session. Données anonymisées.</p>
-          <div class="cookie-names">_ga, _gid, _ga_* — 26 mois</div>
-        </div>
-        <div class="toggle-wrap">
-          <label class="toggle"><input type="checkbox" id="toggle-ga"><span class="slider"></span></label>
-          <span class="toggle-label">Optionnel</span>
-        </div>
-      </div>
-      <div class="cookie-row">
-        <div class="cookie-info">
-          <h3>Google Ads <span class="tag">Publicité</span></h3>
-          <p>Mesure l'efficacité de nos campagnes publicitaires.</p>
-          <div class="cookie-names">_gcl_au, _gcl_aw — 90 jours</div>
-        </div>
-        <div class="toggle-wrap">
-          <label class="toggle"><input type="checkbox" id="toggle-ads"><span class="slider"></span></label>
-          <span class="toggle-label">Optionnel</span>
-        </div>
-      </div>
-      <div class="cookie-row">
-        <div class="cookie-info">
-          <h3>Microsoft Clarity <span class="tag">Comportement</span></h3>
-          <p>Heatmaps et replays de sessions anonymisés pour améliorer l'ergonomie.</p>
-          <div class="cookie-names">_clck, _clsk, CLID — 13 mois</div>
-        </div>
-        <div class="toggle-wrap">
-          <label class="toggle"><input type="checkbox" id="toggle-clarity"><span class="slider"></span></label>
-          <span class="toggle-label">Optionnel</span>
-        </div>
-      </div>
-      <div class="actions">
-        <button class="btn-accept" onclick="acceptAll()">Tout accepter</button>
-        <button class="btn-refuse" onclick="refuseAll()">Tout refuser</button>
-        <button class="btn-save" onclick="savePrefs()">Enregistrer mes choix</button>
-      </div>
-      <div class="status-msg" id="status-msg">Vos préférences ont été enregistrées.</div>
+    </div>
+    <div class="section-block">
+      <h2><span>03 —</span> Détail des cookies utilisés</h2>
+      <table class="cookie-table">
+        <thead><tr><th>Cookie</th><th>Émetteur</th><th>Finalité</th><th>Durée</th></tr></thead>
+        <tbody>
+          <tr><td><code>_ga</code></td><td>Google Analytics</td><td>Distingue les utilisateurs uniques</td><td>2 ans</td></tr>
+          <tr><td><code>_gid</code></td><td>Google Analytics</td><td>Session utilisateur</td><td>24 h</td></tr>
+          <tr><td><code>_ga_*</code></td><td>Google Analytics 4</td><td>État de session GA4</td><td>2 ans</td></tr>
+          <tr><td><code>_gcl_au</code></td><td>Google Ads</td><td>Suivi des conversions</td><td>90 jours</td></tr>
+          <tr><td><code>_clck</code></td><td>Microsoft Clarity</td><td>Identifie l'utilisateur</td><td>1 an</td></tr>
+          <tr><td><code>_clsk</code></td><td>Microsoft Clarity</td><td>Regroupe les actions</td><td>24 h</td></tr>
+          <tr><td><code>CLID</code></td><td>Microsoft Clarity</td><td>Première visite</td><td>1 an</td></tr>
+          <tr><td><code>_fbp</code></td><td>Meta (Facebook)</td><td>Identifie le navigateur pour le remarketing</td><td>90 jours</td></tr>
+          <tr><td><code>_fbc</code></td><td>Meta (Facebook)</td><td>Stocke le paramètre fbclid (clic pub)</td><td>90 jours</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="section-block">
+      <h2><span>04 —</span> Liens utiles</h2>
+      <p>→ <a href="https://tools.google.com/dlpage/gaoptout" target="_blank">Désactiver Google Analytics</a><br>
+      → <a href="https://adssettings.google.com" target="_blank">Gérer vos préférences Google Ads</a><br>
+      → <a href="https://www.facebook.com/privacy/policies/cookies" target="_blank">Politique cookies Meta</a><br>
+      → <a href="https://www.cnil.fr/fr/cookies-et-autres-traceurs/regles/cookies/que-dit-la-loi" target="_blank">Règlementation cookies — CNIL</a></p>
     </div>
   </div>
-  <div class="section-block">
-    <h2><span>03 —</span> Détail des cookies utilisés</h2>
-    <table class="cookie-table">
-      <thead><tr><th>Cookie</th><th>Émetteur</th><th>Finalité</th><th>Durée</th></tr></thead>
-      <tbody>
-        <tr><td><code>_ga</code></td><td>Google Analytics</td><td>Distingue les utilisateurs uniques</td><td>2 ans</td></tr>
-        <tr><td><code>_gid</code></td><td>Google Analytics</td><td>Session utilisateur</td><td>24 h</td></tr>
-        <tr><td><code>_ga_*</code></td><td>Google Analytics 4</td><td>État de session GA4</td><td>2 ans</td></tr>
-        <tr><td><code>_gcl_au</code></td><td>Google Ads</td><td>Suivi des conversions</td><td>90 jours</td></tr>
-        <tr><td><code>_clck</code></td><td>Microsoft Clarity</td><td>Identifie l'utilisateur</td><td>1 an</td></tr>
-        <tr><td><code>_clsk</code></td><td>Microsoft Clarity</td><td>Regroupe les actions</td><td>24 h</td></tr>
-        <tr><td><code>CLID</code></td><td>Microsoft Clarity</td><td>Première visite</td><td>1 an</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <div class="section-block">
-    <h2><span>04 —</span> Liens utiles</h2>
-    <p>→ <a href="https://tools.google.com/dlpage/gaoptout" target="_blank">Désactiver Google Analytics</a><br>
-    → <a href="https://adssettings.google.com" target="_blank">Gérer vos préférences Google Ads</a><br>
-    → <a href="https://www.cnil.fr/fr/cookies-et-autres-traceurs/regles/cookies/que-dit-la-loi" target="_blank">Règlementation cookies — CNIL</a></p>
-  </div>
-</div>
-<footer>
-  <div class="footer-logo">Baptiste <span>&</span> Daphné Immobilier</div>
-  <div class="footer-info">EI Daphné Martin Marin Guillon &amp; EI Baptiste Audouin · Conseillers en immobilier · Réseau IAD France<br>RSAC Chambéry n° 992 606 400 et n° 943 392 555 · Document non contractuel · 2026</div>
-  <div class="footer-links">
-    <a href="mentionslegales.html">Mentions légales</a>
-    <a href="politiquedeconfidentialite.html">Confidentialité</a>
-    <a href="gestiondescookies.html">Cookies</a>
-  </div>
-</footer>
-<script>
-  const CONSENT_KEY = 'bd_cookie_consent';
-  function loadPrefs() {
-    try {
-      const saved = JSON.parse(localStorage.getItem(CONSENT_KEY));
-      if (saved) {
-        document.getElementById('toggle-ga').checked = !!saved.analytics;
-        document.getElementById('toggle-ads').checked = !!saved.ads;
-        document.getElementById('toggle-clarity').checked = !!saved.clarity;
-      }
-    } catch(e) {}
-  }
-  function saveConsent(p) { localStorage.setItem(CONSENT_KEY, JSON.stringify({...p, ts: Date.now()})); }
-  function showStatus() { const m=document.getElementById('status-msg'); m.style.display='block'; setTimeout(()=>m.style.display='none',4000); }
-  function acceptAll() { ['toggle-ga','toggle-ads','toggle-clarity'].forEach(id=>document.getElementById(id).checked=true); saveConsent({analytics:true,ads:true,clarity:true}); showStatus(); }
-  function refuseAll() { ['toggle-ga','toggle-ads','toggle-clarity'].forEach(id=>document.getElementById(id).checked=false); saveConsent({analytics:false,ads:false,clarity:false}); showStatus(); }
-  function savePrefs() { saveConsent({analytics:document.getElementById('toggle-ga').checked,ads:document.getElementById('toggle-ads').checked,clarity:document.getElementById('toggle-clarity').checked}); showStatus(); }
-  loadPrefs();
-</script>
-<script src="script.js" defer></script>
-<script src="cookies.js" defer></script>
+  <footer>
+    <div class="footer-logo">Baptiste <span>&</span> Daphné Immobilier</div>
+    <div class="footer-info">EI Daphné Martin Marin Guillon &amp; EI Baptiste Audouin · Conseillers en immobilier · Réseau IAD France<br>RSAC Chambéry n° 992 606 400 et n° 943 392 555 · Document non contractuel · 2026</div>
+    <div class="footer-links">
+      <a href="mentionslegales.html">Mentions légales</a>
+      <a href="politiquedeconfidentialite.html">Confidentialité</a>
+      <a href="gestiondescookies.html">Cookies</a>
+    </div>
+  </footer>
+  <script>
+    const CONSENT_KEY = 'bd_cookie_consent';
+    function loadPrefs() {
+      try {
+        const saved = JSON.parse(localStorage.getItem(CONSENT_KEY));
+        if (saved) {
+          document.getElementById('toggle-ga').checked      = !!saved.analytics;
+          document.getElementById('toggle-ads').checked     = !!saved.ads;
+          document.getElementById('toggle-clarity').checked = !!saved.clarity;
+          document.getElementById('toggle-meta').checked    = !!saved.meta;
+        }
+      } catch(e) {}
+    }
+    function saveConsent(p) {
+      localStorage.setItem(CONSENT_KEY, JSON.stringify({...p, ts: Date.now()}));
+    }
+    function showStatus() {
+      const m = document.getElementById('status-msg');
+      m.style.display = 'block';
+      setTimeout(() => m.style.display = 'none', 4000);
+    }
+    function acceptAll() {
+      ['toggle-ga','toggle-ads','toggle-clarity','toggle-meta'].forEach(id => document.getElementById(id).checked = true);
+      saveConsent({analytics: true, ads: true, clarity: true, meta: true});
+      showStatus();
+    }
+    function refuseAll() {
+      ['toggle-ga','toggle-ads','toggle-clarity','toggle-meta'].forEach(id => document.getElementById(id).checked = false);
+      saveConsent({analytics: false, ads: false, clarity: false, meta: false});
+      showStatus();
+    }
+    function savePrefs() {
+      saveConsent({
+        analytics: document.getElementById('toggle-ga').checked,
+        ads:       document.getElementById('toggle-ads').checked,
+        clarity:   document.getElementById('toggle-clarity').checked,
+        meta:      document.getElementById('toggle-meta').checked
+      });
+      showStatus();
+    }
+    loadPrefs();
+  </script>
+  <script src="script.js" defer></script>
+  <script src="cookies.js" defer></script>
+
+  <!-- Meta Pixel — initialisation silencieuse (sans tracking) -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){
+    n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;
+    s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
+    (window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('consent', 'revoke');
+    fbq('init', '1405060961660950');
+  </script>
 </body>
 </html>
