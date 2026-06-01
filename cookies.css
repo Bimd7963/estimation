@@ -37,11 +37,11 @@ html:has(body.cookie-wall) {
 
 /* ── Vue principale ── */
 #banner-main {
-  padding: 1.4rem 5%;
-  display: flex; align-items: center; justify-content: space-between;
-  gap: 2rem; flex-wrap: wrap;
+  display: flex; flex-direction: column;
+  align-items: center; gap: 1.2rem; text-align: center;
 }
-.banner-left { flex: 1; min-width: 240px; }
+
+.banner-left { width: 100%; }
 .banner-left strong {
   display: block;
   font-family: 'Cormorant Garamond', serif;
@@ -51,8 +51,8 @@ html:has(body.cookie-wall) {
 .banner-left p { font-size: .78rem; color: rgba(250,247,242,.5); line-height: 1.7; margin: 0; }
 .banner-left p em { font-style: normal; color: rgba(250,247,242,.75); }
 
-.banner-right { display: flex; flex-direction: column; align-items: flex-end; gap: .55rem; flex-shrink: 0; }
-.banner-btns-row { display: flex; gap: .7rem; align-items: center; }
+.banner-right { display: flex; flex-direction: column; align-items: center; gap: .55rem; width: 100%; }
+.banner-btns-row { display: flex; gap: .7rem; align-items: center; justify-content: center; }
 
 .btn-banner-accept {
   background: var(--gold); color: var(--charcoal);
@@ -80,7 +80,7 @@ html:has(body.cookie-wall) {
   text-underline-offset: 3px; padding: 0; transition: color .2s;
 }
 .btn-banner-custom:hover { color: rgba(250,247,242,.55); }
-.banner-reassurance { font-size: .64rem; color: rgba(250,247,242,.18); text-align: right; letter-spacing: .04em; }
+.banner-reassurance { font-size: .64rem; color: rgba(250,247,242,.18); text-align: center; letter-spacing: .04em; }
 
 /* ── Vue personnalisation ── */
 #banner-custom { display: none; padding: 1.4rem 5% 1.2rem; border-top: 1px solid rgba(250,247,242,.06); }
