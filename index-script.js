@@ -229,10 +229,13 @@ if (container) {
           locataire: './index-locataire.html',
           fonds: './index-fonds.html'
         };
-        if (urls[profile]) {
-          console.log('  → Redirection vers:', urls[profile]);
+       if (urls[profile]) {
+        console.log('  → Redirection vers:', urls[profile]);
+        trackProfileSelection(profile);
+        setTimeout(function() {
           window.location.href = urls[profile];
-        }
+        }, 300);
+      }
       } else {
         console.log('  → Slide latérale, goToSlide(' + clickedSlideIndex + ')');
         if (!isAnimating) {
