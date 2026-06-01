@@ -11,6 +11,7 @@ var META_PIXEL_ID = '1405060961660950';
   var html = '\
 <div id="cookie-banner">\
   <div id="banner-main">\
+     <div id="banner-main">\
     <div class="banner-left">\
       <strong>🍪 Ce site utilise des cookies</strong>\
       <p>En acceptant, vous nous aidez à <em>mieux comprendre ce qui vous intéresse</em> et à améliorer notre site. Vos données restent anonymes.</p>\
@@ -68,6 +69,7 @@ var META_PIXEL_ID = '1405060961660950';
       <button class="btn-back-banner" onclick="closeCustom()">← Retour</button>\
       <button class="btn-refuse-all-custom" onclick="bannerRefuse()">Tout refuser</button>\
     </div>\
+  </div>\
   </div>\
 </div>';
   var container = document.createElement('div');
