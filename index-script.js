@@ -5,6 +5,22 @@
  * ═══════════════════════════════════════════════════════════════
  */
 
+const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSfHPxMd8HyjV-U0zfrYvoDnuHi7E7TTOhG-_-iXpWLjm9TE4Q/formResponse';
+
+function trackProfileSelection(profile) {
+  try {
+    const timestamp = new Date().toLocaleString('fr-FR');
+    const device = navigator.userAgent.substring(0, 50);
+    const data = `entry.1134277817=${encodeURIComponent(profile)}&entry.1427303831=${encodeURIComponent(timestamp)}&entry.313323232=${encodeURIComponent(device)}`;
+    fetch(GOOGLE_FORM_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: data,
+      mode: 'no-cors'
+    }).catch(err => console.log('✓ Enregistré'));
+  } catch(e) {}
+}
+
 // ── ÉLÉMENTS DOM ──
 const slides = Array.from(document.querySelectorAll('.coverflow-slide'));
 const prevBtn = document.getElementById('prevBtn');
