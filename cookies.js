@@ -3,73 +3,72 @@
 // ═══════════════════════════════════════════
 
 var CONSENT_KEY = 'bd_cookie_consent';
-
 var META_PIXEL_ID = '1405060961660950';
 
 // ── Injection dynamique du HTML du bandeau
 (function injectBannerHTML() {
   var html = '\
 <div id="cookie-banner">\
-  <div id="banner-main">\
-     <div id="banner-main">\
-    <div class="banner-left">\
-      <strong>🍪 Ce site utilise des cookies</strong>\
-      <p>En acceptant, vous nous aidez à <em>mieux comprendre ce qui vous intéresse</em> et à améliorer notre site. Vos données restent anonymes.</p>\
-    </div>\
-    <div class="banner-right">\
-      <div class="banner-btns-row">\
-        <button class="btn-banner-refuse" onclick="bannerRefuse()">Refuser</button>\
-        <button class="btn-banner-accept" onclick="bannerAccept()">Tout accepter ✓</button>\
+  <div id="banner-inner">\
+    <div id="banner-main">\
+      <div class="banner-left">\
+        <strong>🍪 Ce site utilise des cookies</strong>\
+        <p>En acceptant, vous nous aidez à <em>mieux comprendre ce qui vous intéresse</em> et à améliorer notre site. Vos données restent anonymes.</p>\
       </div>\
-      <span class="banner-reassurance">Vous pouvez changer d\'avis à tout moment</span>\
-      <button class="btn-banner-custom" onclick="openCustom()">⚙ Personnaliser les cookies</button>\
-    </div>\
-  </div>\
-  <div id="banner-custom">\
-    <div class="custom-title">⚙ Personnaliser mes préférences</div>\
-    <div class="custom-rows">\
-      <div class="custom-row required">\
-        <div class="custom-row-info">\
-          <strong>🔒 Essentiels</strong>\
-          <span>Nécessaires au fonctionnement du site. Toujours actifs.</span>\
+      <div class="banner-right">\
+        <div class="banner-btns-row">\
+          <button class="btn-banner-refuse" onclick="bannerRefuse()">Refuser</button>\
+          <button class="btn-banner-accept" onclick="bannerAccept()">Tout accepter ✓</button>\
         </div>\
-        <label class="toggle"><input type="checkbox" checked disabled><span class="slider"></span></label>\
-      </div>\
-      <div class="custom-row">\
-        <div class="custom-row-info">\
-          <strong>📊 Google Analytics</strong>\
-          <span>Mesure d\'audience anonymisée — pages vues, durée de visite.</span>\
-        </div>\
-        <label class="toggle"><input type="checkbox" id="c-ga"><span class="slider"></span></label>\
-      </div>\
-      <div class="custom-row">\
-        <div class="custom-row-info">\
-          <strong>📣 Google Ads</strong>\
-          <span>Suivi des conversions publicitaires.</span>\
-        </div>\
-        <label class="toggle"><input type="checkbox" id="c-ads"><span class="slider"></span></label>\
-      </div>\
-      <div class="custom-row">\
-        <div class="custom-row-info">\
-          <strong>🎥 Microsoft Clarity</strong>\
-          <span>Heatmaps et sessions anonymisées pour améliorer le site.</span>\
-        </div>\
-        <label class="toggle"><input type="checkbox" id="c-clarity"><span class="slider"></span></label>\
-      </div>\
-      <div class="custom-row">\
-        <div class="custom-row-info">\
-          <strong>📣 Meta (Facebook)</strong>\
-          <span>Remarketing et audiences personnalisées.</span>\
-        </div>\
-        <label class="toggle"><input type="checkbox" id="c-meta"><span class="slider"></span></label>\
+        <span class="banner-reassurance">Vous pouvez changer d\'avis à tout moment</span>\
+        <button class="btn-banner-custom" onclick="openCustom()">⚙ Personnaliser les cookies</button>\
       </div>\
     </div>\
-    <div class="custom-actions">\
-      <button class="btn-save-custom" onclick="saveCustom()">Enregistrer mes choix ✓</button>\
-      <button class="btn-back-banner" onclick="closeCustom()">← Retour</button>\
-      <button class="btn-refuse-all-custom" onclick="bannerRefuse()">Tout refuser</button>\
+    <div id="banner-custom">\
+      <div class="custom-title">⚙ Personnaliser mes préférences</div>\
+      <div class="custom-rows">\
+        <div class="custom-row required">\
+          <div class="custom-row-info">\
+            <strong>🔒 Essentiels</strong>\
+            <span>Nécessaires au fonctionnement du site. Toujours actifs.</span>\
+          </div>\
+          <label class="toggle"><input type="checkbox" checked disabled><span class="slider"></span></label>\
+        </div>\
+        <div class="custom-row">\
+          <div class="custom-row-info">\
+            <strong>📊 Google Analytics</strong>\
+            <span>Mesure d\'audience anonymisée — pages vues, durée de visite.</span>\
+          </div>\
+          <label class="toggle"><input type="checkbox" id="c-ga"><span class="slider"></span></label>\
+        </div>\
+        <div class="custom-row">\
+          <div class="custom-row-info">\
+            <strong>📣 Google Ads</strong>\
+            <span>Suivi des conversions publicitaires.</span>\
+          </div>\
+          <label class="toggle"><input type="checkbox" id="c-ads"><span class="slider"></span></label>\
+        </div>\
+        <div class="custom-row">\
+          <div class="custom-row-info">\
+            <strong>🎥 Microsoft Clarity</strong>\
+            <span>Heatmaps et sessions anonymisées pour améliorer le site.</span>\
+          </div>\
+          <label class="toggle"><input type="checkbox" id="c-clarity"><span class="slider"></span></label>\
+        </div>\
+        <div class="custom-row">\
+          <div class="custom-row-info">\
+            <strong>📣 Meta (Facebook)</strong>\
+            <span>Remarketing et audiences personnalisées.</span>\
+          </div>\
+          <label class="toggle"><input type="checkbox" id="c-meta"><span class="slider"></span></label>\
+        </div>\
+      </div>\
+      <div class="custom-actions">\
+        <button class="btn-save-custom" onclick="saveCustom()">Enregistrer mes choix ✓</button>\
+        <button class="btn-back-banner" onclick="closeCustom()">← Retour</button>\
+        <button class="btn-refuse-all-custom" onclick="bannerRefuse()">Tout refuser</button>\
+      </div>\
     </div>\
-  </div>\
   </div>\
 </div>';
   var container = document.createElement('div');
@@ -122,8 +121,6 @@ function activateClarity() {
 
 function activateMeta() {
   if (window._metaLoaded) return; window._metaLoaded = true;
-  // Le pixel est déjà initialisé dans le <head> en mode silencieux
-  // On débloque le tracking uniquement après consentement
   if (window.fbq) {
     fbq('consent', 'grant');
     fbq('track', 'PageView');
@@ -160,7 +157,7 @@ function applyAndLog(prefs, decision) {
 function hideBanner() {
   var banner = document.getElementById('cookie-banner');
   if (banner) banner.classList.remove('visible');
-   document.body.classList.remove('cookie-wall');
+  document.body.classList.remove('cookie-wall');
 }
 
 function bannerAccept() {
@@ -211,10 +208,9 @@ function saveCustom() {
       return;
     }
   } catch (e) {}
-  // Afficher le bandeau après 1.2s si pas de consentement enregistré
   setTimeout(function () {
     var banner = document.getElementById('cookie-banner');
     if (banner) banner.classList.add('visible');
-     document.body.classList.add('cookie-wall');
+    document.body.classList.add('cookie-wall');
   }, 1200);
 })();
