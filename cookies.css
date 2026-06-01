@@ -5,7 +5,7 @@
 /* Bloque le scroll tant que le bandeau est visible */
 body.cookie-wall,
 html:has(body.cookie-wall) {
-  overflow: hidden;
+  overflow-y: hidden !important;
 }
 
 #cookie-banner {
