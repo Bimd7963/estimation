@@ -4,23 +4,98 @@
 
 var CONSENT_KEY = 'bd_cookie_consent';
 
+// ── Remplace par ton vrai ID pixel Meta
+var META_PIXEL_ID = '1405060961660950';
+
+// ── Injection dynamique du HTML du bandeau
+(function injectBannerHTML() {
+  var html = '\
+<div id="cookie-banner">\
+  <div id="banner-main">\
+    <div class="banner-left">\
+      <strong>🍪 Ce site utilise des cookies</strong>\
+      <p>En acceptant, vous nous aidez à <em>mieux comprendre ce qui vous intéresse</em> et à améliorer notre site. Vos données restent anonymes.</p>\
+    </div>\
+    <div class="banner-right">\
+      <div class="banner-btns-row">\
+        <button class="btn-banner-refuse" onclick="bannerRefuse()">Refuser</button>\
+        <button class="btn-banner-accept" onclick="bannerAccept()">Tout accepter ✓</button>\
+      </div>\
+      <span class="banner-reassurance">Vous pouvez changer d\'avis à tout moment</span>\
+      <button class="btn-banner-custom" onclick="openCustom()">⚙ Personnaliser les cookies</button>\
+    </div>\
+  </div>\
+  <div id="banner-custom">\
+    <div class="custom-title">⚙ Personnaliser mes préférences</div>\
+    <div class="custom-rows">\
+      <div class="custom-row required">\
+        <div class="custom-row-info">\
+          <strong>🔒 Essentiels</strong>\
+          <span>Nécessaires au fonctionnement du site. Toujours actifs.</span>\
+        </div>\
+        <label class="toggle"><input type="checkbox" checked disabled><span class="slider"></span></label>\
+      </div>\
+      <div class="custom-row">\
+        <div class="custom-row-info">\
+          <strong>📊 Google Analytics</strong>\
+          <span>Mesure d\'audience anonymisée — pages vues, durée de visite.</span>\
+        </div>\
+        <label class="toggle"><input type="checkbox" id="c-ga"><span class="slider"></span></label>\
+      </div>\
+      <div class="custom-row">\
+        <div class="custom-row-info">\
+          <strong>📣 Google Ads</strong>\
+          <span>Suivi des conversions publicitaires.</span>\
+        </div>\
+        <label class="toggle"><input type="checkbox" id="c-ads"><span class="slider"></span></label>\
+      </div>\
+      <div class="custom-row">\
+        <div class="custom-row-info">\
+          <strong>🎥 Microsoft Clarity</strong>\
+          <span>Heatmaps et sessions anonymisées pour améliorer le site.</span>\
+        </div>\
+        <label class="toggle"><input type="checkbox" id="c-clarity"><span class="slider"></span></label>\
+      </div>\
+      <div class="custom-row">\
+        <div class="custom-row-info">\
+          <strong>📣 Meta (Facebook)</strong>\
+          <span>Remarketing et audiences personnalisées.</span>\
+        </div>\
+        <label class="toggle"><input type="checkbox" id="c-meta"><span class="slider"></span></label>\
+      </div>\
+    </div>\
+    <div class="custom-actions">\
+      <button class="btn-save-custom" onclick="saveCustom()">Enregistrer mes choix ✓</button>\
+      <button class="btn-back-banner" onclick="closeCustom()">← Retour</button>\
+      <button class="btn-refuse-all-custom" onclick="bannerRefuse()">Tout refuser</button>\
+    </div>\
+  </div>\
+</div>';
+  var container = document.createElement('div');
+  container.innerHTML = html;
+  document.body.appendChild(container.firstChild);
+})();
+
+// ═══════════════════════════════════════════
+
 function getSessionId() {
   var sid = sessionStorage.getItem('bd_sid');
   if (!sid) {
-    sid = 'u_' + Date.now() + '_' + Math.random().toString(36).substr(2,8);
+    sid = 'u_' + Date.now() + '_' + Math.random().toString(36).substr(2, 8);
     sessionStorage.setItem('bd_sid', sid);
   }
   return sid;
 }
 
 // ── Activation des outils
+
 function activateAnalytics() {
   if (window._gaLoaded) return; window._gaLoaded = true;
   var s = document.createElement('script'); s.async = true;
   s.src = 'https://www.googletagmanager.com/gtag/js?id=G-41DC15H7KJ';
   document.head.appendChild(s);
   window.dataLayer = window.dataLayer || [];
-  window.gtag = function(){ dataLayer.push(arguments); };
+  window.gtag = function () { dataLayer.push(arguments); };
   gtag('js', new Date()); gtag('config', 'G-41DC15H7KJ');
 }
 
@@ -30,18 +105,33 @@ function activateAds() {
   s.src = 'https://www.googletagmanager.com/gtag/js?id=AW-17870834052';
   document.head.appendChild(s);
   window.dataLayer = window.dataLayer || [];
-  window.gtag = function(){ dataLayer.push(arguments); };
+  window.gtag = function () { dataLayer.push(arguments); };
   gtag('js', new Date()); gtag('config', 'AW-17870834052');
 }
 
 function activateClarity() {
   if (window._clarityLoaded) return; window._clarityLoaded = true;
-  (function(c,l,a,r,i,t,y){
-    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-    t=l.createElement(r); t.async=1;
-    t.src='https://www.clarity.ms/tag/'+i;
-    y=l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t,y);
-  })(window,document,'clarity','script','vnvyypfvt5');
+  (function (c, l, a, r, i, t, y) {
+    c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
+    t = l.createElement(r); t.async = 1;
+    t.src = 'https://www.clarity.ms/tag/' + i;
+    y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+  })(window, document, 'clarity', 'script', 'vnvyypfvt5');
+}
+
+function activateMeta() {
+  if (window._metaLoaded) return; window._metaLoaded = true;
+  !function (f, b, e, v, n, t, s) {
+    if (f.fbq) return; n = f.fbq = function () {
+      n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+    };
+    if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+    n.queue = []; t = b.createElement(e); t.async = !0;
+    t.src = v; s = b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t, s);
+  }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', META_PIXEL_ID);
+  fbq('track', 'PageView');
 }
 
 // ── Log Google Forms
@@ -59,7 +149,7 @@ function logToSheet(prefs, decision) {
     method: 'POST', mode: 'no-cors',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: params
-  }).catch(function(){});
+  }).catch(function () {});
 }
 
 function applyAndLog(prefs, decision) {
@@ -67,20 +157,22 @@ function applyAndLog(prefs, decision) {
   if (prefs.analytics) activateAnalytics();
   if (prefs.ads)       activateAds();
   if (prefs.clarity)   activateClarity();
+  if (prefs.meta)      activateMeta();
   logToSheet(prefs, decision);
 }
 
 function hideBanner() {
-  document.getElementById('cookie-banner').classList.remove('visible');
+  var banner = document.getElementById('cookie-banner');
+  if (banner) banner.classList.remove('visible');
 }
 
 function bannerAccept() {
-  applyAndLog({ analytics: true, ads: true, clarity: true }, 'accept_all');
+  applyAndLog({ analytics: true, ads: true, clarity: true, meta: true }, 'accept_all');
   hideBanner();
 }
 
 function bannerRefuse() {
-  applyAndLog({ analytics: false, ads: false, clarity: false }, 'refuse_all');
+  applyAndLog({ analytics: false, ads: false, clarity: false, meta: false }, 'refuse_all');
   hideBanner();
 }
 
@@ -98,20 +190,22 @@ function saveCustom() {
   var prefs = {
     analytics: document.getElementById('c-ga').checked,
     ads:       document.getElementById('c-ads').checked,
-    clarity:   document.getElementById('c-clarity').checked
+    clarity:   document.getElementById('c-clarity').checked,
+    meta:      document.getElementById('c-meta').checked
   };
   applyAndLog(prefs, 'custom');
   hideBanner();
 }
 
 // ── Init au chargement
-(function(){
+(function () {
   try {
     var saved = JSON.parse(localStorage.getItem(CONSENT_KEY));
-   if (saved && typeof saved === 'object') {
-    if (saved.analytics === true) activateAnalytics();
-    if (saved.ads === true)       activateAds();
-    if (saved.clarity === true)   activateClarity();
+    if (saved && typeof saved === 'object') {
+      if (saved.analytics) activateAnalytics();
+      if (saved.ads)       activateAds();
+      if (saved.clarity)   activateClarity();
+      if (saved.meta)      activateMeta();
       var alreadyLogged = sessionStorage.getItem('bd_session_logged');
       if (!alreadyLogged) {
         sessionStorage.setItem('bd_session_logged', '1');
@@ -119,9 +213,10 @@ function saveCustom() {
       }
       return;
     }
-  } catch(e) {}
+  } catch (e) {}
   // Afficher le bandeau après 1.2s si pas de consentement enregistré
-  setTimeout(function(){
-    document.getElementById('cookie-banner').classList.add('visible');
+  setTimeout(function () {
+    var banner = document.getElementById('cookie-banner');
+    if (banner) banner.classList.add('visible');
   }, 1200);
 })();
