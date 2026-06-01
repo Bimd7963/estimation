@@ -576,13 +576,16 @@ function trackProfileSelection(profile) {
   } catch(e) {}
 }
 
-document.querySelectorAll('.profile-card').forEach(card => {
-  card.addEventListener('click', function() {
-    const profile = this.dataset.profile;
-    trackProfileSelection(profile);
-    sessionStorage.setItem('userProfile', profile);
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.profile-card').forEach(card => {
+    card.addEventListener('click', function() {
+      const profile = this.dataset.profile;
+      trackProfileSelection(profile);
+      sessionStorage.setItem('userProfile', profile);
+    });
   });
 });
+  
 </script>
 </body>
 </html>
