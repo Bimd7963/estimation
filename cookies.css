@@ -3,7 +3,8 @@
    Design V5 — navy #1E2535, gold #A8844A, Jost + Cormorant
    ═══════════════════════════════════════════ */
 /* Bloque le scroll tant que le bandeau est visible */
-body.cookie-wall {
+body.cookie-wall,
+html:has(body.cookie-wall) {
   overflow: hidden;
 }
 
