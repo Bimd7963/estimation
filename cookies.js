@@ -120,11 +120,8 @@ function activateClarity() {
 }
 
 function activateMeta() {
-  if (window._metaLoaded) return; window._metaLoaded = true;
-  if (window.fbq) {
-    fbq('consent', 'grant');
-    fbq('track', 'PageView');
-  }
+  if (!window.fbq) return;
+  fbq('consent', 'grant');
 }
 
 // ── Log Google Forms
