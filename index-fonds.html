@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
 <meta http-equiv="Content-Security-Policy" content="
   default-src 'self';
@@ -68,7 +67,7 @@
   (window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
   fbq('consent', 'revoke');
   fbq('init', '1555055632866132');
-  // Pas de PageView ici — déclenché par cookies.js après consentement
+  fbq('track', 'PageView');
 </script>
   </head>
 <body>
@@ -76,7 +75,7 @@
 <div id="sbar"></div>
 <div id="cur"></div>
 <div id="cur-ring"></div>
-<div class="mobile-sticky"><a href="tel:0610327493">☎&nbsp;&nbsp;06 10 32 74 93 — Nous décrocherons</a></div>
+<div class="mobile-sticky"><a href="tel:0610327493"onclick="fbq('track', 'Contact')">☎&nbsp;&nbsp;06 10 32 74 93 — Nous décrocherons</a></div>
 
   <!-- NAV -->
 <nav id="nav">
@@ -86,7 +85,7 @@
     <li><a href="FAQ.html">Questions fréquentes</a></li>
   </ul>
   <div class="nav-right">
-    <a href="tel:0610327493" class="nav-phone">06 10 32 74 93</a>
+    <a href="tel:0610327493" class="nav-phone" onclick="fbq('track', 'Contact')">06 10 32 74 93</a>
     <a href="#rdv" class="nav-cta">Discuter de mon projet</a>
   </div>
     <button class="hamburger-btn" aria-label="Menu">
@@ -107,7 +106,8 @@
       Une transmission réussie repose sur la rigueur, la discrétion et le bon acquéreur. Nous pilotons chaque étape avec deux regards et un seul objectif : votre sérénité.
     </p>
     <div class="cta-cluster">
-      <a href="tel:0610327493" class="btn-primary">Évaluer mon fonds</a>
+      <a href="tel:0610327493" class="btn-primary"onclick="fbq('track', 'Contact')"
+        >Évaluer mon fonds</a>
     </div>
     </div>
 
@@ -141,7 +141,7 @@
         Nous écoutons votre situation, vos attentes, votre calendrier.
       </p>
       <p style="font-size:.72rem;color:rgba(250,247,242,.5);letter-spacing:.06em;padding-left:1.2rem;margin-bottom:1.2rem;">Appel confidentiel &nbsp;·&nbsp; Sans engagement</p>
-      <a href="tel:0610327493" class="cta-btn">Prendre rendez-vous</a>
+      <a href="tel:0610327493" class="cta-btn"onclick="fbq('track', 'Contact')">Prendre rendez-vous</a>
     </div>
   </div>
 </section>
@@ -333,7 +333,7 @@
 
     <div class="rdv-phone-wrap reveal d1">
       <div class="rdv-phone-lbl">Appelez-nous</div>
-      <a href="tel:0610327493" class="rdv-phone-big">06 10 32 74 93</a>
+      <a href="tel:0610327493" class="rdv-phone-big"onclick="fbq('track', 'Contact')">06 10 32 74 93</a>
       <div class="rdv-phone-sub">Premier échange offert · Vous décidez ensuite</div>
     </div>
 
@@ -341,13 +341,13 @@
       <div class="rdv-phone-lbl">Ou écrivez-nous</div>
       <ul class="rdv-write-list">
         <li>
-           <a href="mailto:baptiste.audouin@iadfrance.fr?subject=Cession%20de%20fonds%20de%20commerce&body=Bonjour%20Baptiste%20et%20Daphn%C3%A9%2C%0A%0AJe%20vous%20contacte%20au%20sujet%20de%20la%20cession%20de%20mon%20fonds%20de%20commerce.%0A%0AType%20d%27activit%C3%A9%20%3A%20[restauration%2C%20commerce%2C%20services...]%0A%0ALocalisation%20%3A%20[adresse]%0A%0AJe%20serais%20heureux%20de%20discuter%20de%20mon%20projet%20avec%20vous.%0A%0ACordialement%2C%0A[Votre%20pr%C3%A9nom%20et%20nom]%0A[Votre%20t%C3%A9l%C3%A9phone]"
+           <a href="mailto:baptiste.audouin@iadfrance.fr?subject=Cession%20de%20fonds%20de%20commerce&body=Bonjour%20Baptiste%20et%20Daphn%C3%A9%2C%0A%0AJe%20vous%20contacte%20au%20sujet%20de%20la%20cession%20de%20mon%20fonds%20de%20commerce.%0A%0AType%20d%27activit%C3%A9%20%3A%20[restauration%2C%20commerce%2C%20services...]%0A%0ALocalisation%20%3A%20[adresse]%0A%0AJe%20serais%20heureux%20de%20discuter%20de%20mon%20projet%20avec%20vous.%0A%0ACordialement%2C%0A[Votre%20pr%C3%A9nom%20et%20nom]%0A[Votre%20t%C3%A9l%C3%A9phone]" onclick="fbq('track', 'Contact')"
            <span class="rdv-write-glyph" aria-hidden="true">✉</span>
             <span><span class="__cf_email__" data-cfemail="f2909382869b818697dc9387969d879b9cb29b93969480939c9197dc9480">baptiste.audouin@iadfrance.fr</span></span>
           </a>
         </li>
         <li>
-          <a href="https://wa.me/33610327493?text=Bonjour%20Baptiste%20et%20Daphn%C3%A9%2C%20je%20souhaite%20discuter%20de%20mon%20projet%20de%20cession%20de%20fonds." target="_blank"
+          <a href="https://wa.me/33610327493?text=Bonjour%20Baptiste%20et%20Daphn%C3%A9%2C%20je%20souhaite%20discuter%20de%20mon%20projet%20de%20cession%20de%20fonds." onclick="fbq('track', 'Contact')" target="_blank"
             <span class="rdv-write-glyph" aria-hidden="true">💬</span>
             <span>WhatsApp</span>
           </a>
