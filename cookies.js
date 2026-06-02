@@ -122,6 +122,7 @@ function activateClarity() {
 function activateMeta() {
   if (!window.fbq) return;
   fbq('consent', 'grant');
+  fbq('track', 'PageView');
 }
 
 // ── Log Google Forms
