@@ -319,6 +319,30 @@
 </head>
 <body>
 
+  
+<div id="sbar"></div>
+<div id="cur"></div>
+<div id="cur-ring"></div>
+<div class="mobile-sticky"><a href="tel:0610327493" onclick="fbq('track', 'Contact')">☎&nbsp;&nbsp;06 10 32 74 93 — Nous décrocherons</a></div>
+
+  <!-- NAV -->
+<nav id="nav">
+  <a href="index.html" class="nav-logo">Baptiste <span>&</span> Daphné<br>Immobilier</a>
+  <ul class="nav-links">
+    <li><a href="venteimmobiliere.html">Vente immobilière</a></li>
+    <li><a href="#avis">Avis clients</a></li>
+    <li><a href="faq.html">Questions fréquentes</a></li>
+     <li><a href="articles.html">Articles</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="tel:0610327493" onclick="fbq('track', 'Contact')" class="nav-phone">06 10 32 74 93</a>
+    <a href="#rdv" class="nav-cta">Discuter de mon projet</a>
+  </div>
+    <button class="hamburger-btn" aria-label="Menu">
+  <!-- Le hamburger s'injectera ici -->
+</nav>
+<!-- Le menu drawer s'injectera automatiquement -->
+
   <!-- ═══ HERO ═══ -->
   <header class="hero reveal">
     <div class="hero-eyebrow">Chambéry & Savoie</div>
@@ -409,14 +433,19 @@
   </section>
 
   <!-- ═══ FOOTER ═══ -->
-  <footer>
-    <div class="footer-logo">Baptiste <span>&</span> Daphné</div>
-    <ul class="footer-links">
-      <li><a href="#">Qui sommes-nous</a></li>
-      <li><a href="#">Avis clients</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-  </footer>
+
+<footer>
+  <div class="footer-logo">Baptiste <span>&</span> Daphné <br>Chambéry & alentours </div>
+  <div class="footer-info">EI Daphné Martin Marin Guillon &amp; EI Baptiste Audouin · Conseillers en immobilier · Réseau IAD France<br>RSAC Chambéry n° 992 606 400 et n° 943 392 555 · Document non contractuel · 2026</div>
+  <div class="footer-links">
+    <a href="mentionslegales.html">Mentions légales</a>
+    <a href="politiquedeconfidentialite.html">Confidentialité</a>
+    <a href="gestiondescookies.html">Cookies</a>
+  </div>
+</footer>
+<script src="script.js" defer></script>
+<script src="cookies.js" defer></script>
+<script src="hamburger-nav-component.js" defer></script>
 
   <script>
     const obs = new IntersectionObserver(
