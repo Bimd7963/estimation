@@ -1,3 +1,8 @@
 Header always set X-Frame-Options "SAMEORIGIN"
 RewriteRule ^index\.html$ / [R=301,L]
 Redirect 301 /mentions-legales.html /mentionslegales.html
+Redirect 301 /FAQ.html /faq.html
+Redirect 301 /index-proprietaire.html /venteimmobiliere.html
+Redirect 301 /index-locataire.html /locataire.html
+Redirect 301 /index-fonds.html /cessiondefonds.html
+Redirect 301 /Articles-p.html /articles.html
