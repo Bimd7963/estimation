@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notre approche — Estimation et vente immobilière à Chambéry | Baptiste & Daphné</title>
+  <meta name="description" content="Une méthode d'estimation structurée, fondée sur les données du marché. Deux conseillers IAD en Savoie qui donnent les clés pour décider en connaissance de cause.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #1E2535;
+      --cream: #F3EDE3;
+      --ivory: #FAF7F2;
+      --charcoal: #181818;
+      --gold: #A8844A;
+      --gold-l: #C9A06A;
+      --gray: #7E7870;
+      --text-muted: #5E5955;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      background: var(--ivory);
+      color: var(--charcoal);
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 6rem 8vw 4rem;
+      max-width: 100%;
+      margin-top: 3.5rem;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.66rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+      font-weight: 400;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 22px;
+      height: 1px;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 3.4vw, 3.6rem);
+      font-weight: 300;
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+      color: var(--charcoal);
+      margin-bottom: 1.6rem;
+      max-width: 50rem;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .hero-intro {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      max-width: 34rem;
+      line-height: 1.85;
+      font-weight: 300;
+    }
+
+    /* ── MAIN CONTENT WRAPPER ── */
+    .content-sections {
+      padding: 0 8vw;
+    }
+
+    /* ── ARTICLE SECTION ── */
+    .article-section {
+      padding: 4rem 0;
+      border-top: 1px solid rgba(168,132,74,0.22);
+      display: grid;
+      grid-template-columns: 3.5rem 1fr;
+      gap: 0 2.5rem;
+      align-items: start;
+    }
+
+    .section-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.8rem;
+      font-weight: 300;
+      color: rgba(168,132,74,0.18);
+      line-height: 1;
+      padding-top: 0.15rem;
+      user-select: none;
+      letter-spacing: -0.03em;
+    }
+
+    .section-body {}
+
+    .s-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.65rem, 2.4vw, 2.5rem);
+      font-weight: 300;
+      line-height: 1.15;
+      color: var(--charcoal);
+      margin-bottom: 1.4rem;
+    }
+
+    .s-title em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .signal-body {
+      font-size: 0.91rem;
+      color: var(--text-muted);
+      line-height: 1.95;
+      margin-bottom: 1rem;
+    }
+
+    .signal-body:last-child { margin-bottom: 0; }
+    .signal-body strong { color: var(--charcoal); font-weight: 400; }
+
+    /* ── HIGHLIGHT ── */
+    .highlight-block {
+      margin: 1.5rem 0;
+      padding: 1.4rem 1.6rem;
+      border-left: 2px solid var(--gold);
+      background: rgba(168,132,74,0.04);
+      font-size: 0.91rem;
+      line-height: 1.95;
+      color: var(--text-muted);
+    }
+
+    .highlight-block em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    /* ── DUO SECTION ── */
+    .duo-section {
+      background: var(--navy);
+      color: var(--ivory);
+      padding: 5rem 8vw;
+      position: relative;
+      overflow: hidden;
+      margin-top: 4rem;
+    }
+
+    .duo-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(ellipse at 10% 60%, rgba(168,132,74,0.07) 0%, transparent 55%),
+        radial-gradient(ellipse at 90% 20%, rgba(168,132,74,0.04) 0%, transparent 45%);
+    }
+
+    .duo-section > * { position: relative; z-index: 1; }
+
+    .duo-section .s-title {
+      color: var(--ivory);
+      margin-bottom: 1.4rem;
+    }
+
+    .duo-section .s-title em { color: var(--gold-l); }
+
+    .duo-section .signal-body {
+      color: rgba(250,247,242,0.75);
+      max-width: 40rem;
+    }
+
+    /* ── CTA ── */
+    .cta-area {
+      text-align: center;
+      padding: 5rem 8vw 6rem;
+    }
+
+    .cta-rule {
+      width: 30px;
+      height: 1px;
+      background: var(--gold);
+      margin: 0 auto 2.5rem;
+      opacity: 0.5;
+    }
+
+    .cta-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.9rem, 3vw, 2.8rem);
+      font-weight: 300;
+      line-height: 1.2;
+      color: var(--charcoal);
+      margin-bottom: 0.6rem;
+    }
+
+    .cta-title em { font-style: italic; color: var(--gold); }
+
+    .cta-subtitle {
+      font-size: 0.85rem;
+      color: var(--gray);
+      margin-bottom: 2rem;
+    }
+
+    .cta-phone {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      background: var(--charcoal);
+      color: var(--ivory);
+      padding: 1.05rem 2.4rem;
+      text-decoration: none;
+      font-size: 0.73rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-weight: 400;
+      transition: background 0.25s, transform 0.15s;
+    }
+
+    .cta-phone:hover {
+      background: var(--gold);
+      color: var(--charcoal);
+      transform: translateY(-1px);
+    }
+
+    .cta-tags {
+      margin-top: 1.2rem;
+      font-size: 0.62rem;
+      color: var(--gray);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--charcoal);
+      color: var(--ivory);
+      padding: 2.8rem 8vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: var(--ivory);
+      letter-spacing: 0.04em;
+    }
+
+    .footer-logo span { color: var(--gold-l); }
+
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .footer-links a {
+      color: rgba(250,247,242,0.32);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--gold-l); }
+
+    /* ── REVEAL ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.75s cubic-bezier(0.16,1,0.3,1), transform 0.75s cubic-bezier(0.16,1,0.3,1);
+    }
+    .reveal.on { opacity: 1; transform: translateY(0); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 680px) {
+      .hero { padding: 4rem 5vw 3rem; }
+      .content-sections { padding: 0 5vw; }
+      .article-section {
+        grid-template-columns: 1fr;
+        gap: 0.5rem 0;
+      }
+      .section-num {
+        font-size: 2.4rem;
+        margin-bottom: -0.2rem;
+      }
+      .duo-section { padding: 4rem 5vw; }
+      .cta-area { padding: 4rem 5vw 5rem; }
+      footer { flex-direction: column; text-align: center; }
+      .footer-links { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ HERO ═══ -->
+  <header class="hero reveal">
+    <div class="hero-eyebrow">Chambéry & Savoie</div>
+    <h1>Vous allez prendre une décision importante. Notre rôle est de vous donner les <em>moyens</em> de la prendre.</h1>
+    <p class="hero-intro">
+      Vendre un bien immobilier à Chambéry, ce n'est pas signer un mandat et attendre. C'est une suite de décisions&nbsp;: le prix, le moment, la stratégie de diffusion, les ajustements en cours de route. Notre travail consiste à vous équiper pour chacune d'entre elles. C'est pour ça que nous limitons volontairement le nombre de dossiers que nous accompagnons en même temps.
+    </p>
+  </header>
+
+  <!-- ═══ SECTIONS ═══ -->
+  <div class="content-sections">
+
+    <div class="article-section reveal">
+      <div class="section-num" aria-hidden="true">1</div>
+      <div class="section-body">
+        <h2 class="s-title">Tout commence sur place</h2>
+        <p class="signal-body">
+          Pas de chiffre envoyé par mail. Pas d'estimation générée en ligne. Le premier rendez-vous se déroule chez vous, sur les lieux du bien à vendre. Nous regardons ce qu'un acquéreur verra&nbsp;: l'orientation, les volumes, l'environnement immédiat, les détails qu'aucun simulateur en ligne ne capte. Nous écoutons aussi votre situation&nbsp;: votre calendrier, vos contraintes, ce qui compte pour vous dans cette vente.
+        </p>
+        <p class="signal-body">
+          C'est cette <strong>lecture croisée</strong>&nbsp;— le bien tel qu'il est, votre projet tel qu'il se dessine&nbsp;— qui oriente tout le travail qui suit. Un bien identique sur le papier peut justifier deux stratégies très différentes selon le contexte de vente. C'est pour ça que nous commençons par là.
+        </p>
+      </div>
+    </div>
+
+    <div class="article-section reveal">
+      <div class="section-num" aria-hidden="true">2</div>
+      <div class="section-body">
+        <h2 class="s-title">Les données viennent ensuite, <em>pas avant</em></h2>
+        <p class="signal-body">
+          Une estimation immobilière sérieuse à Chambéry ne repose pas sur un algorithme. Elle repose sur un travail de confrontation&nbsp;: les ventes réellement signées dans votre secteur, les délais observés, la concurrence active au moment où vous envisagez de mettre en vente. Nous allons chercher ces données. Nous les recoupons. Et nous les traduisons en éléments lisibles pour vous.
+        </p>
+        <div class="highlight-block">
+          Ce que vous recevez, ce n'est pas un chiffre unique posé sur un document. C'est une <em>lecture argumentée du marché</em> autour de votre bien&nbsp;; avec plusieurs scénarios de positionnement prix, et les conséquences concrètes de chacun&nbsp;: délai probable, profil d'acquéreurs ciblé, marge de négociation prévisible. La plupart des outils d'estimation en ligne vous donnent une fourchette. Nous commençons là où ils s'arrêtent.
+        </div>
+      </div>
+    </div>
+
+    <div class="article-section reveal">
+      <div class="section-num" aria-hidden="true">3</div>
+      <div class="section-body">
+        <h2 class="s-title">La décision vous <em>appartient</em></h2>
+        <p class="signal-body">
+          Nous vous conseillons en nous appuyant sur ce que nous avons appris de votre situation, de vos objectifs, et des arbitrages qui comptent pour vous. Nous vous disons ce que nous ferions. Mais nous ne décidons pas à votre place et nous ne posons aucune pression. Le choix du prix de mise en vente, c'est le vôtre. Le choix de la stratégie, c'est le vôtre aussi. Notre rôle est de faire en sorte que ces choix soient éclairés, pas subis.
+        </p>
+        <p class="signal-body">
+          C'est une différence fondamentale avec beaucoup de pratiques du marché. Trop de propriétaires nous racontent la même expérience&nbsp;: un chiffre annoncé sans explication, un mandat signé dans la foulée, et le silence ensuite. Nous travaillons autrement parce qu'une vente bien pilotée commence par une décision bien informée.
+        </p>
+      </div>
+    </div>
+
+    <div class="article-section reveal">
+      <div class="section-num" aria-hidden="true">4</div>
+      <div class="section-body">
+        <h2 class="s-title">Une commercialisation <em>pilotée</em>, pas subie</h2>
+        <p class="signal-body">
+          Lorsque nous décidons de travailler ensemble, la diffusion est structurée. Plus de 50 portails, mobilisation du réseau IAD et de ses 16&nbsp;000 conseillers, mise en relation avec les professionnels du dossier&nbsp;: courtiers, diagnostiqueurs, notaires.
+        </p>
+        <p class="signal-body">
+          Mais la vraie différence se joue après la mise en ligne. Chaque retour du marché vous est transmis. Chaque signal&nbsp;— volume de contacts, qualité des visites, objections récurrentes&nbsp;— est analysé et partagé avec vous. Si un ajustement est nécessaire, il est décidé ensemble. Vous savez où en est votre vente à tout moment. Vous ne la subissez pas. Vous la pilotez.
+        </p>
+        <p class="signal-body">
+          Beaucoup de ventes dérapent non pas à cause du marché mais parce que les signaux d'alerte n'ont jamais été transmis. Nous considérons que ces informations vous appartiennent et qu'elles doivent être partagées sans filtre, même quand elles ne sont pas agréables à entendre.
+        </p>
+      </div>
+    </div>
+
+  </div><!-- /content-sections -->
+
+  <!-- ═══ DUO ═══ -->
+  <section class="duo-section reveal">
+    <h2 class="s-title">Deux conseillers, un seul <em>interlocuteur</em></h2>
+    <p class="signal-body">
+      Baptiste et Daphné, conseillers immobiliers à Chambéry et ses alentours. Nous intervenons systématiquement à deux sur chaque dossier parce qu'un regard unique, aussi expérimenté soit-il, reste un regard unique. Double lecture du bien, double vérification des données, continuité assurée si l'un de nous est indisponible. Pour vous, rien ne change&nbsp;: un seul numéro, un seul fil de conversation, deux cerveaux mobilisés.
+    </p>
+  </section>
+
+  <!-- ═══ CTA ═══ -->
+  <section class="cta-area reveal">
+    <div class="cta-rule"></div>
+    <h2 class="cta-title">Votre bien mérite une <em>vraie conversation</em>.</h2>
+    <p class="cta-subtitle">Le premier échange est offert, sans engagement.</p>
+    <a href="tel:+33610327493" class="cta-phone">
+      <span>Appelez-nous</span>
+      <span style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:300;letter-spacing:.04em;">06 10 32 74 93</span>
+    </a>
+    <div class="cta-tags">Premier contact · Estimation offerte · Vous décidez ensuite</div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer>
+    <div class="footer-logo">Baptiste <span>&</span> Daphné</div>
+    <ul class="footer-links">
+      <li><a href="#">Qui sommes-nous</a></li>
+      <li><a href="#">Avis clients</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </footer>
+
+  <script>
+    const obs = new IntersectionObserver(
+      entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); obs.unobserve(e.target); } }),
+      { threshold: 0.08 }
+    );
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  </script>
+
+</body>
+</html>
