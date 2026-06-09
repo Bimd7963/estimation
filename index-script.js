@@ -241,9 +241,9 @@ if (container) {
       if (clickedSlideIndex === currentIndex) {
         console.log('  → Slide centrale, redirection vers', profile);
         const urls = {
-          proprio: './index-proprietaire.html',
-          locataire: './index-locataire.html',
-          fonds: './index-fonds.html'
+          proprio: './venteimmobiliere.html',
+          locataire: './locataire.html',
+          fonds: './cessiondefonds.html'
         };
        if (urls[profile]) {
         console.log('  → Redirection vers:', urls[profile]);
