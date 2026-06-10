@@ -64,20 +64,27 @@
 <div id="sbar"></div>
 <div id="cur"></div>
 <div id="cur-ring"></div>
-<div class="mobile-sticky"><a href="tel:0610327493">☎&nbsp;&nbsp;06 10 32 74 93 — Nous décrocherons</a></div>
+<div class="mobile-sticky"><a href="tel:0610327493">☎&nbsp;&nbsp;06 10 32 74 93 · Nous décrocherons</a></div>
 
 <!-- NAV -->
 <nav id="nav">
-  <a href="index.html" class="nav-logo">Baptiste <span>&</span> Daphné<br>Immobilier</a>
+  <a href="/index.html" class="nav-logo">Baptiste <span>&</span> Daphné<br>Immobilier</a>
   <ul class="nav-links">
-    <li><a href="venteimmobiliere.html">Vente immobilière</a></li>
-    <li><a href="venteimmobiliere.html#avis">Avis clients</a></li>                        
-    <li><a href="cessiondefonds.html">Fonds de commerce</a></li>
-    <li><a href="faq.html">Questions fréquentes</a></li>
+    <li class="nav-dropdown">
+      <a href="/venteimmobiliere.html">Vente immobilière<span class="nav-caret" aria-hidden="true">▾</span></a>
+      <ul class="nav-dropdown-menu">
+        <li><a href="/notreapproche.html">Notre approche</a></li>
+        <li><a href="/estimation-chambery.html">Estimation</a></li>
+      </ul>
+    </li>
+    <li><a href="/cessiondefonds.html">Cession de fonds</a></li>
+    <li><a href="/venteimmobiliere.html#avis">Avis clients</a></li>
+    <li><a href="/articles.html">Articles</a></li>
+    <li><a href="/faq.html">Questions fréquentes</a></li>
   </ul>
   <div class="nav-right">
-    <a href="tel:0610327493" class="nav-phone">06 10 32 74 93</a>
-    <a href="venteimmobiliere.html#rdv" class="nav-cta">Discuter de mon projet</a>
+    <a href="tel:0610327493" onclick="fbq('track', 'Contact')" class="nav-phone">06 10 32 74 93</a>
+    <a href="/venteimmobiliere.html#rdv" class="nav-cta">Discuter de mon projet</a>
   </div>
    <button class="hamburger-btn" aria-label="Menu"></button>
 </nav>
@@ -108,16 +115,43 @@
 <section class="s-cream wipe">
   <div class="reveal reveal-l" style="text-align:center;margin-bottom:3rem;">
     <div class="lbl" style="text-align:center;">Blog</div>
-    <h2 class="s-title">Premier article à paraître bientôt</h2>
-    <p class="narr" style="margin-top:1.5rem;max-width:600px;margin-left:auto;margin-right:auto;">
-      Nous préparons nos premiers articles. D'ici quelques semaines, vous trouverez ici des réflexions sur le marché immobilier, les stratégies de transmission, et les vraies questions qu'on nous pose.
-    </p>
+    <h2 class="s-title" style="margin:0 auto;">Notre premier article</h2>
   </div>
 
-  <div style="margin-top:3rem;text-align:center;">
-    <a href="tel:0610327493" style="display:inline-flex;flex-direction:column;text-decoration:none;">
-      <span class="rdv-phone-big">06 10 32 74 93</span>
-      <span class="rdv-phone-sub">En attendant, parlons directement</span>
+  <a href="articles/risques-surestimation.html" class="article-feature-card reveal">
+    <div class="article-feature-eyebrow">Estimation immobilière</div>
+    <h3 class="article-feature-title">Surestimer son bien&nbsp;: les conséquences que personne ne vous dit</h3>
+    <p class="article-feature-excerpt">
+      Prix gonflé, bien qui s'use, projet d'achat compromis, prêt relais mal calibré&nbsp;: les vraies conséquences d'une surestimation immobilière, et pourquoi nous ne jouons jamais cette carte.
+    </p>
+    <span class="article-feature-link">Lire l'article →</span>
+  </a>
+</section>
+
+<!-- ═══ POUR ALLER PLUS LOIN ═══ -->
+<section class="s-ivory wipe">
+  <div class="reveal reveal-l" style="text-align:center;margin-bottom:3rem;">
+    <div class="lbl" style="text-align:center;">À découvrir aussi</div>
+    <h2 class="s-title" style="margin:0 auto;">Pour aller plus loin</h2>
+  </div>
+
+  <div class="article-feature-grid">
+    <a href="notreapproche.html" class="article-feature-card reveal">
+      <div class="article-feature-eyebrow">Notre méthode</div>
+      <h3 class="article-feature-title">Notre approche</h3>
+      <p class="article-feature-excerpt">
+        Vendre un bien, c'est une suite de décisions&nbsp;: le prix, le moment, la stratégie de diffusion, les ajustements en cours de route. Découvrez comment nous vous accompagnons à chaque étape.
+      </p>
+      <span class="article-feature-link">Découvrir →</span>
+    </a>
+
+    <a href="estimation-chambery.html" class="article-feature-card reveal">
+      <div class="article-feature-eyebrow">Estimation immobilière</div>
+      <h3 class="article-feature-title">Estimation</h3>
+      <p class="article-feature-excerpt">
+        Une vente ne commence pas par une annonce, elle commence par un chiffre. Découvrez notre méthode d'estimation, fondée sur les données et le terrain.
+      </p>
+      <span class="article-feature-link">Découvrir →</span>
     </a>
   </div>
 </section>

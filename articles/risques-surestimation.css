@@ -1,0 +1,299 @@
+/* ════════════════════════════════════════════════════════════════
+   RISQUES-SURESTIMATION.CSS — Page-specific styles
+   Loaded AFTER base.css (squelette commun : variables, reset, body,
+   curseur, scrollbar, nav, footer, mobile-sticky, reveal)
+   ════════════════════════════════════════════════════════════════ */
+
+:root {
+  --text-muted: #5E5955;
+}
+
+/* ── HERO ── */
+.hero {
+  padding: 6rem 8vw 4rem;
+  max-width: 100%;
+  margin-top: 3.5rem;
+}
+
+.hero-eyebrow {
+  font-size: 0.66rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1rem;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.hero-eyebrow::before {
+  content: '';
+  display: block;
+  width: 22px;
+  height: 1px;
+  background: var(--gold);
+  flex-shrink: 0;
+}
+
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 3.4vw, 3.6rem);
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  color: var(--charcoal);
+  margin-bottom: 1.6rem;
+  max-width: 50rem;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.hero-intro {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  max-width: 34rem;
+  line-height: 1.85;
+  font-weight: 300;
+}
+
+/* ── MAIN CONTENT WRAPPER ── */
+.content-sections {
+  padding: 0 8vw;
+}
+
+/* ── ARTICLE SECTION (numbered sections) ── */
+.article-section {
+  padding: 4rem 0;
+  border-top: 1px solid rgba(168,132,74,0.22);
+  display: grid;
+  grid-template-columns: 3.5rem 1fr;
+  gap: 0 2.5rem;
+  align-items: start;
+}
+
+.section-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3.8rem;
+  font-weight: 300;
+  color: var(--gold);
+  line-height: 1;
+  padding-top: 0.15rem;
+  user-select: none;
+  letter-spacing: -0.03em;
+}
+
+.s-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.65rem, 2.4vw, 2.5rem);
+  font-weight: 300;
+  line-height: 1.15;
+  color: var(--charcoal);
+  margin-bottom: 1.4rem;
+}
+
+.s-title em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.signal-body {
+  font-size: 0.91rem;
+  color: var(--text-muted);
+  line-height: 1.95;
+  margin-bottom: 1rem;
+}
+
+.signal-body:last-child {
+  margin-bottom: 0;
+}
+
+.signal-body strong {
+  color: var(--charcoal);
+  font-weight: 400;
+}
+
+/* ── HIGHLIGHT BLOCK ── */
+.highlight-block {
+  margin: 1.5rem 0;
+  padding: 1.4rem 1.6rem;
+  border-left: 2px solid var(--gold);
+  background: rgba(168,132,74,0.04);
+  font-size: 0.91rem;
+  line-height: 1.95;
+  color: var(--text-muted);
+}
+
+.highlight-block em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+/* ── DUO SECTION (navy background) ── */
+.duo-section {
+  background: var(--navy);
+  color: var(--ivory);
+  padding: 5rem 8vw;
+  position: relative;
+  overflow: hidden;
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.duo-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 10% 60%, rgba(168,132,74,0.07) 0%, transparent 55%),
+    radial-gradient(ellipse at 90% 20%, rgba(168,132,74,0.04) 0%, transparent 45%);
+}
+
+.duo-section > * {
+  position: relative;
+  z-index: 1;
+}
+
+.duo-section .s-title {
+  color: var(--ivory);
+  margin-bottom: 1.4rem;
+}
+
+.duo-section .s-title em {
+  color: var(--gold-l);
+}
+
+.duo-section .signal-body {
+  color: rgba(250,247,242,0.75);
+  max-width: 50rem;
+  text-align: left;
+}
+
+/* ── CTA SECTION ── */
+.cta-area {
+  text-align: center;
+  padding: 5rem 8vw 6rem;
+}
+
+.cta-rule {
+  width: 30px;
+  height: 1px;
+  background: var(--gold);
+  margin: 0 auto 2.5rem;
+  opacity: 0.5;
+}
+
+.cta-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.9rem, 3vw, 2.8rem);
+  font-weight: 300;
+  line-height: 1.2;
+  color: var(--charcoal);
+  margin-bottom: 0.6rem;
+}
+
+.cta-title em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.cta-subtitle {
+  font-size: 0.85rem;
+  color: var(--gray);
+  margin-bottom: 2rem;
+}
+
+.cta-phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  background: var(--charcoal);
+  color: var(--ivory);
+  padding: 1.05rem 2.4rem;
+  text-decoration: none;
+  font-size: 0.73rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 400;
+  transition: background 0.25s, transform 0.15s;
+}
+
+.cta-phone:hover {
+  background: var(--gold);
+  color: var(--charcoal);
+  transform: translateY(-1px);
+}
+
+.cta-tags {
+  margin-top: 1.2rem;
+  font-size: 0.62rem;
+  color: var(--gray);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* ════════════════════════════════════════════════════════════════
+   RESPONSIVE — max-width: 680px
+   ════════════════════════════════════════════════════════════════ */
+@media (max-width: 680px) {
+  .hero {
+    padding: 4rem 5vw 3rem;
+  }
+
+  .content-sections {
+    padding: 0 5vw;
+  }
+
+  .article-section {
+    grid-template-columns: 1fr;
+    gap: 0.5rem 0;
+  }
+
+  .section-num {
+    font-size: 2.4rem;
+    margin-bottom: -0.2rem;
+  }
+
+  .duo-section {
+    padding: 4rem 5vw;
+  }
+
+  .cta-area {
+    padding: 4rem 5vw 5rem;
+  }
+}
+
+/* ════════════════════════════════════════════════════════════════
+   RESPONSIVE — max-width: 480px
+   ════════════════════════════════════════════════════════════════ */
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: clamp(1.5rem, 6vw, 1.9rem);
+  }
+
+  .hero {
+    padding: 3rem 5vw 2rem;
+  }
+
+  .article-section {
+    padding: 2.5rem 0;
+  }
+
+  .section-num {
+    font-size: 1.8rem;
+  }
+
+  .duo-section {
+    padding: 3rem 5vw;
+  }
+
+  .cta-area {
+    padding: 3rem 5vw 4rem;
+  }
+}

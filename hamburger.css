@@ -120,6 +120,13 @@
   height: 100%;
 }
 
+/* Sous-liens (ex: Notre approche, Estimation Chambéry) */
+.menu-nav-sublink {
+  padding-left: 3rem;
+  font-size: 0.76rem;
+  color: var(--gray);
+}
+
 /* Section label — MASQUÉ */
 .menu-section-label {
   display: none;

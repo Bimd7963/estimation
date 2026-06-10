@@ -7,6 +7,9 @@
   // Vérifier que le composant n'est pas déjà injecté
   if (document.getElementById('hamburger-nav-injected')) return;
 
+  // Si la page possède sa propre section #rdv, le bouton y renvoie directement
+  const ctaHref = document.getElementById('rdv') ? '#rdv' : '/venteimmobiliere.html#rdv';
+
   // HTML à injecter
   const navHTML = `
     <button class="hamburger-btn" aria-label="Menu">
@@ -17,13 +20,16 @@
 
     <div id="menu-drawer">
       <div id="menu-content">
-        <a href="index.html#approche" class="menu-nav-link">Notre approche</a>
-        <a href="index.html#avis" class="menu-nav-link">Avis clients</a>
-        <a href="FAQ.html" class="menu-nav-link">Questions</a>
-        <a href="Articles-p.html" class="menu-nav-link">Articles</a>
+        <a href="/venteimmobiliere.html" class="menu-nav-link">Vente immobilière</a>
+        <a href="/notreapproche.html" class="menu-nav-link menu-nav-sublink">Notre approche</a>
+        <a href="/estimation-chambery.html" class="menu-nav-link menu-nav-sublink">Estimation</a>
+        <a href="/cessiondefonds.html" class="menu-nav-link">Cession de fonds</a>
+        <a href="/venteimmobiliere.html#avis" class="menu-nav-link">Avis clients</a>
+        <a href="/articles.html" class="menu-nav-link">Articles</a>
+        <a href="/faq.html" class="menu-nav-link">Questions fréquentes</a>
 
         <div class="menu-cta-section">
-          <a href="index.html#rdv" class="menu-cta-btn">Discuter de mon projet</a>
+          <a href="${ctaHref}" class="menu-cta-btn">Discuter de mon projet</a>
         </div>
       </div>
     </div>
