@@ -575,3 +575,15 @@ section.rdv {
   .rdv-right{padding:1.5rem;}
   .bandeau{padding:1.5rem 5vw;}
 }
+
+/* ══════════════════════════════════
+   RESPONSIVE — 400-480px
+   (grands téléphones type Pixel/iPhone Pro Max :
+   viewport CSS plus large => rem perçu plus petit,
+   on compense le texte courant)
+   ══════════════════════════════════ */
+@media(min-width:400px) and (max-width:480px){
+  .signal-body,.signal-body-desktop{font-size:1rem;}
+  .narr{font-size:.98rem;}
+  .article-feature-excerpt{font-size:.96rem;}
+}
