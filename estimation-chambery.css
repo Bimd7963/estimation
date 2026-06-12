@@ -392,3 +392,20 @@
     padding: 3rem 5vw 4rem;
   }
 }
+
+/* ════════════════════════════════════════════════════════════════
+   RESPONSIVE — 400-480px
+   (grands téléphones type Pixel/iPhone Pro Max :
+   viewport CSS plus large => rem perçu plus petit,
+   on compense le texte courant)
+   ════════════════════════════════════════════════════════════════ */
+@media (min-width: 400px) and (max-width: 480px) {
+  .signal-body,
+  .highlight-block {
+    font-size: 1rem;
+  }
+
+  .hero-intro {
+    font-size: 0.96rem;
+  }
+}
