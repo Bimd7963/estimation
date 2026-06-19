@@ -59,9 +59,8 @@ function calculateOffset(index) {
 /**
  * Applique les transforms 3D
  */
-function applyTransform(slide, offset) {
+function applyTransform(slide, offset, slideWidth) {
   const baseGap = 60;
-  const slideWidth = slide.offsetWidth || 320;
   const spacing = slideWidth / 2 + baseGap;
   
   let rotateY = 0, translateX = 0, translateZ = 0, scale = 1, opacity = 1, zIndex = 50;
@@ -91,9 +90,10 @@ function applyTransform(slide, offset) {
  * Met à jour tout le carrousel
  */
 function updateCoverflow() {
+  const widths = slides.map(s => s.offsetWidth || 320);
   slides.forEach((slide, idx) => {
     const offset = calculateOffset(idx);
-    applyTransform(slide, offset);
+    applyTransform(slide, offset, widths[idx]);
     if (offset === 0) {
       slide.classList.add('active');
     } else {

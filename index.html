@@ -40,7 +40,7 @@ script-src-elem 'self' 'unsafe-inline'
   frame-src 'none';
 ">
   <title>Baptiste & Daphné Immobilier | Chambéry & alentours</title>
-  <meta name="description" content="Baptiste & Daphné, conseillers en immobilier à Chambéry et Savoie. Que vous vendiez un bien ou cédiez un fonds de commerce, nous apportons rigueur et stratégie.">
+  <meta name="description" content="Conseillers en immobilier à Chambéry et en Savoie. Estimation rigoureuse, stratégie de prix argumentée, accompagnement personnalisé. Baptiste & Daphné.">
   <meta name="robots" content="index, follow">
 <meta property="og:title" content="Baptiste & Daphné Immobilier | Chambéry & alentours">
 <meta property="og:description" content="Baptiste va au rythme du client. Souriant, efficace, réactif. Je recommande chaudement ! » ... « Superbe accompagnement dans l'achat de notre maison.">
@@ -81,7 +81,8 @@ script-src-elem 'self' 'unsafe-inline'
   <link rel="dns-prefetch" href="https://www.googletagmanager.com">
   <link rel="dns-prefetch" href="https://www.clarity.ms">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap"></noscript>
   
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="cookies.css">
@@ -515,7 +516,7 @@ script-src-elem 'self' 'unsafe-inline'
     <div class="coverflow-track" id="coverflowTrack">
       
       <div class="coverflow-slide active" data-profile="proprio" data-index="0">
-        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=700&fit=crop" alt="Propriétaire vendant sa maison">
+        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=700&fit=crop" alt="Propriétaire vendant sa maison" fetchpriority="high">
         <div class="slide-overlay">
           <p class="slide-label">01 · Propriétaire</p>
           <h2 class="slide-title">Vendre votre bien</h2>
@@ -554,8 +555,8 @@ script-src-elem 'self' 'unsafe-inline'
 
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script src="index-script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+<script src="index-script.js" defer></script>
 
 <!-- ═════════════════════════════════════════════════════════════
      TRACKING GOOGLE FORMS
