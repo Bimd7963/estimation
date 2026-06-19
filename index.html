@@ -40,7 +40,7 @@ script-src-elem 'self' 'unsafe-inline'
   frame-src 'none';
 ">
   <title>Baptiste & Daphné Immobilier | Chambéry & alentours</title>
-  <meta name="description" content="Conseillers en immobilier à Chambéry. Stratégie de vente pour propriétaires et cession de fonds de commerce pour entrepreneurs. « Baptiste va au rythme du client. Souriant, efficace, réactif. Je recommande chaudement ! » ... « Superbe accompagnement dans l'achat de notre maison.">
+  <meta name="description" content="Conseillers en immobilier à Chambéry et en Savoie. Estimation rigoureuse, stratégie de prix argumentée, accompagnement personnalisé. Baptiste & Daphné.">
   <meta name="robots" content="index, follow">
 <meta property="og:title" content="Baptiste & Daphné Immobilier | Chambéry & alentours">
 <meta property="og:description" content="Baptiste va au rythme du client. Souriant, efficace, réactif. Je recommande chaudement ! » ... « Superbe accompagnement dans l'achat de notre maison.">
@@ -64,7 +64,16 @@ script-src-elem 'self' 'unsafe-inline'
       "addressRegion": "Savoie",
       "postalCode": "73000",
       "addressCountry": "FR"
-    }
+    },
+    "@id": "https://baptistedaphneimmo.com/#organization",
+    "sameAs": [
+      "https://www.facebook.com/profile.php?id=61579482170136",
+      "https://www.instagram.com/baptiste.daphne.immo/",
+      "https://www.youtube.com/@Baptiste.Daphne.Immobilier",
+      "https://www.linkedin.com/in/baptiste-et-daphn%C3%A9-immobilier-1a38b33b8/",
+      "https://maps.app.goo.gl/qzGpANDciyWqccXV7",
+      "https://www.google.com/maps?cid=15526885842950210834"
+    ]
   }
   </script>
   
@@ -72,7 +81,8 @@ script-src-elem 'self' 'unsafe-inline'
   <link rel="dns-prefetch" href="https://www.googletagmanager.com">
   <link rel="dns-prefetch" href="https://www.clarity.ms">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap"></noscript>
   
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="cookies.css">
@@ -506,10 +516,10 @@ script-src-elem 'self' 'unsafe-inline'
     <div class="coverflow-track" id="coverflowTrack">
       
       <div class="coverflow-slide active" data-profile="proprio" data-index="0">
-        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=700&fit=crop" alt="Propriétaire vendant sa maison">
+        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=700&fit=crop" alt="Propriétaire vendant sa maison" fetchpriority="high">
         <div class="slide-overlay">
           <p class="slide-label">01 · Propriétaire</p>
-          <h3 class="slide-title">Vendre votre bien</h3>
+          <h2 class="slide-title">Vendre votre bien</h2>
           <p class="slide-desc">Appartement ou maison à Chambéry</p>
         </div>
       </div>
@@ -518,7 +528,7 @@ script-src-elem 'self' 'unsafe-inline'
         <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=600&h=700&fit=crop" alt="Locataire cherchant son logement">
         <div class="slide-overlay">
           <p class="slide-label">02 · Locataire</p>
-          <h3 class="slide-title">Trouver votre logement</h3>
+          <h2 class="slide-title">Trouver votre logement</h2>
           <p class="slide-desc">Appartement en location à Chambéry</p>
         </div>
       </div>
@@ -527,7 +537,7 @@ script-src-elem 'self' 'unsafe-inline'
         <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?w=600&h=700&fit=crop" alt="Entrepreneur cédant son fonds de commerce">
         <div class="slide-overlay">
           <p class="slide-label">03 · Entrepreneur</p>
-          <h3 class="slide-title">Céder votre fonds</h3>
+          <h2 class="slide-title">Céder votre fonds</h2>
           <p class="slide-desc">Cession de fonds de commerce</p>
         </div>
       </div>
@@ -545,8 +555,8 @@ script-src-elem 'self' 'unsafe-inline'
 
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script src="index-script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+<script src="index-script.js" defer></script>
 
 <!-- ═════════════════════════════════════════════════════════════
      TRACKING GOOGLE FORMS
