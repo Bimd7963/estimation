@@ -56,10 +56,16 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap"></noscript>
+<link rel="stylesheet" href="base.css">
 <link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="cookies.css">
-<link rel="stylesheet" href="hamburger.css">
+<link rel="preload" href="cookies.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="preload" href="hamburger.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript>
+  <link rel="stylesheet" href="cookies.css">
+  <link rel="stylesheet" href="hamburger.css">
+</noscript>
 <link rel="canonical" href="https://baptistedaphneimmo.com/venteimmobiliere.html" />
   <!-- Meta Pixel — initialisation silencieuse (sans tracking) -->
 <script>
@@ -141,7 +147,10 @@
 
   <div class="hero-right">
     <div class="hero-right-bg"></div>
-    <img id="hero-img" src="duonb_hero.png" alt="Baptiste Audouin et Daphné Martin Marin — conseillers en immobilier à Chambéry, spécialistes de la vente immobilière en Savoie">
+    <picture>
+      <source srcset="duonb_hero.webp 1x, duonb_hero@2x.webp 2x" type="image/webp">
+      <img id="hero-img" src="duonb_hero.png" alt="Baptiste Audouin et Daphné Martin Marin — conseillers en immobilier à Chambéry, spécialistes de la vente immobilière en Savoie" fetchpriority="high" width="371" height="618">
+    </picture>
     <div class="hero-quote">
       <p>«&nbsp;Nous ne commençons jamais par un chiffre. Nous commençons par comprendre.&nbsp;»</p>
     </div>

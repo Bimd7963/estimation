@@ -20,7 +20,7 @@ document.addEventListener('mouseout',e=>{
 const sbar=document.getElementById('sbar');
 const navEl=document.getElementById('nav');
 function positionSbar(){sbar.style.top=navEl.offsetHeight+'px';}
-positionSbar();
+requestAnimationFrame(positionSbar);
 window.addEventListener('resize',positionSbar,{passive:true});
 window.addEventListener('scroll',()=>{
   sbar.style.width=(window.scrollY/(document.body.scrollHeight-window.innerHeight)*100)+'%';
@@ -73,7 +73,7 @@ function moveCarousel(dir) {
     }
   }
 }
-moveCarousel(0);
+requestAnimationFrame(()=>moveCarousel(0));
 
 const cobs=new IntersectionObserver(entries=>{
   entries.forEach(e=>{

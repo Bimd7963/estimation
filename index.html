@@ -84,9 +84,14 @@ script-src-elem 'self' 'unsafe-inline'
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap"></noscript>
   
+  <link rel="stylesheet" href="base.css">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="cookies.css">
-  <link rel="stylesheet" href="hamburger.css">
+  <link rel="preload" href="cookies.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="hamburger.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="cookies.css">
+    <link rel="stylesheet" href="hamburger.css">
+  </noscript>
   <link rel="canonical" href="https://baptistedaphneimmo.com/" />
   
   <style>
@@ -516,7 +521,7 @@ script-src-elem 'self' 'unsafe-inline'
     <div class="coverflow-track" id="coverflowTrack">
       
       <div class="coverflow-slide active" data-profile="proprio" data-index="0">
-        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=700&fit=crop" alt="Propriétaire vendant sa maison" fetchpriority="high">
+        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=356&h=416&fit=crop&fm=webp&q=75" srcset="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=178&h=208&fit=crop&fm=webp&q=75 1x, https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=356&h=416&fit=crop&fm=webp&q=75 2x" alt="Propriétaire vendant sa maison" fetchpriority="high" width="178" height="208">
         <div class="slide-overlay">
           <p class="slide-label">01 · Propriétaire</p>
           <h2 class="slide-title">Vendre votre bien</h2>
@@ -525,7 +530,7 @@ script-src-elem 'self' 'unsafe-inline'
       </div>
       
       <div class="coverflow-slide" data-profile="locataire" data-index="1">
-        <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=600&h=700&fit=crop" alt="Locataire cherchant son logement">
+        <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=356&h=416&fit=crop&fm=webp&q=75" srcset="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=178&h=208&fit=crop&fm=webp&q=75 1x, https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=356&h=416&fit=crop&fm=webp&q=75 2x" alt="Locataire cherchant son logement" width="178" height="208">
         <div class="slide-overlay">
           <p class="slide-label">02 · Locataire</p>
           <h2 class="slide-title">Trouver votre logement</h2>
@@ -534,7 +539,7 @@ script-src-elem 'self' 'unsafe-inline'
       </div>
       
       <div class="coverflow-slide" data-profile="fonds" data-index="2">
-        <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?w=600&h=700&fit=crop" alt="Entrepreneur cédant son fonds de commerce">
+        <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?w=356&h=416&fit=crop&fm=webp&q=75" srcset="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?w=178&h=208&fit=crop&fm=webp&q=75 1x, https://images.unsplash.com/photo-1556740738-b6a63e27c4df?w=356&h=416&fit=crop&fm=webp&q=75 2x" alt="Entrepreneur cédant son fonds de commerce" width="178" height="208">
         <div class="slide-overlay">
           <p class="slide-label">03 · Entrepreneur</p>
           <h2 class="slide-title">Céder votre fonds</h2>
