@@ -21,7 +21,7 @@ const sbar=document.getElementById('sbar');
 const navEl=document.getElementById('nav');
 function positionSbar(){sbar.style.top=navEl.offsetHeight+'px';}
 requestAnimationFrame(positionSbar);
-window.addEventListener('resize',positionSbar,{passive:true});
+window.addEventListener('resize',()=>requestAnimationFrame(positionSbar),{passive:true});
 window.addEventListener('scroll',()=>{
   sbar.style.width=(window.scrollY/(document.body.scrollHeight-window.innerHeight)*100)+'%';
 },{passive:true});
@@ -53,13 +53,16 @@ window.addEventListener('scroll', () => {
 
 
 let carPos = 0;
+let _cachedCardW = null;
+window.addEventListener('resize', () => { _cachedCardW = null; }, {passive: true});
 function moveCarousel(dir) {
   const track = document.getElementById('carouselTrack');
   const cards = track.querySelectorAll('.avis-card');
   const perView = window.innerWidth > 900 ? 3 : 1;
   const max = cards.length - perView;
   carPos = Math.max(0, Math.min(carPos + dir, max));
-  const cardW = cards[0].offsetWidth + 24;
+  if (_cachedCardW === null) _cachedCardW = cards[0].offsetWidth + 24;
+  const cardW = _cachedCardW;
   track.style.transform = `translateX(-${carPos * cardW}px)`;
 
   const dotsContainer = document.getElementById('carouselDots');
