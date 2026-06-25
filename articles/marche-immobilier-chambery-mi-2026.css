@@ -1,5 +1,5 @@
 /* ════════════════════════════════════════════════════════════════
-   RISQUES-SURESTIMATION.CSS — Page-specific styles
+   MARCHE-IMMOBILIER-MI-2026.CSS — Page-specific styles
    Loaded AFTER base.css (squelette commun : variables, reset, body,
    curseur, scrollbar, nav, footer, mobile-sticky, reveal)
    ════════════════════════════════════════════════════════════════ */
@@ -58,6 +58,28 @@
   max-width: 34rem;
   line-height: 1.85;
   font-weight: 300;
+  margin-bottom: 1.6rem;
+}
+
+/* ── QUICK ANSWER ── */
+.quick-answer {
+  max-width: 34rem;
+  padding: 1.3rem 1.6rem;
+  border: 1px solid rgba(168,132,74,0.28);
+  background: rgba(168,132,74,0.04);
+  font-size: 0.88rem;
+  line-height: 1.9;
+  color: var(--text-muted);
+}
+
+.quick-answer-label {
+  font-size: 0.59rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.55rem;
+  font-weight: 400;
+  display: block;
 }
 
 /* ── MAIN CONTENT WRAPPER ── */
@@ -193,9 +215,13 @@
 }
 
 /* ── CTA SECTION ── */
+.article-section:last-child {
+  padding-bottom: 2rem;
+}
+
 .cta-area {
   text-align: center;
-  padding: 5rem 8vw 6rem;
+  padding: 2.5rem 8vw 6rem;
 }
 
 .cta-rule {
@@ -282,7 +308,7 @@
   }
 
   .cta-area {
-    padding: 4rem 5vw 5rem;
+    padding: 2rem 5vw 5rem;
   }
 }
 
@@ -311,15 +337,12 @@
   }
 
   .cta-area {
-    padding: 3rem 5vw 4rem;
+    padding: 2rem 5vw 4rem;
   }
 }
 
 /* ════════════════════════════════════════════════════════════════
    RESPONSIVE — 400-480px
-   (grands téléphones type Pixel/iPhone Pro Max :
-   viewport CSS plus large => rem perçu plus petit,
-   on compense le texte courant)
    ════════════════════════════════════════════════════════════════ */
 @media (min-width: 400px) and (max-width: 480px) {
   .signal-body,
