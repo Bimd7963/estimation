@@ -9,15 +9,25 @@ const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSfHPxMd8HyjV-U
 
 function trackProfileSelection(profile) {
   try {
-    const timestamp = new Date().toLocaleString('fr-FR');
-    const device = navigator.userAgent.substring(0, 50);
-    const data = `entry.1134277817=${encodeURIComponent(profile)}&entry.1427303831=${encodeURIComponent(timestamp)}&entry.313323232=${encodeURIComponent(device)}`;
+    // Dédup localStorage
+    var tracked = [];
+    try { tracked = JSON.parse(localStorage.getItem('bd_tracked')) || []; } catch(e) {}
+    if (tracked.indexOf(profile) !== -1) return;
+
+    var timestamp = new Date().toLocaleString('fr-FR');
+    var device = navigator.userAgent.substring(0, 50);
+    var data = 'entry.1134277817=' + encodeURIComponent(profile) +
+               '&entry.1427303831=' + encodeURIComponent(timestamp) +
+               '&entry.313323232=' + encodeURIComponent(device);
     fetch(GOOGLE_FORM_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: data,
       mode: 'no-cors'
-    }).catch(err => console.log('✓ Enregistré'));
+    }).catch(function() { console.log('✓ Enregistré'); });
+
+    tracked.push(profile);
+    localStorage.setItem('bd_tracked', JSON.stringify(tracked));
   } catch(e) {}
 }
 
@@ -247,7 +257,7 @@ if (container) {
         };
        if (urls[profile]) {
         console.log('  → Redirection vers:', urls[profile]);
-        trackProfileSelection(profile);
+        trackProfileSelection('card_' + profile);
         setTimeout(function() {
           window.location.href = urls[profile];
         }, 300);
@@ -395,3 +405,19 @@ if (document.readyState === 'loading') {
 } else {
   init();
 }
+
+// Tracking nav — vente immobilière & cession de fonds
+document.addEventListener('DOMContentLoaded', function() {
+  var navTargets = {
+    '/venteimmobiliere.html': 'nav_vente_immobiliere',
+    '/cessiondefonds.html': 'nav_cession_fonds'
+  };
+  document.querySelectorAll('#nav .nav-links a, .menu-nav-link').forEach(function(link) {
+    var path = link.getAttribute('href');
+    if (navTargets[path]) {
+      link.addEventListener('click', function() {
+        trackProfileSelection(navTargets[path]);
+      });
+    }
+  });
+});

@@ -5,22 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
- <meta http-equiv="Content-Security-Policy" content="
+  <meta http-equiv="Content-Security-Policy" content="
   default-src 'self';
   script-src 'self' 'unsafe-inline'
-  https://www.googletagmanager.com
-  https://www.google-analytics.com
-  https://www.clarity.ms
-  https://scripts.clarity.ms
-  https://connect.facebook.net
-  https://cdnjs.cloudflare.com;
-script-src-elem 'self' 'unsafe-inline'
-  https://www.googletagmanager.com
-  https://www.google-analytics.com
-  https://www.clarity.ms
-  https://scripts.clarity.ms
-  https://connect.facebook.net
-  https://cdnjs.cloudflare.com;
+    https://www.googletagmanager.com
+    https://www.google-analytics.com
+    https://www.clarity.ms
+    https://scripts.clarity.ms
+    https://connect.facebook.net;
+  script-src-elem 'self' 'unsafe-inline'
+    https://www.googletagmanager.com
+    https://www.google-analytics.com
+    https://www.clarity.ms
+    https://scripts.clarity.ms
+    https://connect.facebook.net;
   connect-src 'self'
     https://docs.google.com
     https://www.google-analytics.com
@@ -39,21 +37,23 @@ script-src-elem 'self' 'unsafe-inline'
   img-src 'self' data: https:;
   frame-src 'none';
 ">
+
   <title>Baptiste & Daphné Immobilier | Chambéry & alentours</title>
   <meta name="description" content="Conseillers en immobilier à Chambéry et en Savoie. Estimation rigoureuse, stratégie de prix argumentée, accompagnement personnalisé. Baptiste & Daphné.">
   <meta name="robots" content="index, follow">
-<meta property="og:title" content="Baptiste & Daphné Immobilier | Chambéry & alentours">
-<meta property="og:description" content="Conseillers en immobilier à Chambéry et en Savoie. Estimation rigoureuse, stratégie de prix argumentée, accompagnement personnalisé. Baptiste & Daphné.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://baptistedaphneimmo.com">
-<meta property="og:locale" content="fr_FR">
-<meta property="og:image" content="https://baptistedaphneimmo.com/duonb_hero.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Baptiste & Daphné Immobilier | Chambéry & alentours">
-<meta name="twitter:description" content="Conseillers en immobilier à Chambéry et en Savoie. Estimation rigoureuse, stratégie de prix argumentée, accompagnement personnalisé. Baptiste & Daphné.">
-<meta name="twitter:image" content="https://baptistedaphneimmo.com/duonb_hero.png">
+
+  <meta property="og:title" content="Baptiste & Daphné Immobilier | Chambéry & alentours">
+  <meta property="og:description" content="Conseillers en immobilier à Chambéry et en Savoie. Estimation rigoureuse, stratégie de prix argumentée, accompagnement personnalisé. Baptiste & Daphné.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://baptistedaphneimmo.com">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:image" content="https://baptistedaphneimmo.com/duonb_hero.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Baptiste & Daphné Immobilier | Chambéry & alentours">
+  <meta name="twitter:description" content="Conseillers en immobilier à Chambéry et en Savoie. Estimation rigoureuse, stratégie de prix argumentée, accompagnement personnalisé. Baptiste & Daphné.">
+  <meta name="twitter:image" content="https://baptistedaphneimmo.com/duonb_hero.png">
 
   <script type="application/ld+json">
   {
@@ -71,6 +71,12 @@ script-src-elem 'self' 'unsafe-inline'
       "postalCode": "73000",
       "addressCountry": "FR"
     },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "ratingCount": "31",
+      "bestRating": "5"
+    },
     "@id": "https://baptistedaphneimmo.com/#organization",
     "sameAs": [
       "https://www.facebook.com/profile.php?id=61579482170136",
@@ -82,7 +88,25 @@ script-src-elem 'self' 'unsafe-inline'
     ]
   }
   </script>
-  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://baptistedaphneimmo.com/#website",
+    "url": "https://baptistedaphneimmo.com",
+    "name": "Baptiste & Daphné Immobilier",
+    "publisher": { "@id": "https://baptistedaphneimmo.com/#organization" },
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://baptistedaphneimmo.com/articles.html?q={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="dns-prefetch" href="https://www.googletagmanager.com">
   <link rel="dns-prefetch" href="https://www.clarity.ms">
@@ -93,11 +117,11 @@ script-src-elem 'self' 'unsafe-inline'
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap"></noscript>
-  
+
   <link rel="preload" href="base.css" as="style">
-  <link rel="preload" href="style.css" as="style">
+  <link rel="preload" href="index-new.css" as="style">
   <link rel="stylesheet" href="base.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="index-new.css">
   <link rel="preload" href="cookies.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="hamburger.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript>
@@ -105,408 +129,6 @@ script-src-elem 'self' 'unsafe-inline'
     <link rel="stylesheet" href="hamburger.css">
   </noscript>
   <link rel="canonical" href="https://baptistedaphneimmo.com/" />
-  
-  <style>
-    /* ═══════════════════════════════════════
-       LANDING PAGE — COVERFLOW 3D
-       ═══════════════════════════════════════ */
-    
-    .landing-page {
-      min-height: 100vh;
-      height: 100vh;
-      background: var(--ivory);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 0;
-      position: relative;
-      overflow: hidden;
-      justify-content: space-between;
-    }
-    
-    .landing-page::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 120% 100% at 50% 0%, rgba(168,132,74,0.08) 0%, transparent 70%),
-                  radial-gradient(ellipse 150% 120% at 20% 100%, rgba(30,37,53,0.04) 0%, transparent 60%);
-      pointer-events: none;
-      z-index: 0;
-    }
-    
-    /* ── EN-TÊTE ── */
-    .landing-header {
-      position: relative;
-      z-index: 2;
-      text-align: center;
-      padding: 3rem 5vw 2rem;
-      width: 100%;
-      max-width: 900px;
-      margin: 0 auto;
-      flex-shrink: 0;
-    }
-    
-    .landing-eyebrow {
-      font-family: 'Jost', sans-serif;
-      font-size: 0.6rem;
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 0.5rem;
-      font-weight: 400;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.8rem;
-      opacity: 0;
-      animation: fadeUpLanding 0.8s 0.2s both;
-    }
-    
-    .landing-eyebrow::before,
-    .landing-eyebrow::after {
-      content: '';
-      display: block;
-      width: 20px;
-      height: 1px;
-      background: var(--gold);
-      flex-shrink: 0;
-    }
-    
-    .landing-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.5rem, 3.2vw, 2.2rem);
-      font-weight: 300;
-      line-height: 1.1;
-      letter-spacing: -0.01em;
-      color: var(--charcoal);
-      margin-bottom: 0.6rem;
-      opacity: 0;
-      animation: fadeUpLanding 0.9s 0.3s both;
-    }
-    
-    .landing-title em {
-      font-style: italic;
-      color: var(--gold);
-    }
-    
-    .landing-subtitle {
-      font-family: 'Jost', sans-serif;
-      font-size: 0.75rem;
-      font-weight: 400;
-      color: var(--gray);
-      line-height: 1.65;
-      max-width: 550px;
-      margin: 0 auto;
-      opacity: 0;
-      animation: fadeUpLanding 0.9s 0.4s both;
-    }
-    
-    /* ── CARROUSEL 3D COVERFLOW ── */
-    .coverflow-container {
-      position: relative;
-      width: 100%;
-      height: 38vh;
-      perspective: 1200px;
-      margin-top: 1.5rem;
-      opacity: 0;
-      animation: fadeUpLanding 1s 0.5s both;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: visible;
-      flex-shrink: 0;
-      z-index: 1;
-    }
-    
-    .coverflow-track {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      transform-style: preserve-3d;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    
-    .coverflow-slide {
-      position: absolute;
-      width: clamp(280px, 40vw, 480px);
-      aspect-ratio: 1;
-      cursor: pointer;
-      user-select: none;
-      overflow: hidden;
-      border-radius: 12px;
-      border: 1px solid rgba(168, 132, 74, 0.12);
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-      transform-style: preserve-3d;
-      z-index: 50;
-      flex-shrink: 0;
-      transition: box-shadow 0.3s ease;
-      pointer-events: auto;
-    }
-    
-    .coverflow-slide:hover {
-      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.4);
-    }
-    
-    .coverflow-slide img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      filter: grayscale(6%) brightness(0.93);
-      transition: filter 0.4s ease;
-    }
-    
-    .coverflow-slide:hover img {
-      filter: grayscale(2%) brightness(1);
-    }
-    
-    .coverflow-slide.active {
-      z-index: 100;
-    }
-    
-    .coverflow-slide.active img {
-      filter: grayscale(2%) brightness(1);
-    }
-    
-    .slide-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        180deg,
-        rgba(30, 37, 53, 0) 0%,
-        rgba(30, 37, 53, 0.6) 50%,
-        rgba(30, 37, 53, 0.98) 100%
-      );
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: clamp(1.5rem, 8vw, 2.5rem);
-      z-index: 2;
-      opacity: 1;
-      transition: opacity 0.6s ease;
-      pointer-events: none;
-    }
-    
-    .coverflow-slide.active .slide-overlay {
-      opacity: 1;
-    }
-    
-    .coverflow-slide:not(.active) .slide-overlay {
-      opacity: 0.85;
-    }
-    
-    .slide-label {
-      font-family: 'Jost', sans-serif;
-      font-size: clamp(0.55rem, 2vw, 0.6rem);
-      font-weight: 400;
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 0.6rem;
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-    }
-    
-    .slide-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.1rem, 5vw, 1.8rem);
-      font-weight: 300;
-      color: var(--ivory);
-      margin: 0 0 0.4rem;
-      line-height: 1.2;
-      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
-    }
-    
-    .slide-desc {
-      font-family: 'Jost', sans-serif;
-      font-size: clamp(0.75rem, 2vw, 0.85rem);
-      font-weight: 400;
-      color: rgba(250, 247, 242, 0.95);
-      margin: 0;
-      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
-    }
-    
-    /* ── CONTRÔLES ── */
-    .coverflow-controls {
-      position: relative;
-      z-index: 2;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1.2rem;
-      margin: 0.8rem 0;
-      opacity: 0;
-      animation: fadeUpLanding 1s 0.6s both;
-      flex-shrink: 0;
-    }
-    
-    .coverflow-arrow {
-      width: 40px;
-      height: 40px;
-      border: 1px solid var(--border-l);
-      background: var(--ivory);
-      border-radius: 50%;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--charcoal);
-      font-size: 1.1rem;
-      font-weight: 400;
-      transition: all 0.3s ease;
-      user-select: none;
-      flex-shrink: 0;
-    }
-    
-    .coverflow-arrow:hover {
-      background: var(--gold);
-      border-color: var(--gold);
-      transform: scale(1.05);
-    }
-    
-    .coverflow-arrow:active {
-      transform: scale(0.95);
-    }
-    
-    .coverflow-hint {
-      font-family: 'Jost', sans-serif;
-      font-size: 0.6rem;
-      color: var(--gray);
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      display: none;
-      flex-shrink: 0;
-    }
-    
-    /* ── ANIMATIONS ── */
-    @keyframes fadeUpLanding {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    
-    /* ── RESPONSIVE ── */
-    @media (max-width: 900px) {
-      .landing-page {
-        height: 100vh;
-      }
-      
-      .landing-header {
-        padding: 2.2rem 1rem 1.5rem;
-      }
-      
-      .landing-title {
-        font-size: clamp(1.4rem, 3.5vw, 2rem);
-        margin-bottom: 0.5rem;
-      }
-      
-      .landing-subtitle {
-        font-size: 0.68rem;
-        line-height: 1.6;
-      }
-      
-      .coverflow-container {
-        height: 36vh;
-        margin-top: 1.2rem;
-      }
-      
-      .coverflow-slide {
-        width: clamp(240px, 38vw, 400px);
-      }
-      
-      .coverflow-controls {
-        gap: 1rem;
-        margin: 0.8rem 0;
-      }
-      
-      .coverflow-arrow {
-        width: 36px;
-        height: 36px;
-        font-size: 1rem;
-      }
-    }
-    
-    @media (max-width: 600px) {
-      .landing-page {
-        height: 100vh;
-      }
-      
-      .landing-header {
-        padding: 1.8rem 0.8rem 1.2rem;
-      }
-      
-      .landing-eyebrow {
-        font-size: 0.7rem;       /* +27% */
-        margin-bottom: 0.4rem;
-      }
-
-      .landing-title {
-        font-size: clamp(1.6rem, 5vw, 2.2rem);   /* min +33%, max +29%, 5vw meilleur scaling */
-        margin-bottom: 0.4rem;
-      }
-
-      .landing-subtitle {
-        font-size: 0.7rem;       /* +38% */
-        line-height: 1.55;
-        max-width: 100%;
-        padding: 0 0.5rem;
-      }
-      
-      .coverflow-container {
-        height: 32vh;
-        margin-top: 1rem;
-      }
-      
-      .coverflow-slide {
-        width: clamp(180px, 35vw, 300px);
-      }
-      
-      .slide-title {
-        font-size: clamp(1rem, 4vw, 1.4rem);
-      }
-      
-      .slide-label {
-        font-size: clamp(0.5rem, 1.5vw, 0.55rem);
-      }
-      
-      .slide-desc {
-        font-size: clamp(0.65rem, 1.8vw, 0.75rem);
-      }
-      
-      .coverflow-controls {
-        gap: 0.8rem;
-        margin: 0.6rem 0;
-      }
-      
-      .coverflow-arrow {
-        width: 32px;
-        height: 32px;
-        font-size: 0.9rem;
-      }
-      
-      .coverflow-hint {
-        display: block;
-        width: 100%;
-        text-align: center;
-        font-size: 0.55rem;
-      }
-    }
-    
-    /* Masquer la nav sur landing */
-    .landing-page nav {
-      display: none;
-    }
-    
-    .landing-page .mobile-sticky {
-      display: none;
-    }
-  </style>
 </head>
 
 <body>
@@ -514,90 +136,151 @@ script-src-elem 'self' 'unsafe-inline'
 <div id="sbar"></div>
 <div id="cur"></div>
 <div id="cur-ring"></div>
+<div class="mobile-sticky"><a href="tel:0610327493" onclick="fbq('track', 'Contact')">☎&nbsp;&nbsp;06 10 32 74 93 · Nous décrocherons</a></div>
 
-<div class="landing-page">
-  
-  <!-- EN-TÊTE -->
-  <div class="landing-header">
-    <p class="landing-eyebrow">Chambéry &amp; Savoie</p>
-    <h1 class="landing-title">
-      Stratégie immobilière<br><em>sur mesure</em>
+<!-- NAV -->
+<nav id="nav">
+  <a href="/index.html" class="nav-logo">Baptiste <span>&</span> Daphné<br>Immobilier</a>
+  <ul class="nav-links">
+    <li class="nav-dropdown">
+      <a href="/venteimmobiliere.html">Vente immobilière<span class="nav-caret" aria-hidden="true">▾</span></a>
+      <ul class="nav-dropdown-menu">
+        <li><a href="/notreapproche.html">Notre approche</a></li>
+        <li><a href="/estimation-chambery.html">Estimation</a></li>
+      </ul>
+    </li>
+    <li><a href="/cessiondefonds.html">Cession de fonds</a></li>
+    <li><a href="/venteimmobiliere.html#avis">Avis clients</a></li>
+    <li><a href="/articles.html">Articles</a></li>
+    <li><a href="/faq.html">Questions fréquentes</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="tel:0610327493" onclick="fbq('track', 'Contact')" class="nav-phone">06 10 32 74 93</a>
+    <a href="/venteimmobiliere.html#rdv" class="nav-cta">Discuter de mon projet</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="home-hero">
+  <div class="home-hero-left">
+    <p class="home-eyebrow">Chambéry &amp; Savoie · 14 communes</p>
+    <h1 class="home-title">
+      Stratégie immobilière<br>
+      <em>sur mesure</em><br>
+      à Chambéry & alentours
     </h1>
-    <p class="landing-subtitle">
-      Sélectionnez votre profil pour découvrir comment Baptiste &amp; Daphné vous accompagnent.
+    <p class="home-subtitle">
+      Baptiste et Daphné accompagnent propriétaires vendeurs et chefs d'entreprise dans leurs projets immobiliers.
+      Une approche fondée sur l'écoute, la rigueur et un prix de départ juste, pour que votre projet avance sereinement.
     </p>
   </div>
-  
-  <!-- CARROUSEL COVERFLOW 3D -->
-  <div class="coverflow-container">
-    <div class="coverflow-track" id="coverflowTrack">
-      
-      <div class="coverflow-slide active" data-profile="proprio" data-index="0">
-        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=356&h=416&fit=crop&fm=webp&q=75" srcset="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=178&h=208&fit=crop&fm=webp&q=75 1x, https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=356&h=416&fit=crop&fm=webp&q=75 2x" alt="Propriétaire vendant sa maison" fetchpriority="high" width="178" height="208">
-        <div class="slide-overlay">
-          <p class="slide-label">01 · Propriétaire</p>
-          <h2 class="slide-title">Vendre votre bien</h2>
-          <p class="slide-desc">Appartement ou maison à Chambéry</p>
-        </div>
-      </div>
-      
-      <div class="coverflow-slide" data-profile="locataire" data-index="1">
-        <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=356&h=416&fit=crop&fm=webp&q=75" srcset="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=178&h=208&fit=crop&fm=webp&q=75 1x, https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=356&h=416&fit=crop&fm=webp&q=75 2x" alt="Locataire cherchant son logement" loading="lazy" width="178" height="208">
-        <div class="slide-overlay">
-          <p class="slide-label">02 · Locataire</p>
-          <h2 class="slide-title">Trouver votre logement</h2>
-          <p class="slide-desc">Appartement en location à Chambéry</p>
-        </div>
-      </div>
-      
-      <div class="coverflow-slide" data-profile="fonds" data-index="2">
-        <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?w=356&h=416&fit=crop&fm=webp&q=75" srcset="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?w=178&h=208&fit=crop&fm=webp&q=75 1x, https://images.unsplash.com/photo-1556740738-b6a63e27c4df?w=356&h=416&fit=crop&fm=webp&q=75 2x" alt="Entrepreneur cédant son fonds de commerce" loading="lazy" width="178" height="208">
-        <div class="slide-overlay">
-          <p class="slide-label">03 · Entrepreneur</p>
-          <h2 class="slide-title">Céder votre fonds</h2>
-          <p class="slide-desc">Cession de fonds de commerce</p>
-        </div>
-      </div>
-      
+  <div class="home-hero-right">
+    <div class="home-hero-right-bg"></div>
+    <picture>
+      <source srcset="duonb_hero.webp 1x, duonb_hero@2x.webp 2x" type="image/webp">
+      <img src="duonb_hero.png" alt="Baptiste Audouin et Daphné Martin Marin, conseillers en immobilier à Chambéry" fetchpriority="high" width="371" height="618">
+    </picture>
+    <div class="home-hero-quote">
+      <p>«&nbsp;Nous ne commençons jamais par un chiffre. Nous commençons par comprendre.&nbsp;»</p>
     </div>
   </div>
-  
-  <!-- CONTRÔLES -->
-  <div class="coverflow-controls">
-    <button class="coverflow-arrow" id="prevBtn" aria-label="Slide précédent">←</button>
-    <button class="coverflow-arrow" id="nextBtn" aria-label="Slide suivant">→</button>
+</section>
+
+<!-- CARDS DE SÉLECTION -->
+<section class="home-cards-section">
+  <div class="home-section-hd reveal">
+    <p class="home-section-eyebrow">Votre situation</p>
+    <h2 class="home-section-title">Quel est votre projet&nbsp;?</h2>
   </div>
-  
-  <p class="coverflow-hint">Utilisez les flèches pour naviguer</p>
+  <div class="home-cards-grid">
 
-</div>
+    <a href="/venteimmobiliere.html" class="home-card reveal">
+      <span class="card-num">01 · Propriétaire vendeur</span>
+      <div class="card-body">
+        <h3 class="card-title">Vendre votre bien</h3>
+        <p class="card-desc">Appartement ou maison à Chambéry et alentours</p>
+      </div>
+      <span class="card-arrow">→</span>
+    </a>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
-<script src="index-script.js" defer></script>
+    <a href="/cessiondefonds.html" class="home-card reveal d1">
+      <span class="card-num">02 · Entrepreneur</span>
+      <div class="card-body">
+        <h3 class="card-title">Céder votre fonds<br>de commerce</h3>
+        <p class="card-desc">Valorisation et transmission en Savoie</p>
+      </div>
+      <span class="card-arrow">→</span>
+    </a>
 
-<!-- ═════════════════════════════════════════════════════════════
-     TRACKING GOOGLE FORMS
-     ═════════════════════════════════════════════════════════════ -->
+    <a href="/locataire.html" class="home-card reveal d2">
+      <span class="card-num">03 · Locataire</span>
+      <div class="card-body">
+        <h3 class="card-title">Vous cherchez<br>à louer&nbsp;?</h3>
+        <p class="card-desc">Appartements en location à Chambéry</p>
+      </div>
+      <span class="card-arrow">→</span>
+    </a>
+
+  </div>
+</section>
+
+<!-- AVIS + CRÉDIBILITÉ -->
+<section class="home-avis-section">
+  <div class="home-section-hd reveal">
+    <p class="home-section-eyebrow">Ils nous ont fait confiance</p>
+    <h2 class="home-section-title">Ce qu'ils disent</h2>
+  </div>
+  <div class="home-avis-grid">
+
+    <div class="home-avis-card reveal">
+      <div class="avis-stars-home">★★★★★</div>
+      <p class="avis-txt-home">«&nbsp;Excellent accompagnement dans la mise en vente de mon appartement. Conseils pertinents, aucune pression. Baptiste va au rythme du client. Je recommande chaudement.&nbsp;»</p>
+      <div class="avis-auth-home">Nathalie H. · Avis Google</div>
+    </div>
+
+    <div class="home-avis-card reveal d1">
+      <div class="avis-stars-home">★★★★★</div>
+      <p class="avis-txt-home">«&nbsp;De la première visite jusqu'à la signature, un accompagnement sans faille à chaque étape. Un grand merci.&nbsp;»</p>
+      <div class="avis-auth-home">Nicolas G. · Avis Google</div>
+    </div>
+
+    <div class="home-avis-card reveal d2">
+      <div class="avis-stars-home">★★★★★</div>
+      <p class="avis-txt-home">«&nbsp;Très professionnels, à l'écoute, disponibles. Grâce à leur accompagnement sérieux et humain, chaque étape s'est déroulée en toute confiance.&nbsp;»</p>
+      <div class="avis-auth-home">Michèle B. · Avis Google</div>
+    </div>
+
+  </div>
+  <div class="home-rating-block reveal">
+    <span class="rating-score">5,0</span>
+    <div class="rating-meta">
+      <span class="rating-stars">★★★★★</span>
+      <span class="rating-label">31 avis Google · 14 communes d'intervention</span>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="home-cta-section">
+  <h2 class="home-cta-heading reveal">Un projet immobilier à Chambéry&nbsp;& alentours ?</h2>
+  <p class="home-cta-sub reveal d1">Nous répondons dans la journée.</p>
+  <a href="/venteimmobiliere.html#rdv" class="home-cta-btn reveal d2">Discuter de mon projet</a>
+</section>
+
+<footer>
+  <div class="footer-logo">Baptiste <span>&</span> Daphné<br>Chambéry &amp; alentours</div>
+  <div class="footer-info">EI Daphné Martin Marin Guillon &amp; EI Baptiste Audouin · Conseillers en immobilier · Réseau IAD France<br>RSAC Chambéry n° 992 606 400 et n° 943 392 555 · Document non contractuel · 2026</div>
+  <div class="footer-links">
+    <a href="mentionslegales.html">Mentions légales</a>
+    <a href="politiquedeconfidentialite.html">Confidentialité</a>
+    <a href="gestiondescookies.html">Cookies</a>
+  </div>
+</footer>
+
 <script src="script.js" defer></script>
+<script src="cookies.js" defer></script>
+<script src="hamburger-nav-component.js" defer></script>
+<script src="tracking.js" defer></script>
 
-<script>
-
-function scrollToProfiles(e) {
-  e.preventDefault();
-  document.getElementById('profilesGrid').scrollIntoView({ behavior: 'smooth' });
-}
-
-
-document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('.profile-card').forEach(card => {
-    card.addEventListener('click', function() {
-      const profile = this.dataset.profile;
-      trackProfileSelection(profile);
-      sessionStorage.setItem('userProfile', profile);
-    });
-  });
-});
-  
-</script>
 </body>
 </html>

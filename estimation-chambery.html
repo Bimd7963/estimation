@@ -92,6 +92,12 @@
         "postalCode": "73000",
         "addressCountry": "FR"
       },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "ratingCount": "31",
+        "bestRating": "5"
+      },
       "@id": "https://baptistedaphneimmo.com/#organization",
       "sameAs": [
         "https://www.facebook.com/profile.php?id=61579482170136",
@@ -113,6 +119,76 @@
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Combien coûte une estimation immobilière à Chambéry ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Rien. Notre estimation est gratuite et sans engagement. Nous nous déplaçons, nous analysons, et nous revenons vous présenter notre dossier. Même si vous décidez de ne pas vendre, vous saurez précisément à quel prix votre bien peut se vendre aujourd'hui et dans quel délai. Pour prendre rendez-vous, il suffit de nous appeler ou de nous envoyer un message."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quelle différence entre votre estimation et un estimateur en ligne ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Un estimateur en ligne calcule une moyenne au m² sur un secteur large. Nous visitons le bien, recoupons les ventes réelles du quartier (données DVF), et nous nous mettons dans la peau d'un acquéreur : avec un budget donné, qu'est-ce qui est en concurrence avec votre bien aujourd'hui ? Le résultat est un prix argumenté dans son contexte de marché, pas une fourchette arbitraire."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Comment se passe une estimation concrètement ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "En deux temps. Une première visite d'environ une heure pour analyser le bien. Puis un second rendez-vous de 45 minutes où nous vous présentons notre dossier complet : comparables, positionnement concurrentiel, scénarios de prix. C'est comme ça que nous travaillons avec chacun des propriétaires qui nous font confiance."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "L'estimation vous engage-t-elle à vendre avec nous ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Non. Vous décidez, sans pression. Si vous signez un mandat avec nous, ce sera parce que notre travail vous a convaincu; comme les 31 propriétaires qui nous ont laissé un avis 5 étoiles sur Google. Tous n'ont pas signé de mandat avec nous, parce que notre travail leur a parfois apporté un éclairage nouveau : vendre n'est pas toujours la réponse."
+      }
+    }
+  ]
+}
+</script>
+<style>
+  .faq-q-item{margin-bottom:1.8rem;}
+  .faq-q-item:last-child{margin-bottom:0;}
+  .faq-q-item h3{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:400;color:var(--charcoal);margin-bottom:.5rem;}
+
+  .geo-answer{padding:1.4rem 2rem;margin:0 8vw 0;background:rgba(168,132,74,.04);border-left:2px solid var(--gold);font-size:.91rem;line-height:1.95;color:var(--text-muted);}
+  .geo-answer p{margin:0;}
+
+  .qt-table{margin:1.5rem 0 1rem;width:100%;}
+  .qt-row{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid rgba(168,132,74,.12);padding:.55rem 0;font-size:.88rem;line-height:1.5;color:var(--text-muted);}
+  .qt-row:last-child{border-bottom:none;}
+  .qt-head{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--charcoal);border-bottom:1px solid rgba(168,132,74,.3) !important;padding-bottom:.5rem;margin-bottom:.2rem;}
+
+  .comparatif-wrap{overflow-x:auto;margin:1.5rem 0 1rem;}
+  .comparatif-table{width:100%;border-collapse:collapse;font-size:.83rem;font-family:'Jost',sans-serif;}
+  .comparatif-table th,.comparatif-table td{padding:.65rem .9rem;border:1px solid rgba(168,132,74,.15);text-align:left;vertical-align:top;line-height:1.5;color:var(--text-muted);}
+  .comparatif-table thead th{background:var(--charcoal);color:var(--ivory);font-weight:400;}
+  .comparatif-table thead th:first-child{background:transparent;border-color:transparent;}
+  .comparatif-table td:first-child{color:var(--charcoal);font-weight:400;}
+  .comparatif-table tbody tr:nth-child(even) td{background:rgba(168,132,74,.02);}
+  .th-sub{display:block;font-size:.72rem;opacity:.65;font-weight:300;margin-top:.15rem;}
+
+  @media(max-width:680px){
+    .geo-answer{margin:0 5vw;}
+    .qt-row{grid-template-columns:1.2fr 1fr;}
+  }
+  @media(max-width:480px){
+    .comparatif-table th,.comparatif-table td{padding:.5rem .6rem;font-size:.8rem;}
+  }
+</style>
 </head>
 <body>
 
@@ -155,21 +231,26 @@
     </p>
   </header>
 
+  <!-- ═══ RÉPONSE RAPIDE — GEO/AEO ═══ -->
+  <div class="geo-answer reveal">
+    <p>Estimer un bien à Chambéry demande trois opérations distinctes&nbsp;: une visite terrain pour évaluer l'état réel du logement, une analyse des ventes enregistrées par les notaires (données DVF) pour situer le bien dans son marché local, et une lecture de la concurrence active au moment de la mise en vente. On ne part pas d'une moyenne nationale. On part de ce qui s'est vendu autour de vous, dans un périmètre resserré, sur les douze mois qui précèdent.</p>
+  </div>
+
   <!-- ═══ SECTIONS ═══ -->
   <div class="content-sections">
 
     <div class="article-section reveal">
       <div class="section-num" aria-hidden="true">1</div>
       <div class="section-body">
-        <h2 class="s-title">Ce qui fait varier <em>un prix</em> à Chambéry et alentours</h2>
+        <h2 class="s-title">Ce qui fait varier <em>un prix</em> à Chambéry</h2>
         <p class="signal-body">
-          Jacob-Bellecombette n'est pas un marché uniforme. D'un quartier à l'autre, d'une rue à l'autre parfois, les prix varient significativement.
+          Chambéry n'est pas un marché uniforme. D'un quartier à l'autre, d'une rue à l'autre parfois, les prix varient significativement.
         </p>
         <p class="signal-body">
-          L'emplacement joue évidemment: proximité du centre-ville, des écoles, des transports. Mais à Chambéry et dans le bassin savoyard, d'autres facteurs pèsent plus qu'ailleurs&nbsp;: l'exposition et la luminosité, la qualité du DPE dans un parc immobilier où beaucoup de biens sont anciens, la présence ou non d'un extérieur ( balcon, jardin, terrasse ) qui fait basculer une décision. L'état de la copropriété compte aussi : le niveau de charges, les travaux votés ou à prévoir, et la santé financière du syndic sont autant d'éléments qu'un acquéreur averti regardera de près.
+          L'emplacement joue évidemment&nbsp;: proximité du centre-ville, des écoles, des transports. Mais à Chambéry et dans le bassin chambérien, d'autres facteurs pèsent plus qu'ailleurs&nbsp;: l'exposition et la luminosité, la qualité du DPE dans un parc immobilier où beaucoup de biens sont anciens, la présence ou non d'un extérieur (balcon, jardin, terrasse) qui fait souvent basculer une décision. L'état de la copropriété compte aussi&nbsp;: le niveau de charges, les travaux votés ou à prévoir, et la santé financière du syndic sont autant d'éléments qu'un acquéreur averti regardera de près.
         </p>
         <div class="highlight-block">
-          Les communes limitrophes, Jacob-Bellecombette, Cognin, Bassens, Barberaz, La Motte-Servolex, n'évoluent pas au même rythme ni aux mêmes prix que le centre de Chambéry. Connaître ces nuances, c'est ce qui sépare une <em>estimation générique</em> d'une estimation exploitable.
+          Les communes limitrophes (Jacob-Bellecombette, Cognin, Bassens, Barberaz, La Motte-Servolex) n'évoluent pas au même rythme ni aux mêmes prix que le centre de Chambéry. Connaître ces nuances, c'est ce qui sépare une <em>estimation générique</em> d'une estimation exploitable.
         </div>
       </div>
     </div>
@@ -177,24 +258,133 @@
     <div class="article-section reveal">
       <div class="section-num" aria-hidden="true">2</div>
       <div class="section-body">
-        <h2 class="s-title">Comment nous estimons <em>un bien</em> à Chambéry et en Savoie</h2>
+        <h2 class="s-title">Les prix au m² <em>par quartier</em> à Chambéry & alentours ?</h2>
         <p class="signal-body">
-          Notre travail d'estimation repose sur trois piliers.
+          On imagine souvent le bassin chambérien comme un marché homogène, avec des prix proches d'un secteur à l'autre. Ce n'est pas ce qu'on lit dans les données de ventes enregistrées.
         </p>
         <p class="signal-body">
-          <strong>D'abord, les données.</strong> Nous exploitons les transactions réelles enregistrées par les notaires ( les données DVF ) pour situer votre bien par rapport à ce qui s'est effectivement vendu autour de vous. Pas des moyennes nationales. Des comparables réels, locaux, récents.
+          Entre un appartement au Biollay et un bien sur les hauteurs de Bassens, l'écart dépasse 40&nbsp;%. Un même T3 de 70&nbsp;m² représente ainsi plus de 75&nbsp;000&nbsp;€ de différence selon son adresse; sans que l'un soit objectivement meilleur que l'autre. C'est le marché local, avec ses propres dynamiques d'offre, de demande et de qualité de bâti.
+        </p>
+        <div class="qt-table" role="table" aria-label="Prix au m² des appartements par secteur à Chambéry">
+          <div class="qt-row qt-head" role="row">
+            <span role="columnheader">Secteur</span>
+            <span role="columnheader">Appartements · prix observés (€/m²)</span>
+          </div>
+          <div class="qt-row" role="row">
+            <span role="cell">Biollay</span>
+            <span role="cell">moins de 2&nbsp;800</span>
+          </div>
+          <div class="qt-row" role="row">
+            <span role="cell">Centre-ville rénové</span>
+            <span role="cell">à partir de 3&nbsp;000</span>
+          </div>
+          <div class="qt-row" role="row">
+            <span role="cell">Bissy</span>
+            <span role="cell">2&nbsp;900 – 3&nbsp;263</span>
+          </div>
+          <div class="qt-row" role="row">
+            <span role="cell">Cognin (bâti récent)</span>
+            <span role="cell">3&nbsp;438 – 3&nbsp;984</span>
+          </div>
+          <div class="qt-row" role="row">
+            <span role="cell">Bassens / Monts</span>
+            <span role="cell">plus de 4&nbsp;000</span>
+          </div>
+        </div>
+        <p class="signal-body">
+          Trois variables jouent chacune dans cette fourchette de 15 à 20&nbsp;% sur un même secteur. L'étage&nbsp;: un rez-de-chaussée et le dernier étage du même immeuble ne valent pas le même prix. L'extérieur&nbsp;: un jardin privatif peut faire basculer une décision d'achat à lui seul et le prix avec. Le quartier&nbsp;: le tableau ci-dessus le montre, mais même à l'intérieur d'un même secteur, une rue calme versus un axe passant peut représenter un écart significatif. Ce sont trois facteurs que l'algorithme agrège et que l'acquéreur distingue immédiatement lors de sa visite.
         </p>
         <p class="signal-body">
-          <strong>Ensuite, la visite.</strong> Les données ne voient pas l'état d'une cuisine, la vue depuis un balcon, le bruit d'une route ou le charme d'une pièce traversante. Nous nous déplaçons systématiquement. Chaque bien a une réalité que les chiffres seuls ne captent pas.
-        </p>
-        <p class="signal-body">
-          <strong>Enfin, la restitution.</strong> Nous vous remettons un dossier structuré. Pas un chiffre isolé sur un coin de table. Vous comprenez comment nous sommes arrivés à cette estimation, sur quoi elle s'appuie, et quelles sont les variables qui pourraient la faire évoluer.
-        </p>
-        <p class="signal-body">
-          Pour comprendre notre méthode dans le détail, consultez notre page <a href="notreapproche.html">Notre approche</a>.
+          Ces fourchettes évoluent avec le marché. Ce qui ne change pas, c'est la méthode à appliquer pour situer précisément votre bien à l'intérieur.
         </p>
       </div>
     </div>
+
+    <div class="article-section reveal">
+      <div class="section-num" aria-hidden="true">3</div>
+      <div class="section-body">
+        <h2 class="s-title">Ce qu'on regarde <em>concrètement</em> pendant la visite</h2>
+        <p class="signal-body">
+          On visite tous les biens qu'on estime. Ce n'est pas une politesse commerciale&nbsp;: c'est une condition de la méthode. Aucune donnée ne remplace ce qu'on voit sur place.
+        </p>
+        <p class="signal-body">
+          <strong>L'orientation réelle.</strong> Un appartement annoncé "exposé sud" peut avoir son séjour principal au nord. On le voit lors de la visite. L'acquéreur aussi.
+        </p>
+        <p class="signal-body">
+          <strong>L'état réel versus l'état déclaré.</strong> "Cuisine refaite" peut désigner des façades changées il y a douze ans sur une plomberie d'origine. On évalue l'état fonctionnel, pas l'état cosmétique. Cette distinction peut peser plusieurs dizaines de milliers d'euros en correction de prix.
+        </p>
+        <p class="signal-body">
+          <strong>La copropriété dans le détail.</strong> Le montant des charges, les procès-verbaux des dernières assemblées générales, les travaux votés ou en cours de discussion, l'état du fonds de travaux. Un acquéreur qui finance son achat se verra poser toutes ces questions par sa banque. Si les réponses sont défavorables, elles doivent peser sur le prix.
+        </p>
+        <p class="signal-body">
+          <strong>L'environnement immédiat.</strong> La rue, le vis-à-vis, le niveau sonore, l'accessibilité réelle. Ce qu'on perçoit en quelques minutes modifie sensiblement la valeur perçue par l'acquéreur et sa capacité à formuler une offre au prix demandé.
+        </p>
+        <p class="signal-body">
+          Ces quatre points ne figurent pas dans les données DVF. Ils figurent dans notre dossier. Ce qui amène naturellement à la question de ces données.
+        </p>
+      </div>
+    </div>
+
+    <div class="article-section reveal">
+      <div class="section-num" aria-hidden="true">4</div>
+      <div class="section-body">
+        <h2 class="s-title">Comment on sélectionne <em>les comparables DVF</em></h2>
+        <p class="signal-body">
+          Les données DVF, Demandes de Valeurs Foncières, sont publiques. N'importe qui peut les consulter. Ce qui fait la différence, c'est la façon dont on les filtre et dont on interprète ce qu'elles disent.
+        </p>
+        <p class="signal-body">
+          <strong>Périmètre géographique resserré.</strong> On ne travaille pas à l'échelle de la commune. On affine jusqu'au quartier, parfois jusqu'à la rue ou à l'immeuble selon la densité du marché local. Un appartement à Bissy ne se compare pas avec un T3 du Biollay.
+        </p>
+        <p class="signal-body">
+          <strong>Filtre temporel strict.</strong> Le marché a évolué avec la remontée des taux. Une vente de 2021 dans un contexte à 1&nbsp;% n'a pas la même valeur d'information qu'une transaction de ces derniers mois. On privilégie les douze derniers mois, avec une pondération plus forte sur les six derniers.
+        </p>
+        <p class="signal-body">
+          <strong>Ajustement par caractéristiques.</strong> Deux appartements de 70&nbsp;m² dans la même rue peuvent valoir sensiblement différemment selon l'étage, la présence d'un extérieur, le stationnement, le DPE et l'état général. On ajuste chaque comparable avant de l'intégrer à l'analyse.
+        </p>
+        <p class="signal-body">
+          Le résultat n'est pas une fourchette large conçue pour couvrir les imprécisions. C'est une valeur centrale argumentée, avec les comparables retenus en annexe, pour que vous puissiez suivre le raisonnement ligne à ligne.
+        </p>
+      </div>
+    </div>
+
+    <div class="article-section reveal">
+      <div class="section-num" aria-hidden="true">5</div>
+      <div class="section-body">
+        <h2 class="s-title">Ce que contient <em>le dossier</em> qu'on vous présente</h2>
+        <p class="signal-body">
+          Au second rendez-vous, environ 45 minutes, on vous présente un dossier structuré. Pas un chiffre posé sur un coin de table&nbsp;: un document de travail, lisible, dans lequel chaque étape du raisonnement est visible.
+        </p>
+        <p class="signal-body">
+          Il contient&nbsp;: les comparables DVF retenus avec adresse, date de vente et prix au m²&nbsp;; la grille d'ajustement expliquant le passage du comparable brut à la valeur de votre bien&nbsp;; la concurrence active, ce qui est en vente sur votre secteur au moment de l'estimation&nbsp;; le positionnement concurrentiel, c'est-à-dire face à quoi se retrouve votre bien si vous le mettez en vente demain à ce prix&nbsp;; et les variables d'ajustement, les éléments susceptibles de faire évoluer cette valeur dans un sens ou dans l'autre.
+        </p>
+        <p class="signal-body">
+          Si vous souhaitez comprendre ce qui guide nos choix en amont, la page <a href="notreapproche.html">Notre approche</a> détaille notre méthode. Et si vous êtes déjà au stade de la décision, la page <a href="venteimmobiliere.html">Vente immobilière</a> décrit ce qui vient après l'estimation.
+        </p>
+      </div>
+    </div>
+
+    <section class="article-section reveal" id="faq">
+      <div class="section-num" aria-hidden="true">6</div>
+      <div class="section-body">
+        <h2 class="s-title">Questions fréquentes</h2>
+        <div class="faq-q-item">
+          <h3>Combien coûte une estimation immobilière à Chambéry & alentours ?</h3>
+          <p class="signal-body">Rien. Notre estimation est gratuite et sans engagement. Nous nous déplaçons, nous analysons, et nous revenons vous présenter notre dossier. Même si vous décidez de ne pas vendre, vous saurez précisément à quel prix votre bien peut se vendre aujourd'hui et dans quel délai. Pour prendre rendez-vous, il suffit de nous appeler ou de nous envoyer un message.</p>
+        </div>
+        <div class="faq-q-item">
+          <h3>Quelle différence entre votre estimation et un estimateur en ligne ?</h3>
+          <p class="signal-body">Un estimateur en ligne calcule une moyenne au m² sur un secteur large. Nous visitons le bien, recoupons les ventes réelles du quartier (données DVF), et nous nous mettons dans la peau d'un acquéreur : avec un budget donné, qu'est-ce qui est en concurrence avec votre bien aujourd'hui ? Le résultat est un prix argumenté dans son contexte de marché, pas une fourchette arbitraire.</p>
+        </div>
+        <div class="faq-q-item">
+          <h3>Comment se passe une estimation concrètement ?</h3>
+          <p class="signal-body">En deux temps. Une première visite d'environ une heure pour analyser le bien. Puis un second rendez-vous de 45 minutes où nous vous présentons notre dossier complet : comparables, positionnement concurrentiel, scénarios de prix. C'est comme ça que nous travaillons avec chacun des propriétaires qui nous font confiance.</p>
+        </div>
+        <div class="faq-q-item">
+          <h3>L'estimation vous engage-t-elle à vendre avec nous ?</h3>
+          <p class="signal-body">Non. Vous décidez, sans pression. Si vous signez un mandat avec nous, ce sera parce que notre travail vous a convaincu; comme les 31 propriétaires qui nous ont laissé un avis 5 étoiles sur Google. Tous n'ont pas signé de mandat avec nous, parce que notre travail leur a parfois apporté un éclairage nouveau : vendre n'est pas toujours la réponse.</p>
+        </div>
+      </div>
+    </section>
 
   </div><!-- /content-sections -->
 
@@ -208,20 +398,6 @@
     </a>
   </div>
   
-  <!-- ═══ DUO ═══ -->
-  <section class="duo-section reveal">
-    <h2 class="s-title">Faites estimer votre bien <em>à Chambéry et alentours</em></h2>
-    <p class="signal-body">
-      Une estimation sérieuse, c'est le socle d'une vente maîtrisée et c'est un acte gratuit, sans engagement.
-    </p>
-    <p class="signal-body">
-      En tant que conseillers en immobilier en Savoie, nous intervenons sur Jacob-Bellecombette, Chambéry et l'ensemble du bassin. Nous connaissons les prix, les quartiers, et les réalités de chaque secteur.
-    </p>
-    <p class="signal-body">
-      Vous avez un projet de vente&nbsp;? Contactez-nous directement. Nous reviendrons vers vous sous 24&nbsp;h.
-    </p>
-  </section>
-
   <!-- ═══ CTA ═══ -->
   <section class="cta-area reveal" id="contact">
     <div class="cta-rule"></div>

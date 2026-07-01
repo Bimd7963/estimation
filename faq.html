@@ -422,6 +422,8 @@
       letter-spacing: 0.05em;
       font-style: italic;
     }
+    .faq-link{color:var(--gold);border-bottom:1px solid rgba(168,132,74,.35);text-decoration:none;transition:border-color .2s;}
+    .faq-link:hover{border-color:var(--gold);}
 
     /* ── RESPONSIVE ── */
 
@@ -621,42 +623,26 @@
       },
       {
         "@type": "Question",
-        "name": "C'est quoi les vrais prix à Chambéry en ce moment. Pas les moyennes, les vrais ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "En mai 2026, le prix moyen tourne autour de 2 600 à 3 000 €/m² pour un appartement à Chambéry, mais cette moyenne ne veut pas dire grand-chose. Un T3 rénové au dernier étage en centre-ville peut dépasser 3 000 €/m². Un RDC sombre sur le Biollay descend sous 2 800 €. Le quartier des Monts à Bassens monte au-dessus de 4 000 € pour les maisons avec vue. C'est exactement ce qu'on analyse en RDV estimation, la réalité de votre bien, pas une moyenne de ville."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Combien de temps ça prend vraiment pour vendre à Chambéry ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Le délai moyen observé sur Chambéry début 2026 est d'environ 55 jours, contre 70 jours un an plus tôt. Le marché s'est fluidifié. Mais tout dépend du prix de présentation et du quartier. Un bien « au prix » sur un secteur demandé comme le centre, Bissy ou La Ravoire peut partir en moins de 45 jours. Un bien surévalué de 10 % peut rester trois à quatre mois et finir par se vendre en dessous du prix qu'il aurait atteint s'il avait été bien positionné dès le départ. C'est la raison pour laquelle la stratégie de prix est notre premier sujet de travail."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Quels documents je dois préparer avant de vous appeler ?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Rien d'obligatoire pour un premier échange. Appelez-nous, on verra ensemble. Pour la mise en vente effective, il nous faudra notamment le titre de propriété, les diagnostics techniques obligatoires (DPE, amiante, électricité, ERP…) et d'autres documents importants. Nous vous enverrons une checklist complète le moment venu."
-        }
-      },
-      {
-        "@type": "Question",
         "name": "Je veux vendre mon commerce à Chambéry, vous faites ça aussi ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Oui, et c'est l'un de nos domaines de spécialité. Très peu de mandataires locaux le proposent. Nous accompagnons les cédants de fonds de commerce en Savoie. Estimation fondée sur l'EBE retraité, multiples sectoriels, analyse du bail commercial, étude de faisabilité pour les repreneurs. C'est une approche à la fois immobilière et économique, parce que la valeur d'un fonds ne se résume pas aux murs. C'est un héritage de notre formation en Ecole Supérieure de Commerce."
+          "text": "Oui, et c'est l'un de nos domaines de spécialité. Très peu de mandataires locaux le proposent. Nous accompagnons les cédants de fonds de commerce en Savoie : évaluation fondée sur la rentabilité réelle, analyse du bail commercial, identification de repreneurs qualifiés. C'est une approche à la fois immobilière et économique, parce que la valeur d'un fonds ne se résume pas aux murs."
         }
       },
       {
         "@type": "Question",
-        "name": "Comment vous estimez un fonds de commerce ? C'est quoi la méthode ?",
+        "name": "Le bail commercial doit-il être renouvelé avant de céder ?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "On ne pose pas un coefficient au hasard. On retraite l'EBE (excédent brut d'exploitation) pour isoler la rentabilité réelle de l'activité. Puis on confronte à plusieurs méthodes de valorisation reconnues. Pour une cession en centre-ville de Chambéry, les paramètres ne sont pas les mêmes qu'en zone commerciale périphérique à La Ravoire ou Barby. De même selon le type de commerce. On complète avec une analyse du bail, des scénarios de reprise chiffrés et des leviers de développement. Le résultat, c'est un dossier qui tient face au banquier du repreneur."
+          "text": "Pas nécessairement, mais c'est un point que beaucoup de cédants découvrent trop tard. Le repreneur reprend le bail en cours avec ses conditions (loyer, durée restante, clauses). Si le bail arrive à échéance dans les mois qui suivent la cession, le bailleur peut en profiter pour renégocier à la hausse, ce qui change la rentabilité du fonds pour l'acquéreur et donc sa valorisation. On analyse systématiquement le bail avant toute mise en marché. Durée restante, clause de cession, conditions de renouvellement : ce sont des données qui pèsent autant que le chiffre d'affaires dans la décision d'un repreneur."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Comment céder un fonds sans que la clientèle ou les salariés l'apprennent trop tôt ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "La confidentialité est probablement le point le plus sous-estimé dans une cession de fonds. En coiffure, restauration ou commerce de proximité, une fuite peut faire fuir la clientèle avant même que le repreneur soit trouvé. On travaille avec des mandats confidentiels, des annonces anonymisées et une qualification rigoureuse des acquéreurs avant toute communication d'information sensible. Les données financières ne sont transmises qu'après signature d'un engagement de confidentialité. C'est une discipline de chaque instant, pas un détail logistique."
         }
       }
     ]
@@ -715,7 +701,7 @@
         <span class="faq-question-text">Votre estimation est vraiment gratuite ou je devrai payer si je ne signe pas avec vous ?</span>
         <div class="faq-icon"></div>
       </div>
-      <div class="faq-answer">L'estimation est gratuite, et elle ne vous engage à rien. Nous nous déplaçons chez vous, nous analysons le bien, et nous vous présentons un dossier d'avis de valeur complet, que vous signiez avec nous ou non. On croise les données DVF des ventes réellement signées dans votre rue ou votre résidence, on ajuste par étage, exposition, état et copropriété, et on documente chaque étape. Premier rendez-vous sur place, 45 minutes, sans engagement.</div>
+      <div class="faq-answer">L'estimation est gratuite, et elle ne vous engage à rien. Nous nous déplaçons chez vous, nous analysons le bien, et nous vous présentons un dossier d'avis de valeur complet, que vous signiez avec nous ou non. On croise les données DVF des ventes réellement signées dans votre rue ou votre résidence, on ajuste par étage, exposition, état et copropriété, et on documente chaque étape. Premier rendez-vous sur place, 45 minutes, sans engagement. <a href="estimation-chambery.html" class="faq-link">Comment se déroule une estimation à Chambéry →</a></div>
     </div>
 
     <div class="faq-item">
@@ -723,7 +709,7 @@
         <span class="faq-question-text">Pourquoi l'estimation de mon voisin sur MeilleursAgents ne correspond pas à la vôtre ?</span>
         <div class="faq-icon"></div>
       </div>
-      <div class="faq-answer">Parce que MeilleursAgents estime une adresse, pas un bien. Leur algorithme donne une fourchette au m² par secteur. A Chambéry, ça oscille entre 2 500 et 4 000 €/m² selon les rues. Mais il ne sait pas que votre appartement est traversant avec vue sur les Bauges au 6e étage, ou qu'il est au rez-de-chaussée à côté d'une rue bruyante. À Chambéry centre, l'écart entre un RDC et un dernier étage avec vue peut atteindre 15 à 20 %. Notre travail, c'est de chiffrer précisément ces écarts à partir de ventes comparables réelles, pas d'une moyenne.</div>
+      <div class="faq-answer">Parce que MeilleursAgents estime une adresse, pas un bien. Leur algorithme donne une fourchette au m² par secteur. A Chambéry, ça oscille entre 2 500 et 4 000 €/m² selon les rues. Mais il ne sait pas que votre appartement est traversant avec vue sur les Bauges au 6e étage, ou qu'il est au rez-de-chaussée à côté d'une rue bruyante. À Chambéry centre, l'écart entre un RDC et un dernier étage avec vue peut atteindre 15 à 20 %. Notre travail, c'est de chiffrer précisément ces écarts à partir de ventes comparables réelles, pas d'une moyenne. <a href="estimation-chambery.html" class="faq-link">Voir notre approche de l'estimation →</a></div>
     </div>
 
     <div class="faq-item">
@@ -731,7 +717,7 @@
         <span class="faq-question-text">Comment vous fixez le prix de vente ? Est-ce que vous surévaluez pour prendre le mandat ?</span>
         <div class="faq-icon"></div>
       </div>
-      <div class="faq-answer">Non, et c'est même l'inverse de notre approche. Un bien mal positionné au départ subit en moyenne 8 % de décote avant de trouver preneur. C'est un chiffre du Baromètre LPI-IAD, et on ne le rattrape presque jamais. Nous vous présentons trois scénarios de prix, chacun avec ses conséquences concrètes. Notre rôle est de vous conseiller avec honnêteté. La décision finale vous appartient.</div>
+      <div class="faq-answer">Non, et c'est même l'inverse de notre approche. Un bien mal positionné au départ subit en moyenne 8 % de décote avant de trouver preneur. C'est un chiffre du Baromètre LPI-IAD, et on ne le rattrape presque jamais. Nous vous présentons trois scénarios de prix, chacun avec ses conséquences concrètes. Notre rôle est de vous conseiller avec honnêteté. La décision finale vous appartient. <a href="articles/risques-surestimation.html" class="faq-link">Les vraies conséquences d'une surestimation →</a></div>
     </div>
   </div>
 
@@ -744,7 +730,7 @@
         <span class="faq-question-text">C'est quoi la différence concrète entre vous et une agence classique sur Chambéry ?</span>
         <div class="faq-icon"></div>
       </div>
-      <div class="faq-answer">La qualité plutôt que la quantité. Là où une agence classique gère des dizaines de mandats en parallèle, nous choisissons les biens que nous accompagnons et nous nous investissons pleinement sur chacun. Notre objectif est le vôtre : vendre dans les bonnes conditions, au bon prix, dans le bon délai. Concrètement, ça veut dire un suivi personnalisé, deux conseillers dédiés sur chaque dossier, et un accompagnement sur mesure du premier rendez-vous à la remise des clés.</div>
+      <div class="faq-answer">La qualité plutôt que la quantité. Là où une agence classique gère des dizaines de mandats en parallèle, nous choisissons les biens que nous accompagnons et nous nous investissons pleinement sur chacun. Notre objectif est le vôtre : vendre dans les bonnes conditions, au bon prix, dans le bon délai. Concrètement, ça veut dire un suivi personnalisé, deux conseillers dédiés sur chaque dossier, et un accompagnement sur mesure du premier rendez-vous à la remise des clés. <a href="notreapproche.html" class="faq-link">Notre approche en détail →</a></div>
     </div>
 
     <div class="faq-item">
@@ -773,7 +759,7 @@
         <span class="faq-question-text">Mandat exclusif ou mandat simple : lequel me protège le mieux ?</span>
         <div class="faq-icon"></div>
       </div>
-      <div class="faq-answer">Le mandat exclusif, et de loin. Nous dirions même que le mandat Succès est l'arme la plus efficace. Pas parce que ça nous arrange, parce que c'est ce qui protège votre prix. Avec un mandat simple, votre bien peut se retrouver sur trois agences à trois prix différents. Un acheteur qui voit ça se dit : « ils ont du mal à vendre, je vais négocier dur. » En succès, un seul prix, une seule stratégie, une seule annonce maîtrisée. Et si vous trouvez-vous même l'acquéreur, nous réduisons nos honoraires de moitié et nous nous occupons de votre acquéreur comme si nous l'avions trouvé nous. Résultat : les biens se vendent plus vite et plus proche du prix initial. C'est aussi ce qui nous permet d'investir du budget sur votre bien.</div>
+      <div class="faq-answer">Le mandat exclusif, et de loin. Nous dirions même que le mandat Succès est l'arme la plus efficace. Pas parce que ça nous arrange, parce que c'est ce qui protège votre prix. Avec un mandat simple, votre bien peut se retrouver sur trois agences à trois prix différents. Un acheteur qui voit ça se dit : « ils ont du mal à vendre, je vais négocier dur. » En succès, un seul prix, une seule stratégie, une seule annonce maîtrisée. Et si vous trouvez-vous même l'acquéreur, nous réduisons nos honoraires de moitié et nous nous occupons de votre acquéreur comme si nous l'avions trouvé nous. Résultat : les biens se vendent plus vite et plus proche du prix initial. C'est aussi ce qui nous permet d'investir du budget sur votre bien. <a href="venteimmobiliere.html" class="faq-link">Comment nous pilotons une vente →</a></div>
     </div>
 
     <div class="faq-item">
@@ -802,7 +788,7 @@
         <span class="faq-question-text">Comment je sais ce qui se passe une fois le mandat signé ? Je ne veux pas du silence radio.</span>
         <div class="faq-icon"></div>
       </div>
-      <div class="faq-answer">Vous ne subirez pas votre vente, vous la pilotez. Chaque visite, chaque retour d'acquéreur est tracé et vous est restitué factuellement : qui est venu, ce qu'il a dit, s'il a un financement. Si après trois semaines on a dix visites mais zéro offre, on ne vous dit pas « soyez patient ». On analyse pourquoi et on ajuste ensemble. Vous recevez des points réguliers avec les données réelles du terrain, pas des relances creuses.</div>
+      <div class="faq-answer">Vous ne subirez pas votre vente, vous la pilotez. Chaque visite, chaque retour d'acquéreur est tracé et vous est restitué factuellement : qui est venu, ce qu'il a dit, s'il a un financement. Si après trois semaines on a dix visites mais zéro offre, on ne vous dit pas « soyez patient ». On analyse pourquoi et on ajuste ensemble. Vous recevez des points réguliers avec les données réelles du terrain, pas des relances creuses. <a href="venteimmobiliere.html#processus" class="faq-link">Le déroulement concret d'une vente avec nous →</a></div>
     </div>
 
     <div class="faq-item">
@@ -818,40 +804,11 @@
         <span class="faq-question-text">Votre accompagnement s'arrête quand exactement ?</span>
         <div class="faq-icon"></div>
       </div>
-      <div class="faq-answer">À la remise des clés, pas avant. Entre le compromis et l'acte authentique, nous suivons le financement de l'acheteur, coordonnons avec le notaire, organisons les relevés de compteurs. Nous sommes physiquement présents le jour de la signature chez le notaire. La vente, c'est un processus de plusieurs mois, notre accompagnement couvre l'intégralité, pas juste la première moitié.</div>
+      <div class="faq-answer">À la remise des clés, pas avant. Entre le compromis et l'acte authentique, nous suivons le financement de l'acheteur, coordonnons avec le notaire, organisons les relevés de compteurs. Nous sommes physiquement présents le jour de la signature chez le notaire. La vente, c'est un processus de plusieurs mois, notre accompagnement couvre l'intégralité, pas juste la première moitié. <a href="venteimmobiliere.html" class="faq-link">Toutes les étapes d'une vente immobilière →</a></div>
     </div>
   </div>
 
-  <!-- SECTION 5: MARCHÉ CHAMBÉRY -->
-  <div class="faq-section">
-    <h2 class="faq-section-title">Le Marché Immobilier à Chambéry & Savoie</h2>
-
-    <div class="faq-item">
-      <div class="faq-question">
-        <span class="faq-question-text">C'est quoi les vrais prix à Chambéry en ce moment. Pas les moyennes, les vrais ?</span>
-        <div class="faq-icon"></div>
-      </div>
-      <div class="faq-answer">En mai 2026, le prix moyen tourne autour de 2 600 à 3 000 €/m² pour un appartement à Chambéry, mais cette moyenne ne veut pas dire grand-chose. Un T3 rénové au dernier étage en centre-ville peut dépasser 3 000 €/m². Un RDC sombre sur le Biollay descend sous 2 800 €. Le quartier des Monts à Bassens monte au-dessus de 4 000 € pour les maisons avec vue. C'est exactement ce qu'on analyse en RDV estimation, la réalité de votre bien, pas une moyenne de ville.</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-question">
-        <span class="faq-question-text">Combien de temps ça prend vraiment pour vendre à Chambéry ?</span>
-        <div class="faq-icon"></div>
-      </div>
-      <div class="faq-answer">Le délai moyen observé sur Chambéry début 2026 est d'environ 55 jours, contre 70 jours un an plus tôt. Le marché s'est fluidifié. Mais tout dépend du prix de présentation et du quartier. Un bien « au prix » sur un secteur demandé comme le centre, Bissy ou La Ravoire peut partir en moins de 45 jours. Un bien surévalué de 10 % peut rester trois à quatre mois et finir par se vendre en dessous du prix qu'il aurait atteint s'il avait été bien positionné dès le départ. C'est la raison pour laquelle la stratégie de prix est notre premier sujet de travail.</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-question">
-        <span class="faq-question-text">Quels documents je dois préparer avant de vous appeler ?</span>
-        <div class="faq-icon"></div>
-      </div>
-      <div class="faq-answer">Rien d'obligatoire pour un premier échange. Appelez-nous, on verra ensemble. Pour la mise en vente effective, il nous faudra notamment le titre de propriété, les diagnostics techniques obligatoires (DPE, amiante, électricité, ERP…) et d'autres documents importants. Nous vous enverrons une checklist complète le moment venu.</div>
-    </div>
-  </div>
-
-  <!-- SECTION 6: FONDS DE COMMERCE -->
+  <!-- SECTION 5: FONDS DE COMMERCE -->
   <div class="faq-section">
     <h2 class="faq-section-title">Cession de Fonds de Commerce en Savoie</h2>
 
@@ -860,15 +817,23 @@
         <span class="faq-question-text">Je veux vendre mon commerce à Chambéry, vous faites ça aussi ?</span>
         <div class="faq-icon"></div>
       </div>
-      <div class="faq-answer">Oui, et c'est l'un de nos domaines de spécialité. Très peu de mandataires locaux le proposent. Nous accompagnons les cédants de fonds de commerce en Savoie. Estimation fondée sur l'EBE retraité, multiples sectoriels, analyse du bail commercial, étude de faisabilité pour les repreneurs. C'est une approche à la fois immobilière et économique, parce que la valeur d'un fonds ne se résume pas aux murs. C'est un héritage de notre formation en Ecole Supérieure de Commerce.</div>
+      <div class="faq-answer">Oui, et c'est l'un de nos domaines de spécialité. Très peu de mandataires locaux le proposent. Nous accompagnons les cédants de fonds de commerce en Savoie : évaluation fondée sur la rentabilité réelle, analyse du bail commercial, identification de repreneurs qualifiés. C'est une approche à la fois immobilière et économique, parce que la valeur d'un fonds ne se résume pas aux murs. C'est un héritage de notre formation en Grande École de commerce. <a href="cessiondefonds.html" class="faq-link">Découvrir notre accompagnement cession de fonds →</a></div>
     </div>
 
     <div class="faq-item">
       <div class="faq-question">
-        <span class="faq-question-text">Comment vous estimez un fonds de commerce ? C'est quoi la méthode ?</span>
+        <span class="faq-question-text">Le bail commercial doit-il être renouvelé avant de céder ?</span>
         <div class="faq-icon"></div>
       </div>
-      <div class="faq-answer">On ne pose pas un coefficient au hasard. On retraite l'EBE (excédent brut d'exploitation) pour isoler la rentabilité réelle de l'activité. Puis on confronte à plusieurs méthodes de valorisation reconnues. Pour une cession en centre-ville de Chambéry, les paramètres ne sont pas les mêmes qu'en zone commerciale périphérique à La Ravoire ou Barby. De même selon le type de commerce. On complète avec une analyse du bail, des scénarios de reprise chiffrés et des leviers de développement. Le résultat, c'est un dossier qui tient face au banquier du repreneur.</div>
+      <div class="faq-answer">Pas nécessairement, mais c'est un point que beaucoup de cédants découvrent trop tard. Le repreneur reprend le bail en cours avec ses conditions (loyer, durée restante, clauses). Si le bail arrive à échéance dans les mois qui suivent la cession, le bailleur peut en profiter pour renégocier à la hausse, ce qui change la rentabilité du fonds pour l'acquéreur et donc sa valorisation. On analyse systématiquement le bail avant toute mise en marché. Durée restante, clause de cession, conditions de renouvellement : ce sont des données qui pèsent autant que le chiffre d'affaires dans la décision d'un repreneur.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span class="faq-question-text">Comment céder un fonds sans que la clientèle ou les salariés l'apprennent trop tôt ?</span>
+        <div class="faq-icon"></div>
+      </div>
+      <div class="faq-answer">La confidentialité est probablement le point le plus sous-estimé dans une cession de fonds. En coiffure, restauration ou commerce de proximité, une fuite peut faire fuir la clientèle avant même que le repreneur soit trouvé. On travaille avec des mandats confidentiels, des annonces anonymisées et une qualification rigoureuse des acquéreurs avant toute communication d'information sensible. Les données financières ne sont transmises qu'après signature d'un engagement de confidentialité. C'est une discipline de chaque instant, pas un détail logistique.</div>
     </div>
   </div>
 
