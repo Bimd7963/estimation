@@ -57,6 +57,7 @@ let _cachedCardW = null;
 window.addEventListener('resize', () => { _cachedCardW = null; }, {passive: true});
 function moveCarousel(dir) {
   const track = document.getElementById('carouselTrack');
+  if (!track) return;
   const cards = track.querySelectorAll('.avis-card');
   const perView = window.innerWidth > 900 ? 3 : 1;
   const max = cards.length - perView;

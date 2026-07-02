@@ -27,6 +27,7 @@
         <a href="/venteimmobiliere.html#avis" class="menu-nav-link">Avis clients</a>
         <a href="/articles.html" class="menu-nav-link">Articles</a>
         <a href="/faq.html" class="menu-nav-link">Questions fréquentes</a>
+        <a href="/baptiste-et-daphne.html" class="menu-nav-link">Baptiste &amp; Daphné</a>
 
         <div class="menu-cta-section">
           <a href="${ctaHref}" class="menu-cta-btn">Discuter de mon projet</a>

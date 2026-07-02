@@ -20,7 +20,8 @@ function trackProfileSelection(profile) {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: data,
-      mode: 'no-cors'
+      mode: 'no-cors',
+      keepalive: true
     }).catch(function() {});
 
     tracked.push(profile);
