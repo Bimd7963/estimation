@@ -30,7 +30,6 @@
         <a href="/baptiste-et-daphne.html" class="menu-nav-link">Baptiste &amp; Daphné</a>
 
         <div class="menu-cta-section">
-          <a href="${ctaHref}" class="menu-cta-btn">Discuter de mon projet</a>
         </div>
       </div>
     </div>
